@@ -1,7 +1,6 @@
 import json
 import os
 import urllib.request
-import urllib.parse
 
 DATA_FILE = "scholarhub-opportunities.json"
 
@@ -11,65 +10,46 @@ def load_existing():
     with open(DATA_FILE, "r", encoding="utf-8") as f:
         return json.load(f)
 
-def fetch_careeronestop_scholarships():
-    """
-    Fetches high school scholarships from the U.S. Department of Labor's
-    CareerOneStop API if API credentials are configured in GitHub Secrets.
-    Free API key signup: https://www.careeronestop.org/Developers/WebAPI/registration.aspx
-    """
-    user_id = os.environ.get("COS_USER_ID")
-    api_token = os.environ.get("COS_API_TOKEN")
+def fetch_public_grants():
+    """Fetches open youth/high-school education grants from Grants.gov (No API key needed)."""
+    url = "https://api.grants.gov/v1/api/search2"
+    payload = json.dumps({
+        "keyword": "high school students",
+        "oppStatuses": "posted",
+        "rows": 50
+    }).encode("utf-8")
 
-    if not user_id or not api_token:
-        print("No CareerOneStop API keys found in environment. Skipping API fetch.")
-        return []
-
-    keyword = urllib.parse.quote("high school")
-    url = f"https://api.careeronestop.org/v1/scholarship/{user_id}/{keyword}/0/100"
     req = urllib.request.Request(
         url,
-        headers={
-            "Authorization": f"Bearer {api_token}",
-            "Accept": "application/json"
-        }
+        data=payload,
+        headers={"Content-Type": "application/json", "Accept": "application/json"}
     )
 
     try:
         with urllib.request.urlopen(req, timeout=20) as response:
             raw_data = json.loads(response.read().decode("utf-8"))
     except Exception as e:
-        print(f"Error fetching from CareerOneStop API: {e}")
+        print(f"Error fetching from Grants.gov: {e}")
         return []
 
     fetched = []
-    for item in raw_data.get("Scholarships", []):
-        title = item.get("ScholarshipName", "").strip()
-        link = item.get("WebAddress", "").strip()
-        if not title or not link:
+    for item in raw_data.get("data", {}).get("oppHits", []):
+        title = item.get("title", "").strip()
+        opp_id = item.get("id", "")
+        if not title or not opp_id:
             continue
-
-        if not link.startswith("http"):
-            link = "https://" + link
-
-        amount = item.get("AwardAmount") or "Varies"
-        deadline = item.get("Deadline") or "Check Website"
-        desc = (
-            item.get("Purpose")
-            or item.get("Qualifications")
-            or "Verified national scholarship opportunity."
-        ).strip()
 
         fetched.append({
             "title": title,
-            "category": "Scholarship",
+            "category": "Research" if "science" in title.lower() or "stem" in title.lower() else "Scholarship",
             "grades": [11, 12],
-            "deadline": deadline,
-            "amountOrCost": str(amount),
-            "description": desc[:240] + ("..." if len(desc) > 240 else ""),
-            "link": link
+            "deadline": item.get("closeDate") or "Check Website",
+            "amountOrCost": "Federal Grant / Program",
+            "description": f"Sponsored by {item.get('agency', 'U.S. Federal Agency')}. Click below for full eligibility and application details.",
+            "link": f"https://www.grants.gov/search-results-detail/{opp_id}"
         })
 
-    print(f"Fetched {len(fetched)} opportunities from CareerOneStop.")
+    print(f"Fetched {len(fetched)} public opportunities.")
     return fetched
 
 def merge_and_deduplicate(existing, incoming):
@@ -91,8 +71,8 @@ def merge_and_deduplicate(existing, incoming):
 
 if __name__ == "__main__":
     current_data = load_existing()
-    api_data = fetch_careeronestop_scholarships()
-    updated_data = merge_and_deduplicate(current_data, api_data)
+    new_data = fetch_public_grants()
+    updated_data = merge_and_deduplicate(current_data, new_data)
 
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(updated_data, f, indent=2)
