@@ -1,6 +1,291 @@
 [
   {
-    "id": 1,
+    "title": "UC COSMOS (California State Summer School for Mathematics and Science)",
+    "category": "Summer Program",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "February",
+    "amountOrCost": "Financial Aid Available",
+    "description": "Intensive 4-week residential STEM summer program at UC Davis, UCI, UCLA, UCSD, and UCSC.",
+    "link": "https://cosmos-ucop.ucdavis.edu/",
+    "id": 1
+  },
+  {
+    "title": "UCSB Research Mentorship Program (RMP)",
+    "category": "Research",
+    "grades": [
+      10,
+      11
+    ],
+    "deadline": "March",
+    "amountOrCost": "Scholarships Available",
+    "description": "6-week summer research program at UC Santa Barbara pairing high schoolers with university mentors.",
+    "link": "https://www.summer.ucsb.edu/programs/research-mentorship-program/overview",
+    "id": 2
+  },
+  {
+    "title": "UCSB Summer Research Academies (SRA)",
+    "category": "Research",
+    "grades": [
+      9,
+      10,
+      11
+    ],
+    "deadline": "March",
+    "amountOrCost": "Scholarships Available",
+    "description": "4-week UC Santa Barbara project-based research program in STEM, humanities, and social sciences.",
+    "link": "https://www.summer.ucsb.edu/programs/summer-research-academies/overview",
+    "id": 3
+  },
+  {
+    "title": "UC Berkeley Academic Talent Development Program (ATDP)",
+    "category": "Summer Program",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "February / March",
+    "amountOrCost": "Need-Based Aid Available",
+    "description": "Challenging summer courses at UC Berkeley in CS, biotech, engineering, writing, and math.",
+    "link": "https://atdp.berkeley.edu/",
+    "id": 4
+  },
+  {
+    "title": "UC Berkeley Pre-College Scholars & Haas B-BAY",
+    "category": "Summer Program",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "March",
+    "amountOrCost": "Scholarships Available",
+    "description": "Earn UC Berkeley college credit or study business entrepreneurship at Haas School of Business.",
+    "link": "https://precollege.berkeley.edu/",
+    "id": 5
+  },
+  {
+    "title": "UC Berkeley Girls in Engineering & embARC Design Academy",
+    "category": "Summer Program",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "Spring",
+    "amountOrCost": "Scholarships Available",
+    "description": "Hands-on engineering, coding, robotics, and sustainable architecture academies at UC Berkeley.",
+    "link": "https://girlsinengineering.berkeley.edu/",
+    "id": 6
+  },
+  {
+    "title": "Berkeley Lab (LBNL) High School STEM Internships & QCaMP",
+    "category": "Research",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "Spring",
+    "amountOrCost": "Free / Paid Stipends",
+    "description": "Quantum computing camps and STEM research internships at Lawrence Berkeley National Lab.",
+    "link": "https://k12education.lbl.gov/programs/high-school",
+    "id": 7
+  },
+  {
+    "title": "UCLA Summer College Immersion Program (SCIP & SCIP+)",
+    "category": "Summer Program",
+    "grades": [
+      10,
+      11
+    ],
+    "deadline": "May",
+    "amountOrCost": "Financial Aid Available",
+    "description": "6-week UCLA summer program taking undergraduate courses and research methodology workshops.",
+    "link": "https://summer.ucla.edu/program/summer-college-immersion-program-scip/",
+    "id": 8
+  },
+  {
+    "title": "UCLA Sci|Art NanoLab & Applications of Nanoscience",
+    "category": "Research",
+    "grades": [
+      10,
+      11,
+      12
+    ],
+    "deadline": "March",
+    "amountOrCost": "Scholarships Available",
+    "description": "2-week lab-intensive nanoscience and biotech summer institutes at UCLA CNSI.",
+    "link": "https://www.cnsi.ucla.edu/education/sciart/",
+    "id": 9
+  },
+  {
+    "title": "UCLA Computer Science Summer Institute & Writing Project",
+    "category": "Summer Program",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "May",
+    "amountOrCost": "Financial Aid Available",
+    "description": "3-week UCLA coding intensive and summer writing camp for high school students.",
+    "link": "https://summer.ucla.edu/",
+    "id": 10
+  },
+  {
+    "title": "UCSD Academic Connections & Futures Program",
+    "category": "Summer Program",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "May",
+    "amountOrCost": "Scholarships Available",
+    "description": "Summer academic courses, marine science, and tech certificates at UC San Diego.",
+    "link": "https://academicconnections.ucsd.edu/",
+    "id": 11
+  },
+  {
+    "title": "UCSD Research Experience (REHS) & Salk Heithoff-Brody Scholars",
+    "category": "Research",
+    "grades": [
+      10,
+      11,
+      12
+    ],
+    "deadline": "March",
+    "amountOrCost": "Free / Paid Internship",
+    "description": "8-week computational science and biomedical research internships at UCSD and Salk Institute.",
+    "link": "https://education.sdsc.edu/studenttech/rehs/",
+    "id": 12
+  },
+  {
+    "title": "UCI Cancer Research Institute Youth Science Fellowship (YSFP)",
+    "category": "Research",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "March",
+    "amountOrCost": "Free (Orange County)",
+    "description": "6-week hands-on cancer biology lab fellowship at UC Irvine for Orange County juniors and seniors.",
+    "link": "https://cri.uci.edu/education-outreach/youth-science-fellowship-program/",
+    "id": 13
+  },
+  {
+    "title": "UCI Brain Camp & Summer Surgical Program",
+    "category": "Summer Program",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "Spring",
+    "amountOrCost": "Scholarships Available",
+    "description": "Immersive neuroscience lab camp and hands-on robotic/clinical surgical training at UC Irvine.",
+    "link": "https://braincamp.bio.uci.edu/",
+    "id": 14
+  },
+  {
+    "title": "UCI Pre-College, Gifted Students Academy & UCI x GATI Research",
+    "category": "Summer Program",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "May",
+    "amountOrCost": "Aid Varies",
+    "description": "Summer academic academies and university research tracks at UC Irvine.",
+    "link": "https://summer.uci.edu/high-school-students/",
+    "id": 15
+  },
+  {
+    "title": "UC Davis Young Scholars Program (YSP) & Pre-College",
+    "category": "Research",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "March",
+    "amountOrCost": "Need-Based Aid",
+    "description": "6-week residential biological/environmental research program and 2-week pre-college academies at UCD.",
+    "link": "https://ysp.ucdavis.edu/",
+    "id": 16
+  },
+  {
+    "title": "UC Santa Cruz Science Internship Program (SIP)",
+    "category": "Research",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "March",
+    "amountOrCost": "Full/Partial Scholarships",
+    "description": "10-week summer research internship in active UCSC astrophysics, biology, and CS labs.",
+    "link": "https://sip.ucsc.edu/",
+    "id": 17
+  },
+  {
+    "title": "UCSF High School Intern Program (HIP)",
+    "category": "Research",
+    "grades": [
+      11
+    ],
+    "deadline": "February",
+    "amountOrCost": "Paid Stipend ($3,200-$4,500)",
+    "description": "8-week paid biomedical and health sciences research internship at UC San Francisco.",
+    "link": "https://sep.ucsf.edu/hs_programs/high-school-intern-program/",
+    "id": 18
+  },
+  {
+    "title": "UC Riverside & UC Merced Summer Youth STEM Academies",
+    "category": "Summer Program",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "May",
+    "amountOrCost": "Free / Low Cost",
+    "description": "Engineering workshops, STEM academies, and college readiness programs at UCR and UC Merced.",
+    "link": "https://summer.ucr.edu/high-school",
+    "id": 19
+  },
+  {
+    "title": "UC Regents Scholarships & Blue and Gold Opportunity Plan",
+    "category": "Scholarship",
+    "grades": [
+      12
+    ],
+    "deadline": "Nov 30 / Mar 2",
+    "amountOrCost": "$2,500 - Full Tuition",
+    "description": "Merit scholarships and full systemwide UC tuition coverage for eligible California seniors.",
+    "link": "https://admission.universityofcalifornia.edu/tuition-financial-aid/types-of-aid/",
+    "id": 20
+  },
+  {
+    "id": 21,
     "title": "Johns Hopkins Center for Talented Youth (CTY)",
     "category": "Summer Program",
     "grades": [
@@ -15,7 +300,7 @@
     "link": "https://cty.jhu.edu/"
   },
   {
-    "id": 2,
+    "id": 22,
     "title": "NIH High School Summer Internship Program (HS-SIP)",
     "category": "Research",
     "grades": [
@@ -28,7 +313,7 @@
     "link": "https://www.training.nih.gov/research-training/hs/hs-sip/"
   },
   {
-    "id": 3,
+    "id": 23,
     "title": "Regeneron Science Talent Search (STS)",
     "category": "Research",
     "grades": [
@@ -52,7 +337,7 @@
     "amountOrCost": "Federal Grant / Program",
     "description": "Sponsored by Administration for Children and Families-IOAS-OTIP (Opportunity #HHS-2027-ACF-IOAS-OTIP-TV-0004). Click below for full eligibility requirements and application instructions.",
     "link": "https://www.grants.gov/search-results-detail/363751",
-    "id": 4
+    "id": 24
   },
   {
     "title": "Accelerating Solutions to Improve Access and Quality of Empirically-Supported Practices for Youth Mental Health (R01 Clinical Trial Optional)",
@@ -67,7 +352,7 @@
     "amountOrCost": "Federal Grant / Program",
     "description": "Sponsored by National Institutes of Health (Opportunity #PAR-25-310). Click below for full eligibility requirements and application instructions.",
     "link": "https://www.grants.gov/search-results-detail/357524",
-    "id": 5
+    "id": 25
   },
   {
     "title": "Collaboratory to Advance Mathematics Education and Learning (CAMEL) for K-12",
@@ -82,7 +367,7 @@
     "amountOrCost": "Federal Grant / Program",
     "description": "Sponsored by U.S. National Science Foundation (Opportunity #26-501). Click below for full eligibility requirements and application instructions.",
     "link": "https://www.grants.gov/search-results-detail/361008",
-    "id": 6
+    "id": 26
   },
   {
     "title": "Advanced Laboratories for Accelerating the Reach and Impact of Treatments for Youth and Adults with Mental Illness (ALACRITY) Research Centers",
@@ -97,7 +382,7 @@
     "amountOrCost": "Federal Grant / Program",
     "description": "Sponsored by National Institutes of Health (Opportunity #PAR-27-008). Click below for full eligibility requirements and application instructions.",
     "link": "https://www.grants.gov/search-results-detail/361521",
-    "id": 7
+    "id": 27
   },
   {
     "title": "National Training Center for Title X and Teen Pregnancy Prevention (TPP)",
@@ -112,7 +397,7 @@
     "amountOrCost": "Federal Grant / Program",
     "description": "Sponsored by Office of the Assistant Secretary for Health (Opportunity #AH-TPS-25-001). Click below for full eligibility requirements and application instructions.",
     "link": "https://www.grants.gov/search-results-detail/355936",
-    "id": 8
+    "id": 28
   },
   {
     "title": "Ryan White HIV/AIDS Program Part D - Women, Infants, Children and Youth Grant Supplemental Funding",
@@ -127,7 +412,7 @@
     "amountOrCost": "Federal Grant / Program",
     "description": "Sponsored by Health Resources and Services Administration (Opportunity #HRSA-27-068). Click below for full eligibility requirements and application instructions.",
     "link": "https://www.grants.gov/search-results-detail/363415",
-    "id": 9
+    "id": 29
   },
   {
     "title": "Single Source Competition for Continuation of Understanding and Targeting the Pathophysiology of Youth-Onset Type 2 Diabetes Clinical Centers (U01 Clinical Trial Not Allowed)",
@@ -142,7 +427,7 @@
     "amountOrCost": "Federal Grant / Program",
     "description": "Sponsored by National Institutes of Health (Opportunity #RFA-DK-28-115). Click below for full eligibility requirements and application instructions.",
     "link": "https://www.grants.gov/search-results-detail/363454",
-    "id": 10
+    "id": 30
   },
   {
     "title": "World Trade Center Youth Research Coordinating Center (U54)",
@@ -157,7 +442,7 @@
     "amountOrCost": "Federal Grant / Program",
     "description": "Sponsored by Centers for Disease Control and Prevention - ERA (Opportunity #RFA-OH-27-054). Click below for full eligibility requirements and application instructions.",
     "link": "https://www.grants.gov/search-results-detail/363417",
-    "id": 11
+    "id": 31
   },
   {
     "title": "CDC National Centers of Excellence in Youth Violence Prevention (YVPCs): Rigorous Evaluation of Prevention Approaches to Prevent and Reduce Youth Violence",
@@ -172,7 +457,7 @@
     "amountOrCost": "Federal Grant / Program",
     "description": "Sponsored by Centers for Disease Control and Prevention - ERA (Opportunity #RFA-CE-27-013). Click below for full eligibility requirements and application instructions.",
     "link": "https://www.grants.gov/search-results-detail/363055",
-    "id": 12
+    "id": 32
   },
   {
     "title": "Rigor and Reproducibility for Biomarkers in Type 1 Diabetes Clinical Research",
@@ -187,7 +472,7 @@
     "amountOrCost": "Federal Grant / Program",
     "description": "Sponsored by National Institutes of Health (Opportunity #RFA-DK-27-140). Click below for full eligibility requirements and application instructions.",
     "link": "https://www.grants.gov/search-results-detail/361235",
-    "id": 13
+    "id": 33
   },
   {
     "title": "Advancing Youth Activism and Engagement FY2023",
@@ -202,7 +487,7 @@
     "amountOrCost": "Federal Grant / Program",
     "description": "Sponsored by U.S. Mission to Albania (Opportunity #TIRYOUTHFY23). Click below for full eligibility requirements and application instructions.",
     "link": "https://www.grants.gov/search-results-detail/348303",
-    "id": 14
+    "id": 34
   },
   {
     "title": "Youth Regional Treatment Center Aftercare Program",
@@ -217,7 +502,7 @@
     "amountOrCost": "Federal Grant / Program",
     "description": "Sponsored by Indian Health Service (Opportunity #HHS-2027-IHS-YRTC-0001). Click below for full eligibility requirements and application instructions.",
     "link": "https://www.grants.gov/search-results-detail/363503",
-    "id": 15
+    "id": 35
   },
   {
     "title": "Healthy Lifestyles in Youth",
@@ -232,7 +517,7 @@
     "amountOrCost": "Federal Grant / Program",
     "description": "Sponsored by Indian Health Service (Opportunity #HHS-2027-IHS-HLY-0001). Click below for full eligibility requirements and application instructions.",
     "link": "https://www.grants.gov/search-results-detail/363651",
-    "id": 16
+    "id": 36
   },
   {
     "title": "Rigorously Evaluating Approaches to Prevent Child Sexual Abuse and Problematic Sexual Behavior among Youth",
@@ -247,7 +532,7 @@
     "amountOrCost": "Federal Grant / Program",
     "description": "Sponsored by Centers for Disease Control and Prevention - ERA (Opportunity #RFA-CE-27-016). Click below for full eligibility requirements and application instructions.",
     "link": "https://www.grants.gov/search-results-detail/363147",
-    "id": 17
+    "id": 37
   },
   {
     "title": "Children and Youth with Special Health Care Needs Research Network",
@@ -262,7 +547,7 @@
     "amountOrCost": "Federal Grant / Program",
     "description": "Sponsored by Health Resources and Services Administration (Opportunity #HRSA-27-050). Click below for full eligibility requirements and application instructions.",
     "link": "https://www.grants.gov/search-results-detail/363694",
-    "id": 18
+    "id": 38
   },
   {
     "title": "Preventing Suicide and Interpersonal Violence Among Youth and Young Adults",
@@ -277,7 +562,7 @@
     "amountOrCost": "Federal Grant / Program",
     "description": "Sponsored by Centers for Disease Control and Prevention - ERA (Opportunity #RFA-CE-27-015). Click below for full eligibility requirements and application instructions.",
     "link": "https://www.grants.gov/search-results-detail/363141",
-    "id": 19
+    "id": 39
   },
   {
     "title": "NSF STEM K-12 (STEM K-12)",
@@ -292,7 +577,7 @@
     "amountOrCost": "Federal Grant / Program",
     "description": "Sponsored by U.S. National Science Foundation (Opportunity #25-545). Click below for full eligibility requirements and application instructions.",
     "link": "https://www.grants.gov/search-results-detail/360350",
-    "id": 20
+    "id": 40
   },
   {
     "title": "Research to Improve Rigor, Replicability, and Reproducibility in Biomedical and Behavioral Sciences",
@@ -307,7 +592,7 @@
     "amountOrCost": "Federal Grant / Program",
     "description": "Sponsored by National Institutes of Health (Opportunity #PAR-28-061). Click below for full eligibility requirements and application instructions.",
     "link": "https://www.grants.gov/search-results-detail/363915",
-    "id": 21
+    "id": 41
   },
   {
     "title": "Innovative Approaches for Reducing Disparities in Kidney Health",
@@ -322,7 +607,7 @@
     "amountOrCost": "Federal Grant / Program",
     "description": "Sponsored by Office of the Assistant Secretary for Health (Opportunity #MP-CPI-25-002). Click below for full eligibility requirements and application instructions.",
     "link": "https://www.grants.gov/search-results-detail/355825",
-    "id": 22
+    "id": 42
   },
   {
     "title": "Reducing Fraud and Lowering Barriers to the Production of Drugs in Shortage by Outsourcing Facilities",
@@ -337,7 +622,7 @@
     "amountOrCost": "Federal Grant / Program",
     "description": "Sponsored by Food and Drug Administration (Opportunity #FOR-FD-25-023). Click below for full eligibility requirements and application instructions.",
     "link": "https://www.grants.gov/search-results-detail/360095",
-    "id": 23
+    "id": 43
   },
   {
     "title": "Elucidation and Validation of the role of Transporters in the Placenta, Lactating Mammary Gland, Developing Gut, and Blood Brain Barrier",
@@ -352,64 +637,7 @@
     "amountOrCost": "Federal Grant / Program",
     "description": "Sponsored by National Institutes of Health (Opportunity #RFA-HD-28-003). Click below for full eligibility requirements and application instructions.",
     "link": "https://www.grants.gov/search-results-detail/363210",
-    "id": 24
-  },
-  {
-    "title": "UC COSMOS (California State Summer School for Mathematics and Science)",
-    "category": "Summer Program",
-    "grades": [
-      9,
-      10,
-      11,
-      12
-    ],
-    "deadline": "February",
-    "amountOrCost": "Financial Aid Available",
-    "description": "Intensive 4-week residential STEM summer program hosted at UC Davis, UC Irvine, UCLA, UC San Diego, and UC Santa Cruz. Students work directly with UC faculty and researchers in specialized STEM clusters.",
-    "link": "https://cosmos-ucop.ucdavis.edu/",
-    "id": 25
-  },
-  {
-    "title": "UCSB Research Mentorship Program (RMP)",
-    "category": "Research",
-    "grades": [
-      10,
-      11
-    ],
-    "deadline": "March",
-    "amountOrCost": "Scholarships Available",
-    "description": "Competitive 6-week summer program at UC Santa Barbara pairing high-achieving high school students with a mentor to conduct hands-on university-level research and earn UC credit.",
-    "link": "https://www.summer.ucsb.edu/programs/research-mentorship-program/overview",
-    "id": 26
-  },
-  {
-    "title": "UCSB Summer Research Academies (SRA)",
-    "category": "Research",
-    "grades": [
-      9,
-      10,
-      11
-    ],
-    "deadline": "March",
-    "amountOrCost": "Scholarships Available",
-    "description": "4-week UC Santa Barbara program introducing high school students to university research through project-based tracks in STEM, humanities, and social sciences.",
-    "link": "https://www.summer.ucsb.edu/programs/summer-research-academies/overview",
-    "id": 27
-  },
-  {
-    "title": "UC Berkeley Academic Talent Development Program (ATDP)",
-    "category": "Summer Program",
-    "grades": [
-      9,
-      10,
-      11,
-      12
-    ],
-    "deadline": "February / March",
-    "amountOrCost": "Need-Based Aid Available",
-    "description": "Challenging summer courses at UC Berkeley in computer science, biotechnology, engineering, creative writing, and advanced mathematics for motivated high school students.",
-    "link": "https://atdp.berkeley.edu/",
-    "id": 28
+    "id": 44
   },
   {
     "title": "UC Berkeley Pre-College Scholars (Summer Residential & Commuter)",
@@ -423,7 +651,7 @@
     "amountOrCost": "Tuition / Aid Varies",
     "description": "Earn official UC Berkeley college credit while living on campus or commuting during the summer session alongside undergraduate students.",
     "link": "https://precollege.berkeley.edu/",
-    "id": 29
+    "id": 49
   },
   {
     "title": "UC Berkeley Girls in Engineering (GiE) Summer Camp",
@@ -436,7 +664,7 @@
     "amountOrCost": "Low Cost / Scholarships",
     "description": "UC Berkeley College of Engineering program introducing students to coding, robotics, bioengineering, and hands-on lab visits with Berkeley faculty.",
     "link": "https://girlsinengineering.berkeley.edu/",
-    "id": 30
+    "id": 50
   },
   {
     "title": "UC Berkeley Haas Business Academy for Youth (B-BAY)",
@@ -451,7 +679,7 @@
     "amountOrCost": "Scholarships Available",
     "description": "2-week entrepreneurship and business leadership program taught by UC Berkeley Haas School of Business faculty, culminating in a team business plan pitch.",
     "link": "https://haas.berkeley.edu/business-academy/",
-    "id": 31
+    "id": 51
   },
   {
     "title": "UCLA Summer College Immersion Program (SCIP)",
@@ -464,7 +692,7 @@
     "amountOrCost": "Financial Aid Available",
     "description": "6-week summer program allowing exceptional high school students to take real UCLA undergraduate courses, attend college workshops, and earn UC credit.",
     "link": "https://summer.ucla.edu/program/summer-college-immersion-program-scip/",
-    "id": 32
+    "id": 52
   },
   {
     "title": "UCLA Sci|Art NanoLab Summer Institute",
@@ -478,7 +706,7 @@
     "amountOrCost": "Scholarships Available",
     "description": "2-week intensive at the California NanoSystems Institute (CNSI) at UCLA exploring nanoscience, biotechnology, and scientific visualization through lab experiments.",
     "link": "https://www.cnsi.ucla.edu/education/sciart/",
-    "id": 33
+    "id": 53
   },
   {
     "title": "UCLA Applications of Nanoscience Summer Institute",
@@ -492,7 +720,7 @@
     "amountOrCost": "Scholarships Available",
     "description": "2-week UCLA lab-intensive program where students learn the fundamentals of nanoscience research and pitch a technology commercialization project.",
     "link": "https://www.cnsi.ucla.edu/education/applications-of-nanoscience/",
-    "id": 34
+    "id": 54
   },
   {
     "title": "UCLA Computer Science Summer Institute",
@@ -507,7 +735,7 @@
     "amountOrCost": "Financial Aid Available",
     "description": "3-week coding and computer science intensive at UCLA featuring lab tours, programming workshops, and college credit.",
     "link": "https://summer.ucla.edu/program/computer-science-summer-institute-introductory-track/",
-    "id": 35
+    "id": 55
   },
   {
     "title": "UCSD Academic Connections",
@@ -522,7 +750,7 @@
     "amountOrCost": "Scholarships Available",
     "description": "3-week residential and online summer academic experience at UC San Diego immersing high schoolers in marine science, biomedical research, engineering, and social sciences.",
     "link": "https://academicconnections.ucsd.edu/",
-    "id": 36
+    "id": 56
   },
   {
     "title": "UCSD Research Experience for High School Students (REHS)",
@@ -536,7 +764,7 @@
     "amountOrCost": "Free / Low Fee",
     "description": "8-week volunteer research internship at the San Diego Supercomputer Center (UCSD) pairing students with computational scientists on real research projects.",
     "link": "https://education.sdsc.edu/studenttech/rehs/",
-    "id": 37
+    "id": 57
   },
   {
     "title": "UCSD Heithoff-Brody High School Scholars Program (Salk Institute)",
@@ -549,7 +777,7 @@
     "amountOrCost": "Paid Internship",
     "description": "8-week paid summer biomedical research internship in La Jolla working alongside Salk Institute and UC San Diego researchers.",
     "link": "https://www.salk.edu/about/education-outreach/programs/heithoff-brody-high-school-summers-scholars/",
-    "id": 38
+    "id": 58
   },
   {
     "title": "UC Irvine (UCI) Summer Pre-College Programs",
@@ -564,7 +792,7 @@
     "amountOrCost": "Tuition / Aid Varies",
     "description": "Academic academies and undergraduate courses at UC Irvine in biomedical sciences, game design, computer science, and business.",
     "link": "https://summer.uci.edu/high-school-students/",
-    "id": 39
+    "id": 59
   },
   {
     "title": "UCI Cancer Research Institute Youth Science Fellowship Program (YSFP)",
@@ -577,7 +805,7 @@
     "amountOrCost": "Free (Orange County)",
     "description": "6-week summer laboratory fellowship at UC Irvine for Orange County high school juniors and seniors conducting hands-on cancer biology research.",
     "link": "https://cri.uci.edu/education-outreach/youth-science-fellowship-program/",
-    "id": 40
+    "id": 60
   },
   {
     "title": "UCI Brain Camp",
@@ -592,7 +820,7 @@
     "amountOrCost": "Scholarships Available",
     "description": "2-week immersive neuroscience summer camp at UC Irvine's Center for the Neurobiology of Learning and Memory featuring lab dissections, brain imaging, and experiments.",
     "link": "https://braincamp.bio.uci.edu/",
-    "id": 41
+    "id": 61
   },
   {
     "title": "UC Davis Young Scholars Program (YSP)",
@@ -605,34 +833,7 @@
     "amountOrCost": "Need-Based Fee Reductions",
     "description": "6-week residential research program at UC Davis introducing 40 high-achieving high schoolers to original research in biological, agricultural, and environmental sciences.",
     "link": "https://ysp.ucdavis.edu/",
-    "id": 42
-  },
-  {
-    "title": "UC Santa Cruz Science Internship Program (SIP)",
-    "category": "Research",
-    "grades": [
-      9,
-      10,
-      11,
-      12
-    ],
-    "deadline": "March",
-    "amountOrCost": "Full/Partial Scholarships",
-    "description": "10-week summer research internship placing high school students in active UC Santa Cruz research groups across astrophysics, biology, computer science, and psychology.",
-    "link": "https://sip.ucsc.edu/",
-    "id": 43
-  },
-  {
-    "title": "UCSF High School Intern Program (HIP)",
-    "category": "Research",
-    "grades": [
-      11
-    ],
-    "deadline": "February",
-    "amountOrCost": "Paid Stipend ($3,200-$4,500)",
-    "description": "8-week paid biomedical and health sciences research internship at UC San Francisco for San Francisco high school juniors.",
-    "link": "https://sep.ucsf.edu/hs_programs/high-school-intern-program/",
-    "id": 44
+    "id": 62
   },
   {
     "title": "UC Riverside (UCR) Summer Academy & High School Programs",
@@ -647,7 +848,7 @@
     "amountOrCost": "Varies",
     "description": "Summer academic enrichment, engineering workshops, and college credit courses hosted at UC Riverside.",
     "link": "https://summer.ucr.edu/high-school",
-    "id": 45
+    "id": 65
   },
   {
     "title": "UC Merced Summer Bridge & Youth STEM Programs",
@@ -662,7 +863,7 @@
     "amountOrCost": "Free / Low Cost",
     "description": "STEM workshops, engineering academies, and college readiness programs at UC Merced for California high school students.",
     "link": "https://admissions.ucmerced.edu/",
-    "id": 46
+    "id": 66
   },
   {
     "title": "UC Regents & Chancellor's Scholarships (Incoming UC Freshmen)",
@@ -674,7 +875,7 @@
     "amountOrCost": "$2,500 - Full Need",
     "description": "The most prestigious merit scholarship awarded by UC campuses based on your UC admissions application.",
     "link": "https://admission.universityofcalifornia.edu/tuition-financial-aid/types-of-aid/scholarships/",
-    "id": 47
+    "id": 67
   },
   {
     "title": "UC Blue and Gold Opportunity Plan",
@@ -686,6 +887,6 @@
     "amountOrCost": "Full Systemwide Tuition",
     "description": "Covers 100% of systemwide UC tuition and fees for eligible California high school seniors whose families earn under $80,000 per year.",
     "link": "https://admission.universityofcalifornia.edu/tuition-financial-aid/types-of-aid/blue-and-gold-opportunity-plan.html",
-    "id": 48
+    "id": 68
   }
 ]
