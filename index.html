@@ -1,160 +1,70 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#4f46e5">
-  <meta name="description" content="Find scholarships and educational opportunities by high school grade.">
-  <title>ScholarHub — Find your next opportunity</title>
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <style>
-    :root{--ink:#182238;--muted:#667085;--line:#e7eaf1;--bg:#f7f8fc;--purple:#5145cd;--purple2:#ecebff;--white:#fff;--green:#087e5b}
-    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif}
-    button,input,select{font:inherit} button{cursor:pointer}
-    .wrap{max-width:1120px;margin:auto;padding:24px}
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:26px}
-    .brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:21px;letter-spacing:-.5px}
-    .logo{display:grid;place-items:center;width:40px;height:40px;border-radius:13px;background:var(--purple);color:white;font-size:21px}
-    .nav{display:flex;gap:8px}.nav button,.ghost{border:1px solid var(--line);background:white;color:var(--ink);padding:9px 13px;border-radius:11px}
-    .hero{background:linear-gradient(120deg,#25245e,#5145cd 65%,#756cf0);color:white;border-radius:22px;padding:30px;display:grid;grid-template-columns:1.4fr .6fr;gap:20px;align-items:center;box-shadow:0 12px 30px #3530a51a}
-    .eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;opacity:.8}
-    h1{font-size:clamp(28px,4vw,43px);line-height:1.08;letter-spacing:-1.5px;margin:10px 0}
-    .hero p{max-width:560px;color:#e5e4ff;margin:0}
-    .hero-mark{font-size:92px;text-align:center;opacity:.95}
-    .stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.stat{background:#ffffff20;border:1px solid #ffffff2b;padding:7px 11px;border-radius:10px;font-size:12px}
-    .section-head{display:flex;justify-content:space-between;align-items:end;gap:12px;margin:28px 0 12px}
-    h2{font-size:21px;letter-spacing:-.5px;margin:0}.sub{color:var(--muted);font-size:13px;margin:3px 0 0}
-    .grades{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-    .grade{background:white;border:1px solid var(--line);border-radius:16px;padding:16px;text-align:left;transition:.15s}
-    .grade:hover,.grade.active{border-color:var(--purple);box-shadow:0 0 0 3px #5145cd16}
-    .grade strong{display:block;font-size:25px;color:var(--purple)}.grade span{font-weight:650}
-    .filters{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:10px;margin:15px 0}
-    .field{width:100%;border:1px solid var(--line);border-radius:11px;padding:11px 12px;background:white;color:var(--ink);outline:none}
-    .field:focus{border-color:var(--purple);box-shadow:0 0 0 3px #5145cd16}
-    .chips{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 18px}
-    .chip{border:1px solid var(--line);background:white;border-radius:99px;padding:7px 11px;color:#485066;font-size:12px}
-    .chip.active{background:var(--purple2);border-color:#c9c6ff;color:#3f36a9;font-weight:700}
-    .results-top{display:flex;justify-content:space-between;align-items:center;margin:18px 0 10px}
-    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
-    .card{background:white;border:1px solid var(--line);border-radius:16px;padding:17px;display:flex;flex-direction:column;gap:11px}
-    .cardtop{display:flex;justify-content:space-between;gap:10px;align-items:start}
-    .type{font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:.7px;color:#5145cd;background:#f0efff;padding:5px 8px;border-radius:7px}
-    .save{border:1px solid var(--line);background:white;border-radius:9px;padding:7px 9px;color:#596176}
-    .save.saved{color:#5145cd;background:#f0efff;border-color:#d7d4ff}
-    .card h3{font-size:17px;line-height:1.25;margin:0}.org{font-size:13px;color:var(--muted);margin-top:-7px}
-    .desc{color:#4c566b;font-size:13px;margin:0}
-    .meta{display:flex;flex-wrap:wrap;gap:7px}.pill{font-size:11px;background:#f5f6fa;color:#596176;border-radius:7px;padding:5px 8px}
-    .cardfoot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:auto;padding-top:5px}
-    .deadline{font-size:12px;color:#596176}.link{background:var(--purple);color:white;text-decoration:none;padding:9px 12px;border-radius:10px;font-size:12px;font-weight:700}
-    .demo{font-size:10px;color:#8a5b00;background:#fff5d9;padding:4px 7px;border-radius:6px}
-    .empty{grid-column:1/-1;background:white;border:1px dashed #cfd3df;border-radius:16px;padding:32px;text-align:center;color:var(--muted)}
-    .notice{margin-top:22px;border:1px solid #f0dca5;background:#fffaf0;border-radius:13px;padding:13px 15px;color:#755516;font-size:12px}
-    footer{color:var(--muted);font-size:12px;text-align:center;padding:28px 0}
-    @media(max-width:760px){.wrap{padding:16px}.hero{grid-template-columns:1fr;padding:23px}.hero-mark{display:none}.filters{grid-template-columns:1fr 1fr}.filters input{grid-column:1/-1}.cards{grid-template-columns:1fr}.grades{gap:8px}.grade{padding:12px}.nav .hide-mobile{display:none}}
-    @media(max-width:390px){.grades{grid-template-columns:repeat(2,1fr)}.filters{grid-template-columns:1fr}.filters input{grid-column:auto}}
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ScholarHub — High School Scholarships, Summer Programs & Research</title>
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <div class="brand"><div class="logo">✦</div> ScholarHub</div>
-    <nav class="nav"><button id="allBtn">Explore</button><button id="savedBtn">♡ Saved <span id="savedCount">0</span></button></nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-badge">SH</span>
+        <div>
+          <h1>ScholarHub</h1>
+          <p class="tagline">Scholarships, summer programs &amp; research organized by grade level</p>
+        </div>
+      </div>
+      <div class="header-note">Built for High School Students (9th–12th Grade)</div>
+    </div>
   </header>
 
-  <section class="hero">
-    <div>
-      <div class="eyebrow">Your next opportunity starts here</div>
-      <h1>Make your future<br>more possible.</h1>
-      <p>Discover scholarships, internships, research programs, summer opportunities, and more — organized for high school students.</p>
-      <div class="stats"><span class="stat">Grades 9–12</span><span class="stat">One organized place</span><span class="stat">Free to explore</span></div>
+  <main class="container main-content">
+    <section class="controls-panel" aria-label="Filter opportunities">
+      <div class="filter-group">
+        <span class="filter-label">Grade Level:</span>
+        <div class="pill-row" id="grade-filters">
+          <button class="pill active" data-grade="all" type="button">All Grades</button>
+          <button class="pill" data-grade="9" type="button">9th (Freshman)</button>
+          <button class="pill" data-grade="10" type="button">10th (Sophomore)</button>
+          <button class="pill" data-grade="11" type="button">11th (Junior)</button>
+          <button class="pill" data-grade="12" type="button">12th (Senior)</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Opportunity Type:</span>
+        <div class="pill-row" id="category-filters">
+          <button class="pill active" data-category="all" type="button">All Types</button>
+          <button class="pill" data-category="Scholarship" type="button">Scholarships</button>
+          <button class="pill" data-category="Summer Program" type="button">Summer Programs</button>
+          <button class="pill" data-category="Research" type="button">Research</button>
+        </div>
+      </div>
+
+      <div class="search-summary-row">
+        <input
+          id="search-input"
+          class="search-input"
+          type="search"
+          placeholder="Search by program name, focus, or keyword (e.g., STEM, leadership, full-ride)..."
+          aria-label="Search opportunities"
+        />
+        <div id="results-count" class="results-count">Showing 0 opportunities</div>
+      </div>
+    </section>
+
+    <section id="opportunities-grid" class="opportunities-grid" aria-live="polite"></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>ScholarHub — Always confirm exact deadlines and eligibility requirements on each official program page before applying.</p>
     </div>
-    <div class="hero-mark" aria-hidden="true">🎓</div>
-  </section>
+  </footer>
 
-  <div class="section-head"><div><h2>Start with your grade</h2><p class="sub">Choose a grade to see opportunities that may fit.</p></div></div>
-  <section class="grades" aria-label="Choose grade">
-    <button class="grade" data-grade="9"><strong>09</strong><span>Freshman</span></button>
-    <button class="grade" data-grade="10"><strong>10</strong><span>Sophomore</span></button>
-    <button class="grade" data-grade="11"><strong>11</strong><span>Junior</span></button>
-    <button class="grade" data-grade="12"><strong>12</strong><span>Senior</span></button>
-  </section>
-
-  <div class="section-head"><div><h2 id="listTitle">Explore opportunities</h2><p class="sub">Search and filter to narrow down your options.</p></div></div>
-  <div class="filters">
-    <input id="search" class="field" placeholder="Search by name, subject, or organization…" aria-label="Search opportunities">
-    <select id="typeFilter" class="field" aria-label="Opportunity type"><option value="">All opportunity types</option></select>
-    <select id="gradeFilter" class="field" aria-label="Grade eligibility"><option value="">All grades</option><option value="9">Freshman</option><option value="10">Sophomore</option><option value="11">Junior</option><option value="12">Senior</option></select>
-    <select id="deadlineFilter" class="field" aria-label="Deadline"><option value="">Any deadline</option><option value="upcoming">Upcoming only</option><option value="rolling">Rolling / varies</option></select>
-  </div>
-  <div class="chips" id="quickTypes"></div>
-  <div class="results-top"><strong id="resultCount">0 opportunities</strong><span class="sub">Official-source listings • verify before applying</span></div>
-  <section id="cards" class="cards" aria-live="polite"></section>
-
-  <div class="notice"><strong>Important:</strong> Listings link to official providers. Eligibility, dates, costs, and availability can change. Always confirm the current cycle on the provider’s website before applying. ScholarHub does not guarantee eligibility or acceptance. Never pay an unexpected fee or share sensitive information with an unverified site.</div>
-  <footer>ScholarHub • Built to make opportunity discovery easier for every student.</footer>
-</div>
-<script>
-// Starter set of real opportunities checked against provider pages on Nov. 23, 2026.
-// Add new records using the same fields. Unknown or variable deadlines stay blank.
-const opportunities = [
- {id:"rsi-2027",title:"Research Science Institute (RSI) 2027",org:"Center for Excellence in Education; MIT and Stanford",type:"Research",grades:[11],amount:"Free • residential",deadline:"December 11, 2026",deadlineDate:"2026-12-11",location:"Cambridge, MA / Stanford, CA",subjects:["STEM","Research","Math","Science"],desc:"Six-week summer research program. For students applying during 11th grade who will have one year of high school remaining; applicants must be 16 by July 1, 2027. Very selective. Applications close at 11:59 p.m. ET.",url:"https://www.cee.org/programs/apply-rsi",verified:"2026-11-23",eligibility:"Grade 11; one year of high school remaining; age 16 by July 1, 2027. U.S. and eligible international applicants.",cost:"No cost to participants; housing and dining covered."},
- {id:"nih-sip-2027",title:"NIH Summer Internship Program (SIP) 2027",org:"National Institutes of Health",type:"Internship",grades:[12],amount:"Paid stipend • in-person",deadline:"January 26, 2027",deadlineDate:"2027-01-26",location:"NIH campuses, including Bethesda, MD",subjects:["Biomedical","Medicine","Biology","Research"],desc:"Biomedical and health-related research internships. High-school eligibility is limited: applicants must be graduating seniors, meet the age requirement (generally 18 by Sept. 30, 2027), and satisfy citizenship/residency and other program rules. Read the official eligibility page carefully.",url:"https://www.training.nih.gov/research-training/pb/sip/",verified:"2026-11-23",eligibility:"High-school applicants must be graduating seniors and meet the detailed age, citizenship/permanent-residency, graduation, and location conditions stated by NIH.",cost:"Stipend; full-time, in-person commitment."},
- {id:"scholastic-awards-2027",title:"Scholastic Art & Writing Awards 2027",org:"Alliance for Young Artists & Writers",type:"Competition",grades:[9,10,11,12],amount:"Recognition • scholarship awards",deadline:"Varies by regional affiliate",deadlineDate:"",location:"Nationwide • regional submission",subjects:["Art","Writing","Photography","Poetry","Creative"],desc:"National recognition program for creative teens in grades 7–12, ages 13+. Includes 29 art and writing categories and opportunities for recognition and scholarships. Regional deadlines differ; entry fees apply, with fee waivers available for students facing financial barriers.",url:"https://www.artandwriting.org/",verified:"2026-11-23",eligibility:"Grades 7–12; ages 13+; residents of the U.S., U.S. territories, military bases, or eligible Canada locations.",cost:"$15 per individual entry and $40 per portfolio; fee waivers available."}
- ,{id:"rockefeller-ssrp-2027",title:"Summer Science Research Program (SSRP) 2027",org:"The Rockefeller University",type:"Research",grades:[11,12],amount:"Free • in-person",deadline:"January 4, 2027",deadlineDate:"2027-01-04",location:"New York, NY",subjects:["STEM","Biology","Medicine","Research"],desc:"Seven-week, team-based mentored laboratory research program for high school juniors and seniors. Full-time attendance is required; students must be at least 16 at program start. Application and recommendation letter share the same deadline.",url:"https://www.rockefeller.edu/outreach/ssrp/",verified:"2026-11-23",eligibility:"Must be enrolled as a high school junior or senior and at least 16 at the start of the program; must attend the full program.",cost:"Official page describes program; confirm any travel or housing costs with provider."}
- ,{id:"nist-ship-2027",title:"Summer High School Internship Program (SHIP) 2027",org:"National Institute of Standards and Technology",type:"Internship",grades:[11,12],amount:"Unpaid • in-person",deadline:"See individual vacancy announcement",deadlineDate:"",location:"Gaithersburg, MD or Boulder, CO",subjects:["STEM","Engineering","Physics","Research"],desc:"Seven-week summer educational internship in NIST research laboratories. 2027 vacancy announcements are open; deadlines and project details are listed in the individual announcements.",url:"https://www.nist.gov/ship",verified:"2026-11-23",eligibility:"U.S. citizen; high school junior or senior at time of application; minimum unweighted GPA 3.0/4.0. Must meet campus-specific requirements.",cost:"Unpaid; plan for travel and housing if not local."}
- ,{id:"salk-scholars-2027",title:"Heithoff-Brody High School Summer Scholars 2027",org:"Salk Institute",type:"Internship",grades:[10,11,12],amount:"Paid • in-person",deadline:"February 15, 2027",deadlineDate:"2027-02-15",location:"La Jolla, CA • San Diego County only",subjects:["Biology","Biomedical","Medicine","Research"],desc:"Eight-week paid research internship with hands-on laboratory work, mentorship, seminars, and a research symposium. Applications open December 1, 2026.",url:"https://www.salk.edu/about/education-outreach/programs/high-school-scholars/",verified:"2026-11-23",eligibility:"At least 16 by June 14, 2027; San Diego County resident attending a San Diego County high school; GPA 2.75 minimum; completed a high-school biology course; eligible to work in the U.S.",cost:"Paid internship; 30–40 hours weekly. Local residency restriction applies."}
- ,{id:"lsu-hssr-2027",title:"High School Summer Research Program 2027",org:"Louisiana State University College of Engineering",type:"Research",grades:[9,10,11],amount:"Check provider • in-person",deadline:"February 5, 2027",deadlineDate:"2027-02-05",location:"Baton Rouge, LA",subjects:["Engineering","STEM","Research"],desc:"High school research opportunity in engineering. Application requires a personal statement, transcript, parent/guardian statement, resume, and science-teacher recommendation.",url:"https://lsu.edu/eng/future/summer-camps/hssrprogram.php",verified:"2026-11-23",eligibility:"At least 15 years old; currently enrolled in grades 9–11; minimum 3.5 GPA. Confirm residency and other program conditions with LSU.",cost:"Cost and compensation not clearly stated on the program page; confirm with LSU."}
- ,{id:"fiu-summer-research-2027",title:"Summer Research Internship 2027",org:"Florida International University",type:"Research",grades:[11,12],amount:"Check provider • in-person",deadline:"March 15, 2027",deadlineDate:"2027-03-15",location:"Miami, FL • South Florida eligibility",subjects:["Cardiovascular","Biomedical","Medicine","Research"],desc:"Eight-week cardiovascular health research experience with faculty mentorship, lab research, journal clubs, case studies, and workshops. Application period runs January 4–March 15, 2027.",url:"https://case.fiu.edu/opportunities/internships-jobs/summer-research-internship/",verified:"2026-11-23",eligibility:"Open to eligible South Florida high school students; minimum 3.0 unweighted GPA; strong interest in cardiovascular health research; required time commitment applies.",cost:"Cost or stipend not stated in the retrieved program details; verify with FIU."}
- ,{id:"ucsf-hip-2027",title:"UCSF High School Intern Program 2027",org:"UCSF Science & Health Education Partnership",type:"Internship",grades:[12],amount:"Paid • in-person",deadline:"February 15, 2027",deadlineDate:"2027-02-15",location:"San Francisco, CA • SFUSD / SF charter only",subjects:["Biomedical","Medicine","Cancer","Neuroscience","Research"],desc:"Eight-week paid biomedical research internship with a UCSF scientist mentor. The 2027 application opens January 15. Students receive $4,500 upon full completion.",url:"https://sep.ucsf.edu/programs/high-school-students/intern-program/",verified:"2026-11-23",eligibility:"Current high school junior enrolled in an SFUSD high school or San Francisco public charter school. Program is not open to other students.",cost:"$4,500 stipend upon full completion; 35 hours weekly."}
- ,{id:"ge-reagan-2027",title:"GE-Reagan Foundation Scholarship 2027",org:"Ronald Reagan Presidential Foundation and Institute",type:"Scholarship",grades:[12],amount:"Up to $40,000",deadline:"January 7, 2027",deadlineDate:"2027-01-07",location:"Nationwide • United States",subjects:["Leadership","Community Service","College"],desc:"College scholarship for high school seniors demonstrating leadership, drive, integrity, and citizenship. The 2027 application opened October 12, 2026.",url:"https://apply.mykaleidoscope.com/program/GEReagan2027Scholarship",verified:"2026-11-23",eligibility:"High school seniors nationwide; review the official application for citizenship, enrollment, and other eligibility requirements.",cost:"No application cost stated on the application page; verify details before submitting."}
-
-];
-const types=[...new Set(opportunities.map(x=>x.type))];
-const $=id=>document.getElementById(id);
-let selectedGrade="",savedOnly=false;
-let saved=new Set(JSON.parse(localStorage.getItem("scholarhub-saved")||"[]"));
-types.forEach(t=>{const o=document.createElement("option");o.value=t;o.textContent=t;$("typeFilter").append(o)});
-["Scholarship","Internship","Research","Summer Program","Competition","Leadership","Volunteer","Grant"].forEach(t=>{
- const b=document.createElement("button");b.className="chip";b.textContent=t;b.onclick=()=>{$("typeFilter").value=$("typeFilter").value===t?"":t;render()};$("quickTypes").append(b);
-});
-function save(id){if(saved.has(id))saved.delete(id);else saved.add(id);localStorage.setItem("scholarhub-saved",JSON.stringify([...saved]));render()}
-function render(){
- const q=$("search").value.toLowerCase(),type=$("typeFilter").value,grade=$("gradeFilter").value||selectedGrade,deadline=$("deadlineFilter").value;
- const filtered=opportunities.filter(o=>(!savedOnly||saved.has(o.id))&&(!q||[o.title,o.org,o.desc,...o.subjects].join(" ").toLowerCase().includes(q))&&(!type||o.type===type)&&(!grade||o.grades.includes(Number(grade)))&&(!deadline||(deadline==="rolling"?!o.deadlineDate:!!o.deadlineDate)));
- $("listTitle").textContent=savedOnly?"Your saved opportunities":grade?`Opportunities for grade ${grade}`:"Explore opportunities";
- $("resultCount").textContent=`${filtered.length} ${filtered.length===1?"opportunity":"opportunities"}`;
- $("savedCount").textContent=saved.size;
- document.querySelectorAll(".grade").forEach(b=>b.classList.toggle("active",b.dataset.grade===selectedGrade));
- document.querySelectorAll(".chip").forEach(b=>b.classList.toggle("active",b.textContent===type));
- $("cards").innerHTML="";
- if(!filtered.length){$("cards").innerHTML='<div class="empty"><strong>No matching opportunities yet.</strong><br>Try changing a filter or clearing your search.</div>';return}
- filtered.forEach(o=>{
-  const card=document.createElement("article");card.className="card";
-  const top=document.createElement("div");top.className="cardtop";
-  top.innerHTML=`<span class="type">${o.type}</span><button class="save ${saved.has(o.id)?"saved":""}" aria-label="Save ${o.title}" title="Save opportunity">${saved.has(o.id)?"♥ Saved":"♡ Save"}</button>`;
-  top.querySelector("button").onclick=()=>save(o.id);
-  const title=document.createElement("h3");title.textContent=o.title;
-  const org=document.createElement("div");org.className="org";org.textContent=o.org;
-  const desc=document.createElement("p");desc.className="desc";desc.textContent=o.desc;
-  const meta=document.createElement("div");meta.className="meta";
-  [o.amount,`Grades ${o.grades.join(", ")}`,o.location].forEach(x=>{const s=document.createElement("span");s.className="pill";s.textContent=x;meta.append(s)});
-  const foot=document.createElement("div");foot.className="cardfoot";
-  const dl=document.createElement("span");dl.className="deadline";dl.textContent=`Deadline: ${o.deadline}`;
-  const link=document.createElement("a");link.className="link";link.href=o.url;link.textContent="Official details & apply";link.setAttribute("aria-label",`Details for ${o.title}`);
-  foot.append(dl,link);
-  const verified=document.createElement("span");verified.className="demo";verified.textContent=`OFFICIAL SOURCE • checked ${o.verified}`;
-  const eligibility=document.createElement("p");eligibility.className="desc";eligibility.textContent=`Eligibility: ${o.eligibility} Cost: ${o.cost}`;
-  link.target="_blank";link.rel="noopener noreferrer";
-  card.append(top,title,org,desc,eligibility,meta,foot,verified);$("cards").append(card);
- });
-}
-document.querySelectorAll(".grade").forEach(b=>b.onclick=()=>{selectedGrade=selectedGrade===b.dataset.grade?"":b.dataset.grade;$("gradeFilter").value=selectedGrade; savedOnly=false;render()});
-["search","typeFilter","gradeFilter","deadlineFilter"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",()=>{if(id==="gradeFilter")selectedGrade="";render()}));
-$("savedBtn").onclick=()=>{savedOnly=!savedOnly;render();window.scrollTo({top:500,behavior:"smooth"})};
-$("allBtn").onclick=()=>{savedOnly=false;selectedGrade="";$("gradeFilter").value="";$("typeFilter").value="";$("search").value="";render()};
-render();
-if("serviceWorker" in navigator && location.protocol.startsWith("http")) navigator.serviceWorker.register("./sw.js").catch(()=>{});
-</script>
+  <script src="./opportunities.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
