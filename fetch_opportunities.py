@@ -1,10 +1,35 @@
 import json
 import os
-import subprocess
+import urllib.parse
+import urllib.request
 
 DATA_FILE = "scholarhub-opportunities.json"
-UC_FILE = "uc-opportunities.json"
-MED_FILE = "medical-opportunities.json"
+
+NSF_TOPICS = [
+    ("high school students", "Research"),
+    ("high school summer", "Summer Program"),
+    ("high school internship", "Summer Program"),
+    ("high school research", "Research"),
+    ("secondary school", "Scholarship"),
+    ("pre-college", "Summer Program"),
+    ("youth stem", "Research"),
+    ("youth science", "Research"),
+    ("youth biomedical", "Research"),
+    ("youth health", "Summer Program"),
+    ("youth engineering", "Research"),
+    ("youth computer science", "Research"),
+    ("youth robotics", "Summer Program"),
+    ("youth cybersecurity", "Summer Program"),
+    ("youth environmental", "Research"),
+    ("upward bound", "Scholarship"),
+    ("talent search", "Scholarship"),
+    ("k-12 stem", "Research")
+]
+
+EXCLUDE_WORDS = [
+    "postdoctoral", "postdoc", "doctoral", "phd", "ph.d.",
+    "dissertation", "faculty", "law school", "residency"
+]
 
 def load_json(path):
     if not os.path.exists(path):
@@ -16,29 +41,50 @@ def load_json(path):
     except Exception:
         return []
 
-def recover_largest_from_git():
-    best = load_json(DATA_FILE)
-    try:
-        commits = subprocess.check_output(
-            ["git", "log", "--format=%H", "-n", "25", "--", DATA_FILE],
-            text=True
-        ).splitlines()
-        for sha in commits:
-            raw = subprocess.check_output(["git", "show", f"{sha}:{DATA_FILE}"], text=True)
-            items = json.loads(raw)
-            if isinstance(items, list) and len(items) > len(best):
-                best = items
-    except Exception as e:
-        print(f"Git history check: {e}")
-    return best
+def fetch_nsf():
+    results = []
+    for kw, cat in NSF_TOPICS:
+        q = urllib.parse.quote(kw)
+        url = (
+            f"https://api.nsf.gov/services/v1/awards.json?keyword={q}"
+            "&rpp=100&printFields=id,title,fundsObligatedAmt,expDate,awardeeName,awardeeCity,awardeeStateCode"
+        )
+        req = urllib.request.Request(url, headers={"User-Agent": "ScholarHub/1.0"})
+        try:
+            with urllib.request.urlopen(req, timeout=25) as r:
+                awards = json.loads(r.read().decode("utf-8")).get("response", {}).get("award", [])
+        except Exception as e:
+            print(f"Skipping '{kw}': {e}")
+            continue
+
+        for item in awards:
+            title = item.get("title", "").strip()
+            aid = item.get("id", "")
+            if not title or not aid or any(bad in title.lower() for bad in EXCLUDE_WORDS):
+                continue
+            amt = item.get("fundsObligatedAmt", "")
+            org = item.get("awardeeName", "NSF Partner Institution")
+            city = item.get("awardeeCity", "")
+            state = item.get("awardeeStateCode", "")
+            loc = f" ({city}, {state})" if city and state else ""
+            results.append({
+                "title": title,
+                "category": cat,
+                "grades": [9, 10, 11, 12],
+                "deadline": item.get("expDate") or "Annual / Check Program Site",
+                "amountOrCost": f"Funded (${int(amt):,})" if str(amt).isdigit() and int(amt) > 0 else "NSF Youth Program",
+                "description": f"NSF-funded high school/youth program hosted by {org}{loc}.",
+                "link": f"https://www.nsf.gov/awardsearch/showAward?AWD_ID={aid}"
+            })
+    return results
 
 if __name__ == "__main__":
-    curated = load_json(UC_FILE) + load_json(MED_FILE)
-    historical = recover_largest_from_git()
+    existing = load_json(DATA_FILE)
+    incoming = fetch_nsf()
 
     merged = []
     seen = set()
-    for idx, item in enumerate(curated + historical, start=1):
+    for idx, item in enumerate(existing + incoming, start=1):
         if not isinstance(item, dict):
             continue
         title = item.get("title", "").strip()
@@ -50,4 +96,4 @@ if __name__ == "__main__":
 
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(merged, f, indent=2)
-    print(f"Done! Restored and merged total opportunities: {len(merged)}")
+    print(f"Done! Total opportunities: {len(merged)}")
