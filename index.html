@@ -88,20 +88,19 @@
     <select id="deadlineFilter" class="field" aria-label="Deadline"><option value="">Any deadline</option><option value="upcoming">Upcoming only</option><option value="rolling">Rolling / varies</option></select>
   </div>
   <div class="chips" id="quickTypes"></div>
-  <div class="results-top"><strong id="resultCount">0 opportunities</strong><span class="sub">Demo data shown below</span></div>
+  <div class="results-top"><strong id="resultCount">0 opportunities</strong><span class="sub">Official-source listings • verify before applying</span></div>
   <section id="cards" class="cards" aria-live="polite"></section>
 
-  <div class="notice"><strong>Important:</strong> This is an early prototype. Sample listings are fictional demonstrations, not real scholarship offers. Before applying to any real opportunity, confirm eligibility, dates, and requirements on the provider’s official website. Never pay to apply for a scholarship or share sensitive information with an unverified site.</div>
+  <div class="notice"><strong>Important:</strong> Listings link to official providers. Eligibility, dates, costs, and availability can change. Always confirm the current cycle on the provider’s website before applying. ScholarHub does not guarantee eligibility or acceptance. Never pay an unexpected fee or share sensitive information with an unverified site.</div>
   <footer>ScholarHub • Built to make opportunity discovery easier for every student.</footer>
 </div>
 <script>
+// Starter set of real opportunities checked against provider pages on Nov. 23, 2026.
+// Add new records using the same fields. Unknown or variable deadlines stay blank.
 const opportunities = [
- {id:"demo1",title:"Future Innovators Scholarship",org:"Example Education Foundation",type:"Scholarship",grades:[9,10,11,12],amount:"$1,000 example award",deadline:"Example: March 15",deadlineDate:"2099-03-15",location:"United States",subjects:["STEM","Innovation"],desc:"A demonstration listing showing how an award, grade range, and eligibility summary will appear.",url:"#"},
- {id:"demo2",title:"Young Researchers Summer Experience",org:"Example Research Institute",type:"Research",grades:[10,11],amount:"No cost example",deadline:"Example: Rolling",deadlineDate:"",location:"Online example",subjects:["Biology","Research"],desc:"A sample research opportunity card. Replace this with a real program after checking its official eligibility rules.",url:"#"},
- {id:"demo3",title:"Community Leadership Award",org:"Example Community Organization",type:"Scholarship",grades:[11,12],amount:"$500 example award",deadline:"Example: April 30",deadlineDate:"2099-04-30",location:"Local example",subjects:["Leadership","Service"],desc:"A demonstration award for students involved in volunteering, community service, or student leadership.",url:"#"},
- {id:"demo4",title:"High School STEM Internship",org:"Example Science Center",type:"Internship",grades:[11,12],amount:"Paid status varies",deadline:"Example: January 20",deadlineDate:"2099-01-20",location:"In-person example",subjects:["STEM","Science"],desc:"A sample internship listing illustrating how location, grade eligibility, and compensation can be displayed.",url:"#"},
- {id:"demo5",title:"Creative Voices Writing Contest",org:"Example Arts Council",type:"Competition",grades:[9,10,11,12],amount:"Prizes vary",deadline:"Example: Rolling",deadlineDate:"",location:"United States",subjects:["Writing","Arts"],desc:"A sample academic competition for students interested in writing and creative expression.",url:"#"},
- {id:"demo6",title:"College Readiness Summer Program",org:"Example University",type:"Summer Program",grades:[10,11],amount:"Cost varies",deadline:"Example: February 10",deadlineDate:"2099-02-10",location:"California example",subjects:["College Prep","STEM"],desc:"A demonstration pre-college program card. Confirm costs, financial aid, and eligibility before listing a real program.",url:"#"}
+ {id:"rsi-2027",title:"Research Science Institute (RSI) 2027",org:"Center for Excellence in Education; MIT and Stanford",type:"Research",grades:[11],amount:"Free • residential",deadline:"December 11, 2026",deadlineDate:"2026-12-11",location:"Cambridge, MA / Stanford, CA",subjects:["STEM","Research","Math","Science"],desc:"Six-week summer research program. For students applying during 11th grade who will have one year of high school remaining; applicants must be 16 by July 1, 2027. Very selective. Applications close at 11:59 p.m. ET.",url:"https://www.cee.org/programs/apply-rsi",verified:"2026-11-23",eligibility:"Grade 11; one year of high school remaining; age 16 by July 1, 2027. U.S. and eligible international applicants.",cost:"No cost to participants; housing and dining covered."},
+ {id:"nih-sip-2027",title:"NIH Summer Internship Program (SIP) 2027",org:"National Institutes of Health",type:"Internship",grades:[12],amount:"Paid stipend • in-person",deadline:"January 26, 2027",deadlineDate:"2027-01-26",location:"NIH campuses, including Bethesda, MD",subjects:["Biomedical","Medicine","Biology","Research"],desc:"Biomedical and health-related research internships. High-school eligibility is limited: applicants must be graduating seniors, meet the age requirement (generally 18 by Sept. 30, 2027), and satisfy citizenship/residency and other program rules. Read the official eligibility page carefully.",url:"https://www.training.nih.gov/research-training/pb/sip/",verified:"2026-11-23",eligibility:"High-school applicants must be graduating seniors and meet the detailed age, citizenship/permanent-residency, graduation, and location conditions stated by NIH.",cost:"Stipend; full-time, in-person commitment."},
+ {id:"scholastic-awards-2027",title:"Scholastic Art & Writing Awards 2027",org:"Alliance for Young Artists & Writers",type:"Competition",grades:[9,10,11,12],amount:"Recognition • scholarship awards",deadline:"Varies by regional affiliate",deadlineDate:"",location:"Nationwide • regional submission",subjects:["Art","Writing","Photography","Poetry","Creative"],desc:"National recognition program for creative teens in grades 7–12, ages 13+. Includes 29 art and writing categories and opportunities for recognition and scholarships. Regional deadlines differ; entry fees apply, with fee waivers available for students facing financial barriers.",url:"https://www.artandwriting.org/",verified:"2026-11-23",eligibility:"Grades 7–12; ages 13+; residents of the U.S., U.S. territories, military bases, or eligible Canada locations.",cost:"$15 per individual entry and $40 per portfolio; fee waivers available."}
 ];
 const types=[...new Set(opportunities.map(x=>x.type))];
 const $=id=>document.getElementById(id);
@@ -134,10 +133,12 @@ function render(){
   [o.amount,`Grades ${o.grades.join(", ")}`,o.location].forEach(x=>{const s=document.createElement("span");s.className="pill";s.textContent=x;meta.append(s)});
   const foot=document.createElement("div");foot.className="cardfoot";
   const dl=document.createElement("span");dl.className="deadline";dl.textContent=`Deadline: ${o.deadline}`;
-  const link=document.createElement("a");link.className="link";link.href=o.url;link.textContent="Details";link.setAttribute("aria-label",`Details for ${o.title}`);
+  const link=document.createElement("a");link.className="link";link.href=o.url;link.textContent="Official details & apply";link.setAttribute("aria-label",`Details for ${o.title}`);
   foot.append(dl,link);
-  const demo=document.createElement("span");demo.className="demo";demo.textContent="DEMO — NOT A REAL OFFER";
-  card.append(top,title,org,desc,meta,foot,demo);$("cards").append(card);
+  const verified=document.createElement("span");verified.className="demo";verified.textContent=`OFFICIAL SOURCE • checked ${o.verified}`;
+  const eligibility=document.createElement("p");eligibility.className="desc";eligibility.textContent=`Eligibility: ${o.eligibility} Cost: ${o.cost}`;
+  link.target="_blank";link.rel="noopener noreferrer";
+  card.append(top,title,org,desc,eligibility,meta,foot,verified);$("cards").append(card);
  });
 }
 document.querySelectorAll(".grade").forEach(b=>b.onclick=()=>{selectedGrade=selectedGrade===b.dataset.grade?"":b.dataset.grade;$("gradeFilter").value=selectedGrade; savedOnly=false;render()});

@@ -8,10 +8,10 @@ This is a free, responsive Progressive Web App (PWA) starter for the scholarship
 - Search and filters for opportunity type, grade, and deadline
 - Save/unsave opportunities using browser local storage
 - PWA manifest and basic service worker
-- Clearly labeled fictional demo listings
+- Starter set of real, source-linked listings (checked November 23, 2026)
 
 ## Important
-The included listings are fictional demo data. Do not publish them as real opportunities. Replace them with verified listings and official source URLs before launch. Confirm each opportunity's current eligibility, deadline, costs, and application instructions.
+The included starter listings link to official provider pages. Eligibility, deadlines, costs, and availability can change. Confirm all details with the provider before applying. The initial database is intentionally small; expand it only with source-linked records and clear verification dates.
 
 ## Preview locally
 Open `index.html` in a browser. Some PWA features require the app to be served over HTTPS or localhost.
