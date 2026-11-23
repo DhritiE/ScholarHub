@@ -176,4 +176,8 @@
     "grades": [9, 10, 11, 12],
     "deadline": "May",
     "amountOrCost": "Tuition / Aid Varies",
-    "description": "Academic academies and undergraduate courses at UC Irvine in biomedical sciences, game design, computer science,
+    "description": "Academic academies and undergraduate courses at UC Irvine in biomedical sciences, game design, computer science, and business.",
+    "link": "https://summer.uci.edu/high-school-students/"
+  },
+  {
+    "title
