@@ -1,8 +1,18 @@
 import json
 import os
+import time
 import urllib.request
 
 DATA_FILE = "scholarhub-opportunities.json"
+
+SEARCH_QUERIES = [
+    ("high school students", "Scholarship"),
+    ("high school summer", "Summer Program"),
+    ("high school research", "Research"),
+    ("youth stem", "Research"),
+    ("high school internship", "Summer Program"),
+    ("secondary school scholarship", "Scholarship")
+]
 
 def load_existing():
     if not os.path.exists(DATA_FILE):
@@ -10,47 +20,61 @@ def load_existing():
     with open(DATA_FILE, "r", encoding="utf-8") as f:
         return json.load(f)
 
+def categorize_item(title, default_category):
+    t = title.lower()
+    if any(word in t for word in ["summer", "camp", "internship", "academy", "institute"]):
+        return "Summer Program"
+    if any(word in t for word in ["research", "science", "stem", "lab", "fellowship"]):
+        return "Research"
+    return default_category
+
 def fetch_public_grants():
-    """Fetches open youth/high-school education grants from Grants.gov (No API key needed)."""
+    """Fetches open youth/high-school opportunities across multiple keywords from Grants.gov."""
     url = "https://api.grants.gov/v1/api/search2"
-    payload = json.dumps({
-        "keyword": "high school students",
-        "oppStatuses": "posted",
-        "rows": 50
-    }).encode("utf-8")
+    all_fetched = []
 
-    req = urllib.request.Request(
-        url,
-        data=payload,
-        headers={"Content-Type": "application/json", "Accept": "application/json"}
-    )
+    for keyword, default_cat in SEARCH_QUERIES:
+        payload = json.dumps({
+            "keyword": keyword,
+            "oppStatuses": "posted|forecasted",
+            "rows": 100
+        }).encode("utf-8")
 
-    try:
-        with urllib.request.urlopen(req, timeout=20) as response:
-            raw_data = json.loads(response.read().decode("utf-8"))
-    except Exception as e:
-        print(f"Error fetching from Grants.gov: {e}")
-        return []
+        req = urllib.request.Request(
+            url,
+            data=payload,
+            headers={"Content-Type": "application/json", "Accept": "application/json"}
+        )
 
-    fetched = []
-    for item in raw_data.get("data", {}).get("oppHits", []):
-        title = item.get("title", "").strip()
-        opp_id = item.get("id", "")
-        if not title or not opp_id:
+        try:
+            with urllib.request.urlopen(req, timeout=20) as response:
+                raw_data = json.loads(response.read().decode("utf-8"))
+        except Exception as e:
+            print(f"Error fetching '{keyword}': {e}")
             continue
 
-        fetched.append({
-            "title": title,
-            "category": "Research" if "science" in title.lower() or "stem" in title.lower() else "Scholarship",
-            "grades": [11, 12],
-            "deadline": item.get("closeDate") or "Check Website",
-            "amountOrCost": "Federal Grant / Program",
-            "description": f"Sponsored by {item.get('agency', 'U.S. Federal Agency')}. Click below for full eligibility and application details.",
-            "link": f"https://www.grants.gov/search-results-detail/{opp_id}"
-        })
+        hits = raw_data.get("data", {}).get("oppHits", [])
+        print(f"Keyword '{keyword}': found {len(hits)} results.")
 
-    print(f"Fetched {len(fetched)} public opportunities.")
-    return fetched
+        for item in hits:
+            title = item.get("title", "").strip()
+            opp_id = item.get("id", "")
+            if not title or not opp_id:
+                continue
+
+            all_fetched.append({
+                "title": title,
+                "category": categorize_item(title, default_cat),
+                "grades": [9, 10, 11, 12] if "youth" in keyword or "summer" in keyword else [11, 12],
+                "deadline": item.get("closeDate") or "Check Website",
+                "amountOrCost": "Federal Grant / Program",
+                "description": f"Sponsored by {item.get('agency', 'U.S. Federal Agency')}. Click below for full eligibility and application details.",
+                "link": f"https://www.grants.gov/search-results-detail/{opp_id}"
+            })
+
+        time.sleep(1)
+
+    return all_fetched
 
 def merge_and_deduplicate(existing, incoming):
     seen_titles = {item["title"].strip().lower() for item in existing}
@@ -76,3 +100,4 @@ if __name__ == "__main__":
 
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(updated_data, f, indent=2)
+        
