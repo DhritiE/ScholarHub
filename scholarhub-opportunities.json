@@ -741,7 +741,7 @@
     "link": "https://www.stonybrook.edu/commcms/garcia/summer_program/"
   },
   {
-    "id": 56,
+    "id": 55,
     "title": "Bank of America Student Leaders",
     "category": "Summer Program",
     "grades": [
@@ -754,7 +754,7 @@
     "link": "https://about.bankofamerica.com/en/making-an-impact/student-leaders"
   },
   {
-    "id": 57,
+    "id": 56,
     "title": "MITES Summer (MIT)",
     "category": "Summer Program",
     "grades": [
@@ -766,7 +766,7 @@
     "link": "https://mites.mit.edu/discover-mites/mites-summer/"
   },
   {
-    "id": 58,
+    "id": 57,
     "title": "American Legion Boys State / Girls State",
     "category": "Summer Program",
     "grades": [
@@ -778,7 +778,7 @@
     "link": "https://www.legion.org/boysnation/state"
   },
   {
-    "id": 59,
+    "id": 58,
     "title": "Yale Young Global Scholars (YYGS)",
     "category": "Summer Program",
     "grades": [
@@ -791,7 +791,7 @@
     "link": "https://globalscholars.yale.edu/"
   },
   {
-    "id": 60,
+    "id": 59,
     "title": "Coca-Cola Scholars Program",
     "category": "Scholarship",
     "grades": [
@@ -803,7 +803,7 @@
     "link": "https://www.coca-colascholarsfoundation.org/"
   },
   {
-    "id": 61,
+    "id": 60,
     "title": "The Gates Scholarship",
     "category": "Scholarship",
     "grades": [
@@ -815,7 +815,7 @@
     "link": "https://www.thegatesscholarship.org/"
   },
   {
-    "id": 62,
+    "id": 61,
     "title": "Regeneron Science Talent Search (STS)",
     "category": "Research",
     "grades": [
@@ -827,7 +827,7 @@
     "link": "https://www.societyforscience.org/regeneron-sts/"
   },
   {
-    "id": 63,
+    "id": 62,
     "title": "Jack Kent Cooke Foundation College Scholarship",
     "category": "Scholarship",
     "grades": [
@@ -839,7 +839,7 @@
     "link": "https://www.jkcf.org/our-scholarships/college-scholarship-program/"
   },
   {
-    "id": 64,
+    "id": 63,
     "title": "Elks Most Valuable Student (MVS) Scholarship",
     "category": "Scholarship",
     "grades": [
@@ -851,7 +851,7 @@
     "link": "https://www.elks.org/scholars/scholarships/mvs.cfm"
   },
   {
-    "id": 65,
+    "id": 64,
     "title": "Burger King Scholars Program",
     "category": "Scholarship",
     "grades": [
@@ -875,7 +875,7 @@
     "amountOrCost": "Funded ($235,639)",
     "description": "NSF-funded youth/high school STEM program hosted by Montana State University.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2624343",
-    "id": 106
+    "id": 65
   },
   {
     "title": "Supporting the Success of Physical and Quantitative Sciences Scholars in Rural Appalachia",
@@ -890,7 +890,7 @@
     "amountOrCost": "Funded ($2,000,000)",
     "description": "NSF-funded youth/high school STEM program hosted by Marshall University Research Corporation.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2619971",
-    "id": 107
+    "id": 66
   },
   {
     "title": "FDT-BioTech: Trustworthy Digital Twins for Patient-Specific Evaluation of Implant Systems",
@@ -905,7 +905,7 @@
     "amountOrCost": "Funded ($513,000)",
     "description": "NSF-funded youth/high school STEM program hosted by Texas A&M Engineering Experiment Station.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2625857",
-    "id": 108
+    "id": 67
   },
   {
     "title": "Beyond quartz - Revisiting whole-rock in situ cosmogenic C-14",
@@ -920,7 +920,7 @@
     "amountOrCost": "Funded ($294,737)",
     "description": "NSF-funded youth/high school STEM program hosted by Purdue University.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2608033",
-    "id": 109
+    "id": 68
   },
   {
     "title": "EPSCoR Research Fellows: NSF: Building capacity in museomics to advance evolutionary discovery and use-inspired science",
@@ -935,7 +935,7 @@
     "amountOrCost": "Funded ($299,379)",
     "description": "NSF-funded youth/high school STEM program hosted by Boise State University.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2624534",
-    "id": 110
+    "id": 69
   },
   {
     "title": "Conference: Meeting on Applied Algebraic Geometry",
@@ -950,7 +950,7 @@
     "amountOrCost": "Funded ($33,379)",
     "description": "NSF-funded youth/high school STEM program hosted by Georgia Tech Research Corporation.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2628131",
-    "id": 111
+    "id": 70
   },
   {
     "title": "Collaborative Research: CCSS: Semantic-Aware Collaborative Perception and Networking for Autonomous Urban Mobility",
@@ -965,7 +965,7 @@
     "amountOrCost": "Funded ($200,000)",
     "description": "NSF-funded youth/high school STEM program hosted by Illinois Institute of Technology.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2625502",
-    "id": 112
+    "id": 71
   },
   {
     "title": "Conference: 2027 Label-Free Single Molecule Sensing Gordon Research Conference and Seminar",
@@ -980,7 +980,7 @@
     "amountOrCost": "Funded ($10,000)",
     "description": "NSF-funded youth/high school STEM program hosted by Gordon Research Conferences.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2625972",
-    "id": 114
+    "id": 72
   },
   {
     "title": "Fast Optimization Methods for Transportation Network Design under User Equilibrium",
@@ -995,7 +995,7 @@
     "amountOrCost": "Funded ($350,000)",
     "description": "NSF-funded youth/high school STEM program hosted by University of Minnesota-Twin Cities.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2609977",
-    "id": 115
+    "id": 73
   },
   {
     "title": "Travel: Student Travel Support for 2027 IEEE International Microwave Biomedical Conference (IMBioC)",
@@ -1010,7 +1010,7 @@
     "amountOrCost": "Funded ($26,000)",
     "description": "NSF-funded youth/high school STEM program hosted by University of Illinois at Chicago.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2630803",
-    "id": 116
+    "id": 74
   },
   {
     "title": "NLI: Design and Development: Critical Thinking in the Age of AI: Forming EOP-Minded Leaders through Transformative AI-Enhanced Learning",
@@ -1025,7 +1025,7 @@
     "amountOrCost": "Funded ($349,999)",
     "description": "NSF-funded youth/high school STEM program hosted by Seattle University.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2625617",
-    "id": 117
+    "id": 75
   },
   {
     "title": "Developing STEM Identities and Geoarchaeological Innovation through Immersive Technology for Workforce Pathways",
@@ -1040,7 +1040,7 @@
     "amountOrCost": "Funded ($730,083)",
     "description": "NSF-funded youth/high school STEM program hosted by SUNY at Binghamton.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2625516",
-    "id": 123
+    "id": 76
   },
   {
     "title": "REU Site: Microbiology at the host-pathogen interface",
@@ -1055,7 +1055,7 @@
     "amountOrCost": "Funded ($441,657)",
     "description": "NSF-funded youth/high school STEM program hosted by University of Iowa.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2548170",
-    "id": 124
+    "id": 77
   },
   {
     "title": "EPSCoR Research Fellows: NSF: Watching Catalysts in Action to Design Low-Cost Materials for Clean Hydrogen Production from Water",
@@ -1070,7 +1070,7 @@
     "amountOrCost": "Funded ($297,896)",
     "description": "NSF-funded youth/high school STEM program hosted by Oklahoma State University.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2624608",
-    "id": 125
+    "id": 78
   },
   {
     "title": "Collaborative Research: Linking gut microbiota to host nutrient dynamics, physiological performance, and survival in a resource-limited ecosystem",
@@ -1085,7 +1085,7 @@
     "amountOrCost": "Funded ($434,617)",
     "description": "NSF-funded youth/high school STEM program hosted by University of Illinois at Urbana-Champaign.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2620839",
-    "id": 126
+    "id": 79
   },
   {
     "title": "Quantum Computing Approach for Predicting Extreme Atmospheric Events",
@@ -1100,7 +1100,7 @@
     "amountOrCost": "Funded ($266,449)",
     "description": "NSF-funded youth/high school STEM program hosted by New Jersey Institute of Technology.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2626002",
-    "id": 127
+    "id": 80
   },
   {
     "title": "EPSCoR Research Fellows: NSF: Engineering a Translational SERS Immunophenotyping and Multimodal Analytics Framework for Liquid-Biopsy Based Early Detection of Ovarian Cancer",
@@ -1115,7 +1115,7 @@
     "amountOrCost": "Funded ($272,105)",
     "description": "NSF-funded youth/high school STEM program hosted by University of Oklahoma Norman Campus.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2624329",
-    "id": 128
+    "id": 81
   },
   {
     "title": "Research-based Interventions for Engaging Low-Income Undergraduates in STEM",
@@ -1130,7 +1130,7 @@
     "amountOrCost": "Funded ($2,000,000)",
     "description": "NSF-funded youth/high school STEM program hosted by Black Hills State University.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2619567",
-    "id": 130
+    "id": 82
   },
   {
     "title": "EPSCoR Research Fellows: NSF: Developing a Practical Physics-Informed AI Benchmark for Estuarine Physical-Biogeochemical Prediction and Data Assimilation",
@@ -1145,7 +1145,7 @@
     "amountOrCost": "Funded ($247,885)",
     "description": "NSF-funded youth/high school STEM program hosted by University of South Alabama.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2624607",
-    "id": 131
+    "id": 83
   },
   {
     "title": "EPSCoR Research Fellows: @NASA: Leveraging high-resolution land modeling and remote sensing to understanding the impacts of light-absorbing particles on Western US snowpack",
@@ -1160,7 +1160,7 @@
     "amountOrCost": "Funded ($287,872)",
     "description": "NSF-funded youth/high school STEM program hosted by New Mexico Institute of Mining and Technology.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2624648",
-    "id": 132
+    "id": 84
   },
   {
     "title": "NSFGEO-DFG: Uncovering Atmospheric Composition during the Past 14,000 Years Using European Ice Cores",
@@ -1175,7 +1175,7 @@
     "amountOrCost": "Funded ($805,958)",
     "description": "NSF-funded youth/high school STEM program hosted by Nevada System of Higher Education, Desert Research Institute.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2611604",
-    "id": 133
+    "id": 85
   },
   {
     "title": "Deep ocean circulation and uranium-series radionuclides in Arctic Ocean sediments",
@@ -1190,7 +1190,7 @@
     "amountOrCost": "Funded ($256,690)",
     "description": "NSF-funded youth/high school STEM program hosted by Columbia University.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2539318",
-    "id": 135
+    "id": 86
   },
   {
     "title": "Collaborative Research: Group Structure, Hydrodynamics, and Sensing of Squids during Collective Swimming",
@@ -1205,7 +1205,7 @@
     "amountOrCost": "Funded ($638,784)",
     "description": "NSF-funded youth/high school STEM program hosted by Old Dominion University Research Foundation.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2602818",
-    "id": 136
+    "id": 87
   },
   {
     "title": "Seafloor Phosphorus Weathering and Earth System Response to Geologic Perturbations",
@@ -1220,7 +1220,7 @@
     "amountOrCost": "Funded ($494,304)",
     "description": "NSF-funded youth/high school STEM program hosted by Pennsylvania State Univ University Park.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2617572",
-    "id": 140
+    "id": 88
   },
   {
     "title": "Conference: Multi-disciplinary views of subduction processes",
@@ -1235,7 +1235,7 @@
     "amountOrCost": "Funded ($45,000)",
     "description": "NSF-funded youth/high school STEM program hosted by Trinity University.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2629910",
-    "id": 143
+    "id": 89
   },
   {
     "title": "EPSCoR Research Fellowship Program (EGFP): Enhancing Research Excellence in the Ocean State at the University of Rhode Island",
@@ -1250,7 +1250,7 @@
     "amountOrCost": "Funded ($954,000)",
     "description": "NSF-funded youth/high school STEM program hosted by University of Rhode Island.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2535408",
-    "id": 152
+    "id": 90
   },
   {
     "title": "EPSCOR Research Fellows: NSF: Quantum Advantage in Random Quantum Hamiltonians",
@@ -1265,7 +1265,7 @@
     "amountOrCost": "Funded ($235,973)",
     "description": "NSF-funded youth/high school STEM program hosted by Bowdoin College.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2624545",
-    "id": 159
+    "id": 91
   },
   {
     "title": "RUI: Enabling phylogenomic research on microbial eukaryotes with EukPhylo",
@@ -1280,7 +1280,7 @@
     "amountOrCost": "Funded ($736,602)",
     "description": "NSF-funded youth/high school STEM program hosted by Smith College.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2620734",
-    "id": 160
+    "id": 92
   },
   {
     "title": "EPSCoR Research Fellows: NSF: Automated Discovery of Controlled Radical Polymerization Approaches for Olefin-Containing Copolymers",
@@ -1295,7 +1295,7 @@
     "amountOrCost": "Funded ($199,363)",
     "description": "NSF-funded youth/high school STEM program hosted by University of Southern Mississippi.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2624643",
-    "id": 161
+    "id": 93
   },
   {
     "title": "Excellence in Research: Empowering Sustainable Aquaponics with AI and Robotics for Enhanced Resource Efficiency",
@@ -1310,7 +1310,7 @@
     "amountOrCost": "Funded ($930,648)",
     "description": "NSF-funded youth/high school STEM program hosted by Virginia State University.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2602928",
-    "id": 162
+    "id": 94
   },
   {
     "title": "Collaborative Research: NLI: Design and Development: Supporting Professional Formation for Sustainable Construction Practice",
@@ -1325,7 +1325,7 @@
     "amountOrCost": "Funded ($315,000)",
     "description": "NSF-funded youth/high school STEM program hosted by Georgia Tech Research Corporation.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2625588",
-    "id": 164
+    "id": 95
   },
   {
     "title": "Collaborative Research: A Subspace Optimization Framework for Resource-Efficient and Private Fine-Tuning of Large Language Models",
@@ -1340,7 +1340,7 @@
     "amountOrCost": "Funded ($120,000)",
     "description": "NSF-funded youth/high school STEM program hosted by University of Texas at San Antonio.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2619079",
-    "id": 166
+    "id": 96
   },
   {
     "title": "Collaborative Research: Research Initiation: Forming T-shaped Civil Systems Engineers in Western Pennsylvania via AI-enabled Communication Coach for Large-Scale Infrastructure",
@@ -1355,7 +1355,7 @@
     "amountOrCost": "Funded ($50,000)",
     "description": "NSF-funded youth/high school STEM program hosted by University of Pittsburgh.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2605809",
-    "id": 167
+    "id": 97
   },
   {
     "title": "S-STEM: Preparing Academic Talent for High-demand STEM Fields at a Historically Black Community College",
@@ -1370,7 +1370,7 @@
     "amountOrCost": "Funded ($2,000,000)",
     "description": "NSF-funded youth/high school STEM program hosted by Lawson State Community College.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2619894",
-    "id": 168
+    "id": 98
   },
   {
     "title": "Collaborative Research: Quantifying secondary production in complex tropical seascapes using ecosystem level manipulations",
@@ -1385,7 +1385,7 @@
     "amountOrCost": "Funded ($434,804)",
     "description": "NSF-funded youth/high school STEM program hosted by University of Rhode Island.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2546555",
-    "id": 169
+    "id": 99
   },
   {
     "title": "EPSCoR Research Fellows: NSF: A Unified Modeling Approach to Ductile Fracture in Metals with Crystal Defects",
@@ -1400,7 +1400,7 @@
     "amountOrCost": "Funded ($298,163)",
     "description": "NSF-funded youth/high school STEM program hosted by University of Vermont & State Agricultural College.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2624506",
-    "id": 170
+    "id": 100
   },
   {
     "title": "Collaborative Research: An Integrative Approach To Examine Freshwater Mussel Physiological Responses to Multiple Stressors",
@@ -1415,7 +1415,7 @@
     "amountOrCost": "Funded ($394,798)",
     "description": "NSF-funded youth/high school STEM program hosted by Louisiana State University Agricultural Center.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2601781",
-    "id": 172
+    "id": 101
   },
   {
     "title": "FDT-BioTech: Biosignals Fusion-Informed Neuromusculoskeletal Reconstruction in Immersive Digital Twin for Personalized Stroke Gait Rehabilitation Using Lower-Limb Exoskeletons",
@@ -1430,7 +1430,7 @@
     "amountOrCost": "Funded ($525,021)",
     "description": "NSF-funded youth/high school STEM program hosted by University of Alabama Tuscaloosa.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2625825",
-    "id": 173
+    "id": 102
   },
   {
     "title": "Collaborative Research: Promoting Career-readiness through Course-based Undergraduate Research Experiences",
@@ -1445,7 +1445,7 @@
     "amountOrCost": "Funded ($382,402)",
     "description": "NSF-funded youth/high school STEM program hosted by University of Oklahoma Norman Campus.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2539671",
-    "id": 174
+    "id": 103
   },
   {
     "title": "Electroacoustic Topological Insulator-Based Logic Devices",
@@ -1460,7 +1460,7 @@
     "amountOrCost": "Funded ($358,299)",
     "description": "NSF-funded youth/high school STEM program hosted by University of Vermont & State Agricultural College.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2641390",
-    "id": 175
+    "id": 104
   },
   {
     "title": "EPSCoR Research Fellows: NSF: A Genotype-Forward Framework for Mechanistic Penetrance Estimation in Alzheimer's Disease",
@@ -1475,6 +1475,21 @@
     "amountOrCost": "Funded ($300,000)",
     "description": "NSF-funded youth/high school STEM program hosted by New Mexico Institute of Mining and Technology.",
     "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2624584",
-    "id": 240
+    "id": 105
+  },
+  {
+    "title": "High order entropy stable finite elements for unsteady compressible flows via entropy correction artificial viscosity",
+    "category": "Research",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "12/31/2029",
+    "amountOrCost": "Funded ($270,000)",
+    "description": "NSF-funded youth/high school STEM program hosted by University of Texas at Austin.",
+    "link": "https://www.nsf.gov/awardsearch/showAward?AWD_ID=2607830",
+    "id": 135
   }
 ]
