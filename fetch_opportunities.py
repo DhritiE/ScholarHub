@@ -1,33 +1,28 @@
 import json
 import os
-import time
+import urllib.parse
 import urllib.request
 
 DATA_FILE = "scholarhub-opportunities.json"
 UC_FILE = "uc-opportunities.json"
 MED_FILE = "medical-opportunities.json"
 
-QUERIES = [
-    ("high school students", "Scholarship"), ("high school summer", "Summer Program"),
-    ("high school research", "Research"), ("high school internship", "Summer Program"),
-    ("high school senior", "Scholarship"), ("high school biomedical", "Research"),
-    ("high school health", "Summer Program"), ("high school clinical", "Summer Program"),
-    ("high school medicine", "Research"), ("high school stem", "Research"),
-    ("secondary school", "Scholarship"), ("pre-college", "Summer Program"),
-    ("upward bound", "Summer Program"), ("talent search", "Scholarship"),
-    ("teen leadership", "Summer Program"), ("youth biomedical", "Research"),
-    ("youth health careers", "Summer Program"), ("youth medical", "Research"),
-    ("youth hospital", "Summer Program"), ("youth neuroscience", "Research"),
-    ("youth stem", "Research"), ("youth science", "Research"),
-    ("youth robotics", "Summer Program"), ("youth cybersecurity", "Summer Program"),
-    ("youth arts", "Summer Program"), ("youth entrepreneurship", "Summer Program")
+NSF_QUERIES = [
+    "high school students",
+    "high school summer",
+    "high school research",
+    "secondary school stem",
+    "pre-college",
+    "youth stem",
+    "high school internship",
+    "high school robotics",
+    "high school computer science",
+    "high school biomedical"
 ]
 
 EXCLUDE_WORDS = [
-    "postdoctoral", "postdoc", "doctoral", "phd", "ph.d.", "dissertation",
-    "graduate student", "graduate fellowship", "graduate research", "faculty",
-    "undergraduate only", "college sophomore", "college junior", "law school",
-    "medical school", "residency", "veteran", "small business", "sbir", "sttr"
+    "postdoctoral", "postdoc", "doctoral", "phd", "dissertation",
+    "graduate student", "graduate fellowship", "faculty", "undergraduate only"
 ]
 
 def is_valid_hs(title):
@@ -44,39 +39,43 @@ def load_json(path):
     except Exception:
         return []
 
-def fetch_grants():
-    url = "https://api.grants.gov/v1/api/search2"
+def fetch_nsf_programs():
     results = []
-    for kw, cat in QUERIES:
-        payload = json.dumps({"keyword": kw, "oppStatuses": "posted|forecasted", "rows": 250}).encode("utf-8")
-        req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json", "Accept": "application/json", "User-Agent": "Mozilla/5.0"})
+    for kw in NSF_QUERIES:
+        q = urllib.parse.quote(kw)
+        url = f"https://api.nsf.gov/services/v1/awards.json?keyword={q}&printFields=id,title,agency,fundsObligatedAmt,expDate,awardeeName"
+        req = urllib.request.Request(url, headers={"User-Agent": "ScholarHub/1.0"})
         try:
             with urllib.request.urlopen(req, timeout=20) as r:
-                hits = json.loads(r.read().decode("utf-8")).get("data", {}).get("oppHits", [])
+                awards = json.loads(r.read().decode("utf-8")).get("response", {}).get("award", [])
         except Exception as e:
-            print(f"Skipping '{kw}': {e}")
+            print(f"NSF skip '{kw}': {e}")
             continue
-        for item in hits:
+
+        for item in awards:
             title = item.get("title", "").strip()
-            oid = item.get("id", "")
-            if title and oid and is_valid_hs(title):
-                c = item.get("awardCeiling")
-                award = f"Up to ${int(c):,}" if c and str(c).isdigit() and int(c) > 0 else "Federal Grant / Program"
-                results.append({
-                    "title": title, "category": cat,
-                    "grades": [11, 12] if "senior" in kw else [9, 10, 11, 12],
-                    "deadline": item.get("closeDate") or "Rolling / Check Site",
-                    "amountOrCost": award,
-                    "description": f"Sponsored by {item.get('agency', 'U.S. Federal Agency')}. Click below for high school eligibility and details.",
-                    "link": f"https://www.grants.gov/search-results-detail/{oid}"
-                })
-        time.sleep(0.2)
+            aid = item.get("id", "")
+            if not title or not aid or not is_valid_hs(title):
+                continue
+            org = item.get("awardeeName", "National Science Foundation Partner")
+            amt = item.get("fundsObligatedAmt", "")
+            award_str = f"Funded (${int(amt):,})" if str(amt).isdigit() and int(amt) > 0 else "NSF Youth STEM Program"
+            cat = "Summer Program" if any(w in title.lower() for w in ["summer", "camp", "internship"]) else "Research"
+            results.append({
+                "title": title,
+                "category": cat,
+                "grades": [9, 10, 11, 12],
+                "deadline": item.get("expDate") or "Annual / Check Program Site",
+                "amountOrCost": award_str,
+                "description": f"NSF-funded youth/high school STEM program hosted by {org}.",
+                "link": f"https://www.nsf.gov/awardsearch/showAward?AWD_ID={aid}"
+            })
     return results
 
 if __name__ == "__main__":
     curated = load_json(UC_FILE) + load_json(MED_FILE)
     existing = [x for x in load_json(DATA_FILE) if isinstance(x, dict) and is_valid_hs(x.get("title", ""))]
-    incoming = curated + fetch_grants()
+    incoming = curated + fetch_nsf_programs()
 
     cleaned = []
     seen = set()
