@@ -6,28 +6,58 @@ import urllib.request
 DATA_FILE = "scholarhub-opportunities.json"
 
 SEARCH_QUERIES = [
+    # Core High School & Youth
     ("high school students", "Scholarship"),
     ("high school summer", "Summer Program"),
     ("high school research", "Research"),
-    ("youth stem", "Research"),
     ("high school internship", "Summer Program"),
-    ("secondary school scholarship", "Scholarship"),
     ("high school senior", "Scholarship"),
     ("high school fellowship", "Research"),
+    ("secondary school", "Scholarship"),
     ("teen leadership", "Summer Program"),
-    ("youth science", "Research"),
-    ("college prep", "Scholarship"),
+    ("adolescent youth", "Summer Program"),
     ("pre-college", "Summer Program"),
-    ("youth internship", "Summer Program"),
-    ("youth mentorship", "Summer Program"),
+    ("college prep", "Scholarship"),
+    ("college readiness", "Scholarship"),
+    ("upward bound", "Summer Program"),
+    ("talent search youth", "Scholarship"),
+
+    # STEM, Coding, Engineering & Medicine
+    ("youth stem", "Research"),
+    ("youth science", "Research"),
+    ("underrepresented youth stem", "Research"),
+    ("computer science youth", "Research"),
+    ("coding youth", "Summer Program"),
+    ("robotics youth", "Summer Program"),
+    ("engineering high school", "Research"),
+    ("mathematics youth", "Research"),
+    ("biomedical youth", "Research"),
+    ("health careers youth", "Summer Program"),
+    ("environmental youth", "Research"),
+    ("climate youth", "Research"),
+    ("ocean science youth", "Research"),
+    ("space education youth", "Research"),
+    ("cybersecurity youth", "Summer Program"),
+    ("artificial intelligence education", "Research"),
+
+    # Humanities, Arts, Civics & Leadership
     ("youth civic engagement", "Summer Program"),
     ("youth arts", "Summer Program"),
-    ("environmental youth", "Research"),
+    ("humanities youth", "Summer Program"),
+    ("youth journalism", "Summer Program"),
+    ("youth entrepreneurship", "Summer Program"),
+    ("financial literacy youth", "Scholarship"),
+    ("youth mentorship", "Summer Program"),
+    ("youth service", "Summer Program"),
+    ("community service youth", "Scholarship"),
+    ("youth agriculture", "Summer Program"),
+    ("youth conservation", "Summer Program"),
+
+    # General Student & Summer Institutes
     ("student scholarship", "Scholarship"),
     ("summer institute high school", "Summer Program"),
     ("summer academy youth", "Summer Program"),
-    ("adolescent education", "Scholarship"),
-    ("underrepresented youth stem", "Research")
+    ("youth workforce", "Summer Program")
 ]
 
 def load_existing():
@@ -38,20 +68,26 @@ def load_existing():
 
 def categorize_item(title, default_category):
     t = title.lower()
-    if any(word in t for word in ["summer", "camp", "internship", "academy", "institute", "mentorship"]):
+    if any(word in t for word in ["summer", "camp", "internship", "academy", "institute", "mentorship", "workforce"]):
         return "Summer Program"
-    if any(word in t for word in ["research", "science", "stem", "lab", "fellowship", "environmental"]):
+    if any(word in t for word in ["research", "science", "stem", "lab", "fellowship", "environmental", "biomedical", "engineering"]):
         return "Research"
     return default_category
 
-def assign_grades(keyword):
-    k = keyword.lower()
-    if "senior" in k or "college prep" in k:
+def assign_grades(keyword, title):
+    combined = f"{keyword} {title}".lower()
+    if any(word in combined for word in ["senior", "college prep", "college readiness", "12th"]):
         return [11, 12]
     return [9, 10, 11, 12]
 
-def fetch_public_grants():
-    """Fetches open youth/high-school opportunities across 22 keywords from Grants.gov."""
+def format_award(item):
+    ceiling = item.get("awardCeiling")
+    if ceiling and str(ceiling).isdigit() and int(ceiling) > 0:
+        return f"Up to ${int(ceiling):,}"
+    return "Federal Grant / Program"
+
+def fetch_grants_gov():
+    """Fetches open and forecasted opportunities across 45 keywords from Grants.gov."""
     url = "https://api.grants.gov/v1/api/search2"
     all_fetched = []
 
@@ -59,7 +95,7 @@ def fetch_public_grants():
         payload = json.dumps({
             "keyword": keyword,
             "oppStatuses": "posted|forecasted",
-            "rows": 250
+            "rows": 500
         }).encode("utf-8")
 
         req = urllib.request.Request(
@@ -84,17 +120,24 @@ def fetch_public_grants():
             if not title or not opp_id:
                 continue
 
+            agency = item.get("agency", "U.S. Federal Agency")
+            opp_num = item.get("number", "")
+            desc = f"Sponsored by {agency}"
+            if opp_num:
+                desc += f" (Opportunity #{opp_num})"
+            desc += ". Click below for full eligibility requirements and application instructions."
+
             all_fetched.append({
                 "title": title,
                 "category": categorize_item(title, default_cat),
-                "grades": assign_grades(keyword),
-                "deadline": item.get("closeDate") or "Check Website",
-                "amountOrCost": "Federal Grant / Program",
-                "description": f"Sponsored by {item.get('agency', 'U.S. Federal Agency')}. Click below for full eligibility and application details.",
+                "grades": assign_grades(keyword, title),
+                "deadline": item.get("closeDate") or "Rolling / Check Site",
+                "amountOrCost": format_award(item),
+                "description": desc,
                 "link": f"https://www.grants.gov/search-results-detail/{opp_id}"
             })
 
-        time.sleep(0.8)
+        time.sleep(0.5)
 
     return all_fetched
 
@@ -112,14 +155,13 @@ def merge_and_deduplicate(existing, incoming):
             seen_titles.add(key)
             added_count += 1
 
-    print(f"Added {added_count} new unique opportunities. Total: {len(existing)}")
+    print(f"Added {added_count} new unique opportunities. Total in database: {len(existing)}")
     return existing
 
 if __name__ == "__main__":
     current_data = load_existing()
-    new_data = fetch_public_grants()
+    new_data = fetch_grants_gov()
     updated_data = merge_and_deduplicate(current_data, new_data)
 
     with open(DATA_FILE, "w", encoding="utf-8") as f:
         json.dump(updated_data, f, indent=2)
-        
