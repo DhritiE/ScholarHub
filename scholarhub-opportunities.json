@@ -18469,5 +18469,339 @@
     "description": "Sponsored by National Institutes of Health (Opportunity #PA-25-305). Click below for full eligibility requirements and application instructions.",
     "link": "https://www.grants.gov/search-results-detail/357813",
     "id": 1239
+  },
+  {
+    "title": "UC COSMOS (California State Summer School for Mathematics and Science)",
+    "category": "Summer Program",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "February",
+    "amountOrCost": "Financial Aid Available",
+    "description": "Intensive 4-week residential STEM summer program hosted at UC Davis, UC Irvine, UCLA, UC San Diego, and UC Santa Cruz. Students work directly with UC faculty and researchers in specialized STEM clusters.",
+    "link": "https://cosmos-ucop.ucdavis.edu/",
+    "id": 1240
+  },
+  {
+    "title": "UCSB Research Mentorship Program (RMP)",
+    "category": "Research",
+    "grades": [
+      10,
+      11
+    ],
+    "deadline": "March",
+    "amountOrCost": "Scholarships Available",
+    "description": "Competitive 6-week summer program at UC Santa Barbara pairing high-achieving high school students with a mentor to conduct hands-on university-level research and earn UC credit.",
+    "link": "https://www.summer.ucsb.edu/programs/research-mentorship-program/overview",
+    "id": 1241
+  },
+  {
+    "title": "UCSB Summer Research Academies (SRA)",
+    "category": "Research",
+    "grades": [
+      9,
+      10,
+      11
+    ],
+    "deadline": "March",
+    "amountOrCost": "Scholarships Available",
+    "description": "4-week UC Santa Barbara program introducing high school students to university research through project-based tracks in STEM, humanities, and social sciences.",
+    "link": "https://www.summer.ucsb.edu/programs/summer-research-academies/overview",
+    "id": 1242
+  },
+  {
+    "title": "UC Berkeley Academic Talent Development Program (ATDP)",
+    "category": "Summer Program",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "February / March",
+    "amountOrCost": "Need-Based Aid Available",
+    "description": "Challenging summer courses at UC Berkeley in computer science, biotechnology, engineering, creative writing, and advanced mathematics for motivated high school students.",
+    "link": "https://atdp.berkeley.edu/",
+    "id": 1243
+  },
+  {
+    "title": "UC Berkeley Pre-College Scholars (Summer Residential & Commuter)",
+    "category": "Summer Program",
+    "grades": [
+      10,
+      11,
+      12
+    ],
+    "deadline": "March",
+    "amountOrCost": "Tuition / Aid Varies",
+    "description": "Earn official UC Berkeley college credit while living on campus or commuting during the summer session alongside undergraduate students.",
+    "link": "https://precollege.berkeley.edu/",
+    "id": 1244
+  },
+  {
+    "title": "UC Berkeley Girls in Engineering (GiE) Summer Camp",
+    "category": "Summer Program",
+    "grades": [
+      9,
+      10
+    ],
+    "deadline": "Spring",
+    "amountOrCost": "Low Cost / Scholarships",
+    "description": "UC Berkeley College of Engineering program introducing students to coding, robotics, bioengineering, and hands-on lab visits with Berkeley faculty.",
+    "link": "https://girlsinengineering.berkeley.edu/",
+    "id": 1245
+  },
+  {
+    "title": "UC Berkeley Haas Business Academy for Youth (B-BAY)",
+    "category": "Summer Program",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "February",
+    "amountOrCost": "Scholarships Available",
+    "description": "2-week entrepreneurship and business leadership program taught by UC Berkeley Haas School of Business faculty, culminating in a team business plan pitch.",
+    "link": "https://haas.berkeley.edu/business-academy/",
+    "id": 1246
+  },
+  {
+    "title": "UCLA Summer College Immersion Program (SCIP)",
+    "category": "Summer Program",
+    "grades": [
+      10,
+      11
+    ],
+    "deadline": "May",
+    "amountOrCost": "Financial Aid Available",
+    "description": "6-week summer program allowing exceptional high school students to take real UCLA undergraduate courses, attend college workshops, and earn UC credit.",
+    "link": "https://summer.ucla.edu/program/summer-college-immersion-program-scip/",
+    "id": 1247
+  },
+  {
+    "title": "UCLA Sci|Art NanoLab Summer Institute",
+    "category": "Research",
+    "grades": [
+      10,
+      11,
+      12
+    ],
+    "deadline": "March",
+    "amountOrCost": "Scholarships Available",
+    "description": "2-week intensive at the California NanoSystems Institute (CNSI) at UCLA exploring nanoscience, biotechnology, and scientific visualization through lab experiments.",
+    "link": "https://www.cnsi.ucla.edu/education/sciart/",
+    "id": 1248
+  },
+  {
+    "title": "UCLA Applications of Nanoscience Summer Institute",
+    "category": "Research",
+    "grades": [
+      10,
+      11,
+      12
+    ],
+    "deadline": "April",
+    "amountOrCost": "Scholarships Available",
+    "description": "2-week UCLA lab-intensive program where students learn the fundamentals of nanoscience research and pitch a technology commercialization project.",
+    "link": "https://www.cnsi.ucla.edu/education/applications-of-nanoscience/",
+    "id": 1249
+  },
+  {
+    "title": "UCLA Computer Science Summer Institute",
+    "category": "Summer Program",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "May",
+    "amountOrCost": "Financial Aid Available",
+    "description": "3-week coding and computer science intensive at UCLA featuring lab tours, programming workshops, and college credit.",
+    "link": "https://summer.ucla.edu/program/computer-science-summer-institute-introductory-track/",
+    "id": 1250
+  },
+  {
+    "title": "UCSD Academic Connections",
+    "category": "Summer Program",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "May",
+    "amountOrCost": "Scholarships Available",
+    "description": "3-week residential and online summer academic experience at UC San Diego immersing high schoolers in marine science, biomedical research, engineering, and social sciences.",
+    "link": "https://academicconnections.ucsd.edu/",
+    "id": 1251
+  },
+  {
+    "title": "UCSD Research Experience for High School Students (REHS)",
+    "category": "Research",
+    "grades": [
+      10,
+      11,
+      12
+    ],
+    "deadline": "March",
+    "amountOrCost": "Free / Low Fee",
+    "description": "8-week volunteer research internship at the San Diego Supercomputer Center (UCSD) pairing students with computational scientists on real research projects.",
+    "link": "https://education.sdsc.edu/studenttech/rehs/",
+    "id": 1252
+  },
+  {
+    "title": "UCSD Heithoff-Brody High School Scholars Program (Salk Institute)",
+    "category": "Research",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "March",
+    "amountOrCost": "Paid Internship",
+    "description": "8-week paid summer biomedical research internship in La Jolla working alongside Salk Institute and UC San Diego researchers.",
+    "link": "https://www.salk.edu/about/education-outreach/programs/heithoff-brody-high-school-summers-scholars/",
+    "id": 1253
+  },
+  {
+    "title": "UC Irvine (UCI) Summer Pre-College Programs",
+    "category": "Summer Program",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "May",
+    "amountOrCost": "Tuition / Aid Varies",
+    "description": "Academic academies and undergraduate courses at UC Irvine in biomedical sciences, game design, computer science, and business.",
+    "link": "https://summer.uci.edu/high-school-students/",
+    "id": 1254
+  },
+  {
+    "title": "UCI Cancer Research Institute Youth Science Fellowship Program (YSFP)",
+    "category": "Research",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "March",
+    "amountOrCost": "Free (Orange County)",
+    "description": "6-week summer laboratory fellowship at UC Irvine for Orange County high school juniors and seniors conducting hands-on cancer biology research.",
+    "link": "https://cri.uci.edu/education-outreach/youth-science-fellowship-program/",
+    "id": 1255
+  },
+  {
+    "title": "UCI Brain Camp",
+    "category": "Summer Program",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "Spring",
+    "amountOrCost": "Scholarships Available",
+    "description": "2-week immersive neuroscience summer camp at UC Irvine's Center for the Neurobiology of Learning and Memory featuring lab dissections, brain imaging, and experiments.",
+    "link": "https://braincamp.bio.uci.edu/",
+    "id": 1256
+  },
+  {
+    "title": "UC Davis Young Scholars Program (YSP)",
+    "category": "Research",
+    "grades": [
+      10,
+      11
+    ],
+    "deadline": "March",
+    "amountOrCost": "Need-Based Fee Reductions",
+    "description": "6-week residential research program at UC Davis introducing 40 high-achieving high schoolers to original research in biological, agricultural, and environmental sciences.",
+    "link": "https://ysp.ucdavis.edu/",
+    "id": 1257
+  },
+  {
+    "title": "UC Santa Cruz Science Internship Program (SIP)",
+    "category": "Research",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "March",
+    "amountOrCost": "Full/Partial Scholarships",
+    "description": "10-week summer research internship placing high school students in active UC Santa Cruz research groups across astrophysics, biology, computer science, and psychology.",
+    "link": "https://sip.ucsc.edu/",
+    "id": 1258
+  },
+  {
+    "title": "UCSF High School Intern Program (HIP)",
+    "category": "Research",
+    "grades": [
+      11
+    ],
+    "deadline": "February",
+    "amountOrCost": "Paid Stipend ($3,200-$4,500)",
+    "description": "8-week paid biomedical and health sciences research internship at UC San Francisco for San Francisco high school juniors.",
+    "link": "https://sep.ucsf.edu/hs_programs/high-school-intern-program/",
+    "id": 1259
+  },
+  {
+    "title": "UC Riverside (UCR) Summer Academy & High School Programs",
+    "category": "Summer Program",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "May",
+    "amountOrCost": "Varies",
+    "description": "Summer academic enrichment, engineering workshops, and college credit courses hosted at UC Riverside.",
+    "link": "https://summer.ucr.edu/high-school",
+    "id": 1260
+  },
+  {
+    "title": "UC Merced Summer Bridge & Youth STEM Programs",
+    "category": "Summer Program",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "Spring",
+    "amountOrCost": "Free / Low Cost",
+    "description": "STEM workshops, engineering academies, and college readiness programs at UC Merced for California high school students.",
+    "link": "https://admissions.ucmerced.edu/",
+    "id": 1261
+  },
+  {
+    "title": "UC Regents & Chancellor's Scholarships (Incoming UC Freshmen)",
+    "category": "Scholarship",
+    "grades": [
+      12
+    ],
+    "deadline": "November 30 (UC App)",
+    "amountOrCost": "$2,500 - Full Need",
+    "description": "The most prestigious merit scholarship awarded by UC campuses based on your UC admissions application.",
+    "link": "https://admission.universityofcalifornia.edu/tuition-financial-aid/types-of-aid/scholarships/",
+    "id": 1262
+  },
+  {
+    "title": "UC Blue and Gold Opportunity Plan",
+    "category": "Scholarship",
+    "grades": [
+      12
+    ],
+    "deadline": "March 2 (FAFSA/CADAA)",
+    "amountOrCost": "Full Systemwide Tuition",
+    "description": "Covers 100% of systemwide UC tuition and fees for eligible California high school seniors whose families earn under $80,000 per year.",
+    "link": "https://admission.universityofcalifornia.edu/tuition-financial-aid/types-of-aid/blue-and-gold-opportunity-plan.html",
+    "id": 1263
   }
 ]
