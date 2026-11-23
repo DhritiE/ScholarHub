@@ -1,0 +1,325 @@
+[
+  {
+    "id": 1,
+    "title": "Davidson Fellows Scholarship",
+    "category": "Scholarship",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "February",
+    "amountOrCost": "Up to $50,000",
+    "description": "Awarded to students 18 and under who have completed a significant piece of work in STEM, literature, music, or philosophy.",
+    "link": "https://www.davidsongifted.org/gifted-programs/fellows-scholarship/"
+  },
+  {
+    "id": 2,
+    "title": "Prudential Emerging Visionaries",
+    "category": "Scholarship",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "November",
+    "amountOrCost": "Up to $15,000",
+    "description": "Recognizes young people ages 14\u201318 creating innovative solutions to financial or societal challenges in their communities.",
+    "link": "https://www.prudential.com/links/about/emergingvisionaries"
+  },
+  {
+    "id": 3,
+    "title": "Gloria Barron Prize for Young Heroes",
+    "category": "Scholarship",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "April",
+    "amountOrCost": "$10,000",
+    "description": "Honors inspiring, public-spirited young people ages 8\u201318 who have made a significant positive difference to people and the environment.",
+    "link": "https://barronprize.org/"
+  },
+  {
+    "id": 4,
+    "title": "Carson Scholars Fund",
+    "category": "Scholarship",
+    "grades": [
+      9,
+      10,
+      11
+    ],
+    "deadline": "January",
+    "amountOrCost": "$1,000",
+    "description": "Awarded to students in grades 4\u201311 with a 3.75+ GPA who demonstrate strong humanitarian qualities (requires school nomination).",
+    "link": "https://carsonscholars.org/"
+  },
+  {
+    "id": 5,
+    "title": "Stanford Pre-Collegiate Summer Institutes",
+    "category": "Summer Program",
+    "grades": [
+      9,
+      10,
+      11
+    ],
+    "deadline": "March",
+    "amountOrCost": "Paid (Financial Aid Available)",
+    "description": "Intensive single-subject online summer enrichment courses in STEM, humanities, writing, and business for grades 8\u201311.",
+    "link": "https://summerinstitutes.spcs.stanford.edu/"
+  },
+  {
+    "id": 6,
+    "title": "Johns Hopkins Center for Talented Youth (CTY)",
+    "category": "Summer Program",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "May",
+    "amountOrCost": "Paid (Financial Aid Available)",
+    "description": "Advanced academic summer programs and online courses in math, science, computer science, and humanities.",
+    "link": "https://cty.jhu.edu/"
+  },
+  {
+    "id": 7,
+    "title": "iD Tech Camps",
+    "category": "Summer Program",
+    "grades": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "deadline": "Rolling",
+    "amountOrCost": "Paid (Scholarships Available)",
+    "description": "Summer camps in coding, AI, robotics, and game design hosted at major university campuses nationwide.",
+    "link": "https://www.idtech.com/"
+  },
+  {
+    "id": 8,
+    "title": "Coolidge Scholarship",
+    "category": "Scholarship",
+    "grades": [
+      11
+    ],
+    "deadline": "December / January",
+    "amountOrCost": "Full-Ride (Tuition, Room & Board)",
+    "description": "Prestigious, non-partisan merit scholarship covering full tuition, room, board, and expenses\u2014open exclusively to high school juniors.",
+    "link": "https://coolidgescholars.org/"
+  },
+  {
+    "id": 9,
+    "title": "QuestBridge College Prep Scholars",
+    "category": "Scholarship",
+    "grades": [
+      11
+    ],
+    "deadline": "March",
+    "amountOrCost": "Grants & Full Summer Scholarships",
+    "description": "Equips high-achieving, low-income juniors with awards, college admissions coaching, and summer program scholarships.",
+    "link": "https://www.questbridge.org/high-school-students/college-prep-scholars"
+  },
+  {
+    "id": 10,
+    "title": "Horatio Alger Association National Scholarship",
+    "category": "Scholarship",
+    "grades": [
+      11
+    ],
+    "deadline": "March",
+    "amountOrCost": "$25,000",
+    "description": "Supports high school juniors who have faced and overcome great obstacles in their lives and demonstrate critical financial need.",
+    "link": "https://scholars.horatioalger.org/"
+  },
+  {
+    "id": 11,
+    "title": "National Merit Scholarship Program (PSAT/NMSQT)",
+    "category": "Scholarship",
+    "grades": [
+      11
+    ],
+    "deadline": "October (Test Date)",
+    "amountOrCost": "$2,500+ & College-Sponsored Full Rides",
+    "description": "Academic competition for recognition and college scholarships entered by taking the PSAT/NMSQT in October of junior year.",
+    "link": "https://www.nationalmerit.org/"
+  },
+  {
+    "id": 12,
+    "title": "Research Science Institute (RSI) at MIT",
+    "category": "Research",
+    "grades": [
+      11
+    ],
+    "deadline": "December",
+    "amountOrCost": "Free (Fully Funded)",
+    "description": "Premier cost-free, six-week summer science and engineering program combining coursework in scientific theory with off-campus research.",
+    "link": "https://www.cee.org/programs/research-science-institute"
+  },
+  {
+    "id": 13,
+    "title": "Simons Summer Research Program (Stony Brook)",
+    "category": "Research",
+    "grades": [
+      11
+    ],
+    "deadline": "February",
+    "amountOrCost": "Free + Stipend",
+    "description": "Hands-on research apprenticeship where rising seniors join research groups in science, math, or engineering at Stony Brook University.",
+    "link": "https://www.stonybrook.edu/simons/"
+  },
+  {
+    "id": 14,
+    "title": "Garcia Summer Scholars (Stony Brook)",
+    "category": "Research",
+    "grades": [
+      10,
+      11
+    ],
+    "deadline": "February / March",
+    "amountOrCost": "Lab Fee (Financial Aid Available)",
+    "description": "Seven-week intensive summer program offering high school students the opportunity to perform independent polymer science research.",
+    "link": "https://www.stonybrook.edu/commcms/garcia/summer_program/"
+  },
+  {
+    "id": 15,
+    "title": "NIH High School Summer Internship Program (HS-SIP)",
+    "category": "Research",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "February",
+    "amountOrCost": "Paid Stipend",
+    "description": "Full-time biomedical research internships at the National Institutes of Health (applicants must be 17+ by the start date).",
+    "link": "https://www.training.nih.gov/research-training/hs/hs-sip/"
+  },
+  {
+    "id": 16,
+    "title": "Bank of America Student Leaders",
+    "category": "Summer Program",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "January",
+    "amountOrCost": "Paid Internship + Free Summit",
+    "description": "Eight-week paid summer internship at a local nonprofit organization plus an all-expenses-paid leadership summit in Washington, D.C.",
+    "link": "https://about.bankofamerica.com/en/making-an-impact/student-leaders"
+  },
+  {
+    "id": 17,
+    "title": "MITES Summer (MIT)",
+    "category": "Summer Program",
+    "grades": [
+      11
+    ],
+    "deadline": "February",
+    "amountOrCost": "Free (Fully Funded)",
+    "description": "Six-week residential STEM immersion program at MIT for rising seniors from underrepresented or underserved backgrounds.",
+    "link": "https://mites.mit.edu/discover-mites/mites-summer/"
+  },
+  {
+    "id": 18,
+    "title": "American Legion Boys State / Girls State",
+    "category": "Summer Program",
+    "grades": [
+      11
+    ],
+    "deadline": "Spring (Varies by State)",
+    "amountOrCost": "Free (Sponsored)",
+    "description": "Week-long participatory summer program in civics, government, and leadership for rising high school seniors.",
+    "link": "https://www.legion.org/boysnation/state"
+  },
+  {
+    "id": 19,
+    "title": "Yale Young Global Scholars (YYGS)",
+    "category": "Summer Program",
+    "grades": [
+      10,
+      11
+    ],
+    "deadline": "January",
+    "amountOrCost": "Paid (Need-Based Financial Aid Available)",
+    "description": "Two-week academic enrichment sessions at Yale University covering politics, STEM, literature, and global affairs.",
+    "link": "https://globalscholars.yale.edu/"
+  },
+  {
+    "id": 20,
+    "title": "Coca-Cola Scholars Program",
+    "category": "Scholarship",
+    "grades": [
+      12
+    ],
+    "deadline": "September / October",
+    "amountOrCost": "$20,000",
+    "description": "Achievement-based scholarship awarded to graduating high school seniors recognized for their capacity to lead and serve.",
+    "link": "https://www.coca-colascholarsfoundation.org/"
+  },
+  {
+    "id": 21,
+    "title": "The Gates Scholarship",
+    "category": "Scholarship",
+    "grades": [
+      12
+    ],
+    "deadline": "September",
+    "amountOrCost": "Full Cost of Attendance",
+    "description": "Highly selective, last-dollar scholarship for outstanding, Pell-eligible minority high school seniors.",
+    "link": "https://www.thegatesscholarship.org/"
+  },
+  {
+    "id": 22,
+    "title": "Regeneron Science Talent Search (STS)",
+    "category": "Research",
+    "grades": [
+      12
+    ],
+    "deadline": "November",
+    "amountOrCost": "Up to $250,000",
+    "description": "The nation's oldest and most prestigious science and math competition for high school seniors submitting original research.",
+    "link": "https://www.societyforscience.org/regeneron-sts/"
+  },
+  {
+    "id": 23,
+    "title": "Jack Kent Cooke Foundation College Scholarship",
+    "category": "Scholarship",
+    "grades": [
+      12
+    ],
+    "deadline": "November",
+    "amountOrCost": "Up to $55,000 / year",
+    "description": "Undergraduate scholarship program available to high-achieving high school seniors with financial need.",
+    "link": "https://www.jkcf.org/our-scholarships/college-scholarship-program/"
+  },
+  {
+    "id": 24,
+    "title": "Elks Most Valuable Student (MVS) Scholarship",
+    "category": "Scholarship",
+    "grades": [
+      12
+    ],
+    "deadline": "November",
+    "amountOrCost": "$1,000 to $7,500 / year",
+    "description": "Judged on scholarship, leadership, and financial need; open to any high school senior who is a U.S. citizen.",
+    "link": "https://www.elks.org/scholars/scholarships/mvs.cfm"
+  },
+  {
+    "id": 25,
+    "title": "Burger King Scholars Program",
+    "category": "Scholarship",
+    "grades": [
+      12
+    ],
+    "deadline": "December",
+    "amountOrCost": "$1,000 to $60,000",
+    "description": "Awards scholarships to high school seniors based on grade point average, work experience, extracurriculars, and community service.",
+    "link": "https://www.burgerkingfoundation.org/programs/burger-king-sm-scholars"
+  }
+]

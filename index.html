@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ScholarHub | High School Scholarships, Research & Summer Programs</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="#" class="brand">
+        <img src="./favicon.svg" alt="ScholarHub Logo" class="brand-icon" />
+        <span class="brand-name">ScholarHub</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#opportunities">Explore</a>
+        <button id="savedToggleBtn" class="saved-pill" type="button">
+          Saved (<span id="savedCount">0</span>)
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-inner">
+      <span class="hero-badge">Built for High School Students (Grades 9–12)</span>
+      <h1>Find Scholarships, Research &amp; Summer Programs by Grade Level</h1>
+      <p>
+        Stop sifting through expired links and college-only awards. Filter real opportunities tailored specifically to your current grade level—all in one place.
+      </p>
+      <div class="search-wrapper">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search by keyword (e.g., MIT, STEM, full-ride, paid, junior)..."
+          aria-label="Search opportunities"
+        />
+      </div>
+    </div>
+  </section>
+
+  <main id="opportunities" class="container main-section">
+    <!-- Filter Controls -->
+    <div class="controls-panel">
+      <div class="filter-group">
+        <span class="filter-label">Grade Level:</span>
+        <div class="pill-group" id="gradeFilters">
+          <button class="filter-btn active" data-grade="all">All Grades</button>
+          <button class="filter-btn" data-grade="9">9th Grade</button>
+          <button class="filter-btn" data-grade="10">10th Grade</button>
+          <button class="filter-btn" data-grade="11">11th Grade</button>
+          <button class="filter-btn" data-grade="12">12th Grade</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Category:</span>
+        <div class="pill-group" id="categoryFilters">
+          <button class="filter-btn active" data-category="All">All Types</button>
+          <button class="filter-btn" data-category="Scholarship">Scholarships</button>
+          <button class="filter-btn" data-category="Research">Research</button>
+          <button class="filter-btn" data-category="Summer Program">Summer Programs</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="results-bar">
+      <p id="resultsCount">Loading opportunities...</p>
+      <button id="resetFiltersBtn" class="reset-link" type="button">Reset Filters</button>
+    </div>
+
+    <!-- Cards Grid -->
+    <div id="cardsGrid" class="cards-grid"></div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <img src="./favicon.svg" alt="ScholarHub Icon" width="24" height="24" />
+        <span><strong>ScholarHub</strong> — Centralized High School Opportunities</span>
+      </div>
+      <p class="footer-note">Verify exact deadlines and eligibility requirements on each organization's official website.</p>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
