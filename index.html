@@ -3,427 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ScholaHub | High School Scholarships, Research & Summer Programs</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <style>
-    :root {
-      --primary: #2563eb;
-      --primary-hover: #1d4ed8;
-      --bg: #f1f5f9;
-      --surface: #ffffff;
-      --text: #0f172a;
-      --text-muted: #475569;
-      --border: #e2e8f0;
-      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    }
-
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%);
-      color: #ffffff;
-      padding: 3.5rem 1.5rem 4.5rem;
-      text-align: center;
-    }
-
-    .hero-badge {
-      display: inline-block;
-      background: rgba(255, 255, 255, 0.15);
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      padding: 0.3rem 0.85rem;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-    }
-
-    .hero h1 {
-      font-size: 2.75rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 0.75rem;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      color: #cbd5e1;
-      max-width: 640px;
-      margin: 0 auto;
-    }
-
-    .container {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 1.5rem 4rem;
-    }
-
-    .filter-panel {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.25rem;
-      margin-top: -2.25rem;
-      margin-bottom: 1.75rem;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr auto;
-      gap: 0.85rem;
-      align-items: center;
-    }
-
-    @media (max-width: 850px) {
-      .filter-panel {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    input, select {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      font-size: 0.95rem;
-      color: var(--text);
-      background: #f8fafc;
-      transition: all 0.15s ease;
-      outline: none;
-    }
-
-    input:focus, select:focus {
-      background: #ffffff;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-    }
-
-    .saved-toggle {
-      padding: 0.75rem 1.1rem;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: #f8fafc;
-      font-weight: 600;
-      font-size: 0.92rem;
-      cursor: pointer;
-      color: var(--text);
-      white-space: nowrap;
-      transition: all 0.15s ease;
-    }
-
-    .saved-toggle.active {
-      background: #fef3c7;
-      border-color: #f59e0b;
-      color: #92400e;
-    }
-
-    .toolbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 1.25rem;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--text-muted);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-shadow: var(--shadow);
-      transition: transform 0.18s ease, box-shadow 0.18s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.1);
-    }
-
-    .card-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 0.85rem;
-    }
-
-    .badge {
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-
-    .badge-Scholarship { background: #dbeafe; color: #1e40af; }
-    .badge-Research { background: #dcfce7; color: #166534; }
-    .badge-Summer { background: #fef3c7; color: #92400e; }
-
-    .bookmark-btn {
-      background: none;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 0.25rem 0.6rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      cursor: pointer;
-      color: var(--text-muted);
-      transition: all 0.15s ease;
-    }
-
-    .bookmark-btn.saved {
-      background: #fef3c7;
-      border-color: #f59e0b;
-      color: #b45309;
-    }
-
-    .card h3 {
-      font-size: 1.12rem;
-      font-weight: 700;
-      line-height: 1.4;
-      margin-bottom: 0.6rem;
-      color: var(--text);
-    }
-
-    .card p {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      margin-bottom: 1.25rem;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .meta {
-      background: #f8fafc;
-      border-radius: 10px;
-      padding: 0.75rem 0.9rem;
-      font-size: 0.84rem;
-      margin-bottom: 1.15rem;
-      border: 1px solid var(--border);
-    }
-
-    .meta div {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 0.25rem;
-    }
-
-    .meta div:last-child {
-      margin-bottom: 0;
-    }
-
-    .meta span:first-child {
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    .meta span:last-child {
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .apply-btn {
-      display: block;
-      text-align: center;
-      background: var(--primary);
-      color: #ffffff;
-      text-decoration: none;
-      padding: 0.75rem 1rem;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: background 0.15s ease;
-    }
-
-    .apply-btn:hover {
-      background: var(--primary-hover);
-    }
-
-    .empty-state {
-      grid-column: 1 / -1;
-      text-align: center;
-      padding: 4rem 1.5rem;
-      background: var(--surface);
-      border-radius: 14px;
-      border: 1px dashed var(--border);
-      color: var(--text-muted);
-    }
-  </style>
+  <title>ScholarHub | High School Scholarships, Research & Summer Programs</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-
-  <header class="hero">
-    <div class="hero-badge">Grades 9–12 Opportunity Directory</div>
-    <h1>ScholaHub</h1>
-    <p>Centralized high school scholarships, STEM research programs, and summer internships—updated automatically every week.</p>
+  <header class="navbar">
+    <div class="container nav-content">
+      <a href="#" class="brand">
+        <img src="./favicon.svg" alt="ScholarHub Logo" class="brand-icon" />
+        <span class="brand-name">ScholarHub</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#opportunities">Explore</a>
+        <button id="savedToggleBtn" class="saved-pill" type="button">
+          Saved (<span id="savedCount">0</span>)
+        </button>
+      </nav>
+    </div>
   </header>
 
-  <main class="container">
-    <div class="filter-panel">
-      <input type="text" id="searchInput" placeholder="Search scholarships, STEM, research, agencies..." />
-      <select id="categoryFilter">
-        <option value="All">All Categories</option>
-        <option value="Scholarship">Scholarships</option>
-        <option value="Research">Research</option>
-        <option value="Summer Program">Summer Programs</option>
-      </select>
-      <select id="gradeFilter">
-        <option value="All">All Grades (9–12)</option>
-        <option value="9">9th Grade</option>
-        <option value="10">10th Grade</option>
-        <option value="11">11th Grade</option>
-        <option value="12">12th Grade</option>
-      </select>
-      <button type="button" id="savedFilterBtn" class="saved-toggle">★ Saved (0)</button>
+  <section class="hero">
+    <div class="container hero-inner">
+      <span class="hero-badge">Built for High School Students (Grades 9–12)</span>
+      <h1>Find Scholarships, Research &amp; Summer Programs by Grade Level</h1>
+      <p>
+        Stop sifting through expired links and college-only awards. Filter real opportunities tailored specifically to your current grade level—all in one place.
+      </p>
+      <div class="search-wrapper">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search by keyword (e.g., MIT, STEM, full-ride, paid, junior)..."
+          aria-label="Search opportunities"
+        />
+      </div>
+    </div>
+  </section>
+
+  <main id="opportunities" class="container main-section">
+    <!-- Filter Controls -->
+    <div class="controls-panel">
+      <div class="filter-group">
+        <span class="filter-label">Grade Level:</span>
+        <div class="pill-group" id="gradeFilters">
+          <button class="filter-btn active" data-grade="all">All Grades</button>
+          <button class="filter-btn" data-grade="9">9th Grade</button>
+          <button class="filter-btn" data-grade="10">10th Grade</button>
+          <button class="filter-btn" data-grade="11">11th Grade</button>
+          <button class="filter-btn" data-grade="12">12th Grade</button>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <span class="filter-label">Category:</span>
+        <div class="pill-group" id="categoryFilters">
+          <button class="filter-btn active" data-category="All">All Types</button>
+          <button class="filter-btn" data-category="Scholarship">Scholarships</button>
+          <button class="filter-btn" data-category="Research">Research</button>
+          <button class="filter-btn" data-category="Summer Program">Summer Programs</button>
+        </div>
+      </div>
     </div>
 
-    <div class="toolbar">
-      <span id="resultCount">Loading opportunities...</span>
+    <div class="results-bar">
+      <p id="resultsCount">Loading opportunities...</p>
+      <button id="resetFiltersBtn" class="reset-link" type="button">Reset Filters</button>
     </div>
 
-    <div class="grid" id="opportunitiesGrid"></div>
+    <!-- Cards Grid -->
+    <div id="cardsGrid" class="cards-grid"></div>
   </main>
 
-  <script>
-    let allOpportunities = [];
-    let showSavedOnly = false;
-    let savedIds = new Set(JSON.parse(localStorage.getItem("scholahub_saved") || "[]"));
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <img src="./favicon.svg" alt="ScholarHub Icon" width="24" height="24" />
+        <span><strong>ScholarHub</strong> — Centralized High School Opportunities</span>
+      </div>
+      <p class="footer-note">Verify exact deadlines and eligibility requirements on each organization's official website.</p>
+    </div>
+  </footer>
 
-    const searchInput = document.getElementById("searchInput");
-    const categoryFilter = document.getElementById("categoryFilter");
-    const gradeFilter = document.getElementById("gradeFilter");
-    const savedFilterBtn = document.getElementById("savedFilterBtn");
-    const grid = document.getElementById("opportunitiesGrid");
-    const resultCount = document.getElementById("resultCount");
-
-    function updateSavedButton() {
-      savedFilterBtn.textContent = `★ Saved (${savedIds.size})`;
-      savedFilterBtn.classList.toggle("active", showSavedOnly);
-    }
-
-    function toggleSave(id) {
-      if (savedIds.has(id)) {
-        savedIds.delete(id);
-      } else {
-        savedIds.add(id);
-      }
-      localStorage.setItem("scholahub_saved", JSON.stringify([...savedIds]));
-      updateSavedButton();
-      renderOpportunities();
-    }
-
-    async function loadOpportunities() {
-      try {
-        const response = await fetch("scholarhub-opportunities.json?v=" + Date.now(), {
-          cache: "no-store"
-        });
-        if (!response.ok) throw new Error("Failed to fetch JSON");
-        allOpportunities = await response.json();
-        updateSavedButton();
-        renderOpportunities();
-      } catch (err) {
-        console.error(err);
-        resultCount.textContent = "Could not load opportunities. Please refresh the page.";
-      }
-    }
-
-    function renderOpportunities() {
-      const query = searchInput.value.toLowerCase().trim();
-      const category = categoryFilter.value;
-      const grade = gradeFilter.value;
-
-      const filtered = allOpportunities.filter(item => {
-        if (showSavedOnly && !savedIds.has(item.id)) return false;
-
-        const matchesSearch =
-          !query ||
-          (item.title && item.title.toLowerCase().includes(query)) ||
-          (item.description && item.description.toLowerCase().includes(query));
-
-        const matchesCategory =
-          category === "All" || item.category === category;
-
-        const matchesGrade =
-          grade === "All" ||
-          (Array.isArray(item.grades) && item.grades.includes(Number(grade)));
-
-        return matchesSearch && matchesCategory && matchesGrade;
-      });
-
-      resultCount.textContent = `Showing ${filtered.length} of ${allOpportunities.length} opportunities`;
-
-      if (filtered.length === 0) {
-        grid.innerHTML = `<div class="empty-state">No matching opportunities found. Try clearing your filters or search term.</div>`;
-        return;
-      }
-
-      grid.innerHTML = filtered.map(item => {
-        const badgeClass =
-          item.category === "Research" ? "badge-Research" :
-          item.category === "Summer Program" ? "badge-Summer" : "badge-Scholarship";
-
-        const gradesText = Array.isArray(item.grades) ? `Grades ${item.grades.join(", ")}` : "Grades 9–12";
-        const isSaved = savedIds.has(item.id);
-
-        return `
-          <article class="card">
-            <div>
-              <div class="card-top">
-                <span class="badge ${badgeClass}">${item.category || "Opportunity"}</span>
-                <button type="button" class="bookmark-btn ${isSaved ? "saved" : ""}" onclick="toggleSave(${item.id})">
-                  ${isSaved ? "★ Saved" : "☆ Save"}
-                </button>
-              </div>
-              <h3>${item.title}</h3>
-              <p>${item.description || ""}</p>
-            </div>
-            <div>
-              <div class="meta">
-                <div><span>Eligible:</span><span>${gradesText}</span></div>
-                <div><span>Deadline:</span><span>${item.deadline || "Check Website"}</span></div>
-                <div><span>Award / Type:</span><span>${item.amountOrCost || "Varies"}</span></div>
-              </div>
-              <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="apply-btn">View Details & Apply</a>
-            </div>
-          </article>
-        `;
-      }).join("");
-    }
-
-    searchInput.addEventListener("input", renderOpportunities);
-    categoryFilter.addEventListener("change", renderOpportunities);
-    gradeFilter.addEventListener("change", renderOpportunities);
-    savedFilterBtn.addEventListener("click", () => {
-      showSavedOnly = !showSavedOnly;
-      updateSavedButton();
-      renderOpportunities();
-    });
-
-    loadOpportunities();
-  </script>
+  <script src="./script.js"></script>
 </body>
 </html>
