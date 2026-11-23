@@ -1,9 +1,9 @@
-# ScholarHub Website Files
+# ScholarHub Website Files (48 Opportunities)
 
-Upload the files inside this zip (`index.html`, `styles.css`, `opportunities.js`, and `app.js`) to the root of your `ScholarHub` GitHub repository.
+Upload the 4 website files (`index.html`, `styles.css`, `opportunities.js`, and `app.js`) to the root of your `ScholarHub` GitHub repository.
 
-## How to Upload to GitHub Without Coding
-1. Open your **ScholarHub** repository on GitHub (`https://github.com/dhritienukonda/ScholarHub`).
-2. Click **Add file** → **Upload files**.
-3. Drag and drop `index.html`, `styles.css`, `opportunities.js`, and `app.js` into the upload box (replace existing files if prompted).
-4. Scroll down, click **Commit changes**, and wait 1–2 minutes for GitHub Pages to refresh `https://dhritienukonda.github.io/ScholarHub/`.
+## Quick Upload Steps
+1. Open `https://github.com/dhritienukonda/ScholarHub`.
+2. Click **Add file** -> **Upload files**.
+3. Drag and drop `index.html`, `styles.css`, `opportunities.js`, and `app.js` into the upload area.
+4. Click **Commit changes** and wait 1–2 minutes for `https://dhritienukonda.github.io/ScholarHub/` to update.
