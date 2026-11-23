@@ -11,7 +11,23 @@ SEARCH_QUERIES = [
     ("high school research", "Research"),
     ("youth stem", "Research"),
     ("high school internship", "Summer Program"),
-    ("secondary school scholarship", "Scholarship")
+    ("secondary school scholarship", "Scholarship"),
+    ("high school senior", "Scholarship"),
+    ("high school fellowship", "Research"),
+    ("teen leadership", "Summer Program"),
+    ("youth science", "Research"),
+    ("college prep", "Scholarship"),
+    ("pre-college", "Summer Program"),
+    ("youth internship", "Summer Program"),
+    ("youth mentorship", "Summer Program"),
+    ("youth civic engagement", "Summer Program"),
+    ("youth arts", "Summer Program"),
+    ("environmental youth", "Research"),
+    ("student scholarship", "Scholarship"),
+    ("summer institute high school", "Summer Program"),
+    ("summer academy youth", "Summer Program"),
+    ("adolescent education", "Scholarship"),
+    ("underrepresented youth stem", "Research")
 ]
 
 def load_existing():
@@ -22,14 +38,20 @@ def load_existing():
 
 def categorize_item(title, default_category):
     t = title.lower()
-    if any(word in t for word in ["summer", "camp", "internship", "academy", "institute"]):
+    if any(word in t for word in ["summer", "camp", "internship", "academy", "institute", "mentorship"]):
         return "Summer Program"
-    if any(word in t for word in ["research", "science", "stem", "lab", "fellowship"]):
+    if any(word in t for word in ["research", "science", "stem", "lab", "fellowship", "environmental"]):
         return "Research"
     return default_category
 
+def assign_grades(keyword):
+    k = keyword.lower()
+    if "senior" in k or "college prep" in k:
+        return [11, 12]
+    return [9, 10, 11, 12]
+
 def fetch_public_grants():
-    """Fetches open youth/high-school opportunities across multiple keywords from Grants.gov."""
+    """Fetches open youth/high-school opportunities across 22 keywords from Grants.gov."""
     url = "https://api.grants.gov/v1/api/search2"
     all_fetched = []
 
@@ -37,7 +59,7 @@ def fetch_public_grants():
         payload = json.dumps({
             "keyword": keyword,
             "oppStatuses": "posted|forecasted",
-            "rows": 100
+            "rows": 250
         }).encode("utf-8")
 
         req = urllib.request.Request(
@@ -47,7 +69,7 @@ def fetch_public_grants():
         )
 
         try:
-            with urllib.request.urlopen(req, timeout=20) as response:
+            with urllib.request.urlopen(req, timeout=25) as response:
                 raw_data = json.loads(response.read().decode("utf-8"))
         except Exception as e:
             print(f"Error fetching '{keyword}': {e}")
@@ -65,14 +87,14 @@ def fetch_public_grants():
             all_fetched.append({
                 "title": title,
                 "category": categorize_item(title, default_cat),
-                "grades": [9, 10, 11, 12] if "youth" in keyword or "summer" in keyword else [11, 12],
+                "grades": assign_grades(keyword),
                 "deadline": item.get("closeDate") or "Check Website",
                 "amountOrCost": "Federal Grant / Program",
                 "description": f"Sponsored by {item.get('agency', 'U.S. Federal Agency')}. Click below for full eligibility and application details.",
                 "link": f"https://www.grants.gov/search-results-detail/{opp_id}"
             })
 
-        time.sleep(1)
+        time.sleep(0.8)
 
     return all_fetched
 
