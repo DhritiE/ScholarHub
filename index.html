@@ -3,1026 +3,346 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ScholarHub — High School Scholarships, Summer Programs & Research</title>
+  <title>ScholarHub — Scholarships, Summer Programs & Research</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <link rel="manifest" href="./manifest.json" />
   <style>
-:root {
-  --bg: #f6f8fb;
-  --surface: #ffffff;
-  --text: #14213d;
-  --muted: #52607a;
-  --border: #dfe5f0;
-  --accent: #1d4ed8;
-  --accent-soft: #e8efff;
-  --tag-scholarship: #dcfce7;
-  --tag-scholarship-text: #166534;
-  --tag-summer: #fef3c7;
-  --tag-summer-text: #92400e;
-  --tag-research: #e0e7ff;
-  --tag-research-text: #3730a3;
-  --radius: 14px;
-  --shadow: 0 6px 20px rgba(20, 33, 61, 0.06);
-}
+    * {
+      box-sizing: border-box;
+    }
 
-* {
-  box-sizing: border-box;
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7fb;
+      color: #162032;
+      line-height: 1.5;
+    }
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: var(--bg);
-  color: var(--text);
-  line-height: 1.5;
-}
+    header {
+      background: #173f8a;
+      color: #ffffff;
+      padding: 24px 16px;
+    }
 
-.container {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
 
-.site-header {
-  background: linear-gradient(135deg, #0f172a 0%, #1d4ed8 100%);
-  color: #ffffff;
-  padding: 28px 0;
-  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.14);
-}
+    header h1 {
+      margin: 0 0 6px 0;
+      font-size: 28px;
+    }
 
-.header-inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
+    header p {
+      margin: 0;
+      opacity: 0.92;
+    }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
+    .filters-box {
+      background: #ffffff;
+      border: 1px solid #d7e0ee;
+      border-radius: 10px;
+      padding: 18px;
+      margin: 22px 0;
+    }
 
-.brand-badge {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.16);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  font-size: 1.15rem;
-  letter-spacing: 0.04em;
-}
+    .filter-row {
+      margin-bottom: 14px;
+    }
 
-.brand h1 {
-  margin: 0;
-  font-size: 1.75rem;
-  letter-spacing: -0.02em;
-}
+    .filter-title {
+      font-weight: bold;
+      display: inline-block;
+      margin-right: 10px;
+      margin-bottom: 6px;
+    }
 
-.tagline {
-  margin: 2px 0 0;
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 0.95rem;
-}
+    .filter-btn {
+      padding: 7px 13px;
+      margin: 3px 4px 3px 0;
+      border: 1px solid #c3d0e5;
+      border-radius: 20px;
+      background: #f8faff;
+      color: #162032;
+      cursor: pointer;
+      font-size: 14px;
+    }
 
-.header-note {
-  background: rgba(255, 255, 255, 0.14);
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-size: 0.85rem;
-  font-weight: 600;
-}
+    .filter-btn.active {
+      background: #173f8a;
+      color: #ffffff;
+      border-color: #173f8a;
+      font-weight: bold;
+    }
 
-.main-content {
-  padding: 28px 0 56px;
-}
+    .search-bar {
+      width: 100%;
+      padding: 10px 12px;
+      font-size: 15px;
+      border: 1px solid #c3d0e5;
+      border-radius: 8px;
+      margin-top: 4px;
+    }
 
-.controls-panel {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 22px;
-  box-shadow: var(--shadow);
-  margin-bottom: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
+    .count-bar {
+      margin-top: 12px;
+      font-weight: bold;
+      color: #324667;
+    }
 
-.filter-group {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px;
-}
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 18px;
+      padding-bottom: 40px;
+    }
 
-.filter-label {
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: var(--muted);
-  min-width: 130px;
-}
+    .card {
+      background: #ffffff;
+      border: 1px solid #d7e0ee;
+      border-radius: 10px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-.pill-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
+    .tag-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
 
-.pill {
-  border: 1px solid var(--border);
-  background: #f8faff;
-  color: var(--text);
-  padding: 8px 14px;
-  border-radius: 999px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.15s ease;
-}
+    .type-tag {
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      padding: 4px 9px;
+      border-radius: 6px;
+      background: #e6effc;
+      color: #173f8a;
+    }
 
-.pill:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
+    .grade-tag {
+      font-size: 12px;
+      font-weight: bold;
+      padding: 4px 9px;
+      border-radius: 6px;
+      background: #eef2f7;
+      color: #2c3e5c;
+    }
 
-.pill.active {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #ffffff;
-}
+    .card h2 {
+      margin: 4px 0 8px 0;
+      font-size: 19px;
+    }
 
-.search-summary-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding-top: 6px;
-  border-top: 1px solid var(--border);
-}
+    .card p {
+      margin: 0 0 12px 0;
+      color: #425470;
+      font-size: 14px;
+    }
 
-.search-input {
-  flex: 1 1 320px;
-  padding: 11px 14px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  font-size: 0.95rem;
-  color: var(--text);
-}
+    .details {
+      font-size: 13px;
+      color: #24344d;
+      margin-bottom: 14px;
+    }
 
-.search-input:focus {
-  outline: 2px solid var(--accent-soft);
-  border-color: var(--accent);
-}
+    .details div {
+      margin-bottom: 4px;
+    }
 
-.results-count {
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--muted);
-}
-
-.opportunities-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 22px;
-  box-shadow: var(--shadow);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 16px;
-}
-
-.card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.badge {
-  display: inline-block;
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-}
-
-.badge-scholarship {
-  background: var(--tag-scholarship);
-  color: var(--tag-scholarship-text);
-}
-
-.badge-summer {
-  background: var(--tag-summer);
-  color: var(--tag-summer-text);
-}
-
-.badge-research {
-  background: var(--tag-research);
-  color: var(--tag-research-text);
-}
-
-.grades-text {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--accent);
-  background: var(--accent-soft);
-  padding: 4px 10px;
-  border-radius: 999px;
-}
-
-.card h2 {
-  margin: 10px 0 8px;
-  font-size: 1.2rem;
-}
-
-.card p {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.93rem;
-}
-
-.meta-list {
-  list-style: none;
-  padding: 0;
-  margin: 14px 0 0;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-size: 0.86rem;
-  color: var(--text);
-}
-
-.meta-list strong {
-  color: var(--muted);
-  font-weight: 600;
-}
-
-.card-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
-.deadline-text {
-  font-size: 0.82rem;
-  color: var(--muted);
-  font-weight: 600;
-}
-
-.apply-btn {
-  text-decoration: none;
-  background: var(--accent);
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 0.88rem;
-  padding: 9px 14px;
-  border-radius: 8px;
-  transition: background 0.15s ease;
-}
-
-.apply-btn:hover {
-  background: #1e40af;
-}
-
-.empty-state {
-  grid-column: 1 / -1;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 36px;
-  text-align: center;
-  color: var(--muted);
-}
-
-.site-footer {
-  background: var(--surface);
-  border-top: 1px solid var(--border);
-  padding: 20px 0;
-  color: var(--muted);
-  font-size: 0.88rem;
-}
-
+    .link-btn {
+      display: inline-block;
+      text-decoration: none;
+      background: #173f8a;
+      color: #ffffff;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 14px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <span class="brand-badge">SH</span>
-        <div>
-          <h1>ScholarHub</h1>
-          <p class="tagline">Scholarships, summer programs &amp; research organized by grade level</p>
-        </div>
-      </div>
-      <div class="header-note">Built for High School Students (9th–12th Grade)</div>
+  <header>
+    <div class="wrap">
+      <h1>ScholarHub</h1>
+      <p>Scholarships, summer programs, and research opportunities for high school students</p>
     </div>
   </header>
 
-  <main class="container main-content">
-    <section class="controls-panel" aria-label="Filter opportunities">
-      <div class="filter-group">
-        <span class="filter-label">Grade Level:</span>
-        <div class="pill-row" id="grade-filters">
-          <button class="pill active" data-grade="all" type="button">All Grades</button>
-          <button class="pill" data-grade="9" type="button">9th (Freshman)</button>
-          <button class="pill" data-grade="10" type="button">10th (Sophomore)</button>
-          <button class="pill" data-grade="11" type="button">11th (Junior)</button>
-          <button class="pill" data-grade="12" type="button">12th (Senior)</button>
-        </div>
+  <main class="wrap">
+    <div class="filters-box">
+      <div class="filter-row" id="gradeGroup">
+        <span class="filter-title">Grade:</span>
+        <button type="button" class="filter-btn active" data-val="all">All Grades</button>
+        <button type="button" class="filter-btn" data-val="9">9th</button>
+        <button type="button" class="filter-btn" data-val="10">10th</button>
+        <button type="button" class="filter-btn" data-val="11">11th</button>
+        <button type="button" class="filter-btn" data-val="12">12th</button>
       </div>
 
-      <div class="filter-group">
-        <span class="filter-label">Opportunity Type:</span>
-        <div class="pill-row" id="category-filters">
-          <button class="pill active" data-category="all" type="button">All Types</button>
-          <button class="pill" data-category="Scholarship" type="button">Scholarships</button>
-          <button class="pill" data-category="Summer Program" type="button">Summer Programs</button>
-          <button class="pill" data-category="Research" type="button">Research</button>
-        </div>
+      <div class="filter-row" id="typeGroup">
+        <span class="filter-title">Category:</span>
+        <button type="button" class="filter-btn active" data-val="all">All</button>
+        <button type="button" class="filter-btn" data-val="Scholarship">Scholarships</button>
+        <button type="button" class="filter-btn" data-val="Summer Program">Summer Programs</button>
+        <button type="button" class="filter-btn" data-val="Research">Research</button>
       </div>
 
-      <div class="search-summary-row">
-        <input
-          id="search-input"
-          class="search-input"
-          type="search"
-          placeholder="Search by program name, subject, free/paid, or keyword (e.g., STEM, writing, art, full-ride)..."
-          aria-label="Search opportunities"
-        />
-        <div id="results-count" class="results-count">Showing 0 opportunities</div>
-      </div>
-    </section>
+      <input type="text" id="searchBox" class="search-bar" placeholder="Search opportunities by name, topic, award, or keyword..." />
+      <div class="count-bar" id="countText">Loading opportunities...</div>
+    </div>
 
-    <section id="opportunities-grid" class="opportunities-grid" aria-live="polite"></section>
+    <div class="cards" id="cardsContainer"></div>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>ScholarHub — Always confirm exact deadlines and eligibility requirements on each official program page before applying.</p>
-    </div>
-  </footer>
-
   <script>
-const OPPORTUNITIES = [
-  // ================= SCHOLARSHIPS (18) =================
-  {
-    id: 1,
-    title: "Coolidge Scholarship",
-    category: "Scholarship",
-    grades: [11],
-    award: "Full-ride (4 years of undergraduate study)",
-    focus: "Academic merit, public policy, and civic leadership",
-    deadlineWindow: "Typically January",
-    description: "An independently endowed, non-partisan scholarship for high school juniors who plan to enroll in college the following fall.",
-    url: "https://coolidgescholars.org/"
-  },
-  {
-    id: 2,
-    title: "Horatio Alger National & State Scholarships",
-    category: "Scholarship",
-    grades: [11],
-    award: "$10,000 to $25,000",
-    focus: "Financial need, perseverance, and overcoming adversity",
-    deadlineWindow: "Typically spring of junior year",
-    description: "Supports high school juniors facing financial hardship who demonstrate integrity, grit, and a commitment to completing higher education.",
-    url: "https://scholars.horatioalger.org/"
-  },
-  {
-    id: 3,
-    title: "Davidson Fellows Scholarship",
-    category: "Scholarship",
-    grades: [9, 10, 11, 12],
-    award: "$10,000, $25,000, or $50,000",
-    focus: "Significant student projects in STEM, Literature, Music, Philosophy, or Outside the Box",
-    deadlineWindow: "Typically February",
-    description: "Recognizes students under 18 who have produced an original, graduate-level-caliber piece of work.",
-    url: "https://www.davidsongifted.org/gifted-programs/fellows-scholarship/"
-  },
-  {
-    id: 4,
-    title: "VFW Voice of Democracy",
-    category: "Scholarship",
-    grades: [9, 10, 11, 12],
-    award: "Up to $35,000 national top award",
-    focus: "Recorded audio-essay competition on an annual theme",
-    deadlineWindow: "Typically October 31",
-    description: "High school students record and submit a short audio essay expressing their perspective on a yearly civic theme.",
-    url: "https://www.vfw.org/community/youth-and-education/youth-scholarships"
-  },
-  {
-    id: 5,
-    title: "Cameron Impact Scholarship",
-    category: "Scholarship",
-    grades: [11],
-    award: "Full-tuition merit scholarship",
-    focus: "Leadership, community service, academics, and extracurricular impact",
-    deadlineWindow: "Early application opens spring of junior year",
-    description: "Four-year merit scholarship rewarding students who actively lead initiatives and help others in their school or community.",
-    url: "https://www.bryancameroneducationfoundation.org/"
-  },
-  {
-    id: 6,
-    title: "Coca-Cola Scholars Program",
-    category: "Scholarship",
-    grades: [12],
-    award: "$20,000 college scholarship",
-    focus: "Leadership, service, and academic achievement",
-    deadlineWindow: "Opens August before senior year; closes October",
-    description: "Achievement-based scholarship awarded to graduating seniors who drive positive change in their schools and communities.",
-    url: "https://www.coca-colascholarsfoundation.org/"
-  },
-  {
-    id: 7,
-    title: "QuestBridge College Prep Scholars Program",
-    category: "Scholarship",
-    grades: [11],
-    award: "Full summer program scholarships, campus visits & college prep awards",
-    focus: "High-achieving juniors from low-income backgrounds",
-    deadlineWindow: "Typically March",
-    description: "Equips high-achieving high school juniors from low-income households with awards, mentorship, and an early edge for the National College Match.",
-    url: "https://www.questbridge.org/high-school-students/college-prep-scholars"
-  },
-  {
-    id: 8,
-    title: "QuestBridge National College Match",
-    category: "Scholarship",
-    grades: [12],
-    award: "Full four-year scholarship to partner colleges",
-    focus: "Academic excellence and financial need",
-    deadlineWindow: "Typically late September",
-    description: "Matches high-achieving seniors from low-income backgrounds with full four-year scholarships covering tuition, housing, food, and expenses.",
-    url: "https://www.questbridge.org/high-school-students/national-college-match"
-  },
-  {
-    id: 9,
-    title: "The Gates Scholarship",
-    category: "Scholarship",
-    grades: [12],
-    award: "Last-dollar full cost of attendance scholarship",
-    focus: "Pell-eligible minority high school seniors with strong leadership",
-    deadlineWindow: "Opens July; closes September",
-    description: "Covers the full remaining cost of attendance not already covered by financial aid for exceptional Pell-eligible seniors.",
-    url: "https://www.thegatesscholarship.org/"
-  },
-  {
-    id: 10,
-    title: "Jack Kent Cooke Foundation College Scholarship",
-    category: "Scholarship",
-    grades: [12],
-    award: "Up to $55,000 per year",
-    focus: "High-achieving seniors with financial need",
-    deadlineWindow: "Typically November",
-    description: "Supports high-achieving graduating seniors with financial need to attend top four-year colleges and universities.",
-    url: "https://www.jkcf.org/our-scholarships/college-scholarship-program/"
-  },
-  {
-    id: 11,
-    title: "Elks Most Valuable Student (MVS) Scholarship",
-    category: "Scholarship",
-    grades: [12],
-    award: "$1,000 to $7,500 per year (4 years)",
-    focus: "Scholarship, leadership, and financial need",
-    deadlineWindow: "Typically November",
-    description: "Open to any high school senior who is a U.S. citizen; judged on academics, leadership, and financial need.",
-    url: "https://www.elks.org/scholars/scholarships/mvs.cfm"
-  },
-  {
-    id: 12,
-    title: "Prudential Emerging Visionaries",
-    category: "Scholarship",
-    grades: [9, 10, 11, 12],
-    award: "Up to $15,000 + leadership summit",
-    focus: "Youth-led solutions to financial or societal community challenges",
-    deadlineWindow: "Typically November",
-    description: "Recognizes students ages 14–18 who create innovative solutions to pressing problems in their communities.",
-    url: "https://www.prudential.com/links/about/emergingvisionaries"
-  },
-  {
-    id: 13,
-    title: "Doodle for Google Scholarship",
-    category: "Scholarship",
-    grades: [9, 10, 11, 12],
-    award: "Up to $55,000 college scholarship + $50,000 tech package for school",
-    focus: "Visual art and creative design around an annual prompt",
-    deadlineWindow: "Typically February / March",
-    description: "Annual art contest where K–12 students redesign the Google logo based on a creative theme.",
-    url: "https://doodles.google.com/d4g/"
-  },
-  {
-    id: 14,
-    title: "Scholastic Art & Writing Awards",
-    category: "Scholarship",
-    grades: [9, 10, 11, 12],
-    award: "Recognition, exhibitions & scholarships up to $12,500",
-    focus: "Original visual art and creative/analytical writing",
-    deadlineWindow: "Regional deadlines December–January",
-    description: "The nation’s longest-running recognition program for creative teens in grades 7–12 across 28 art and writing categories.",
-    url: "https://www.artandwriting.org/"
-  },
-  {
-    id: 15,
-    title: "JFK Profile in Courage Essay Contest",
-    category: "Scholarship",
-    grades: [9, 10, 11, 12],
-    award: "Up to $10,000",
-    focus: "Historical/political essay on an act of political courage",
-    deadlineWindow: "Typically January",
-    description: "High school students write an original essay describing an act of political courage by a U.S. elected official.",
-    url: "https://www.jfklibrary.org/learn/education/profile-in-courage-essay-contest"
-  },
-  {
-    id: 16,
-    title: "Ayn Rand Anthem & Fountainhead Essay Contests",
-    category: "Scholarship",
-    grades: [9, 10, 11, 12],
-    award: "Up to $10,000",
-    focus: "Literary and philosophical analysis essays",
-    deadlineWindow: "Typically April",
-    description: "Free-to-enter essay competitions open to high schoolers worldwide analyzing themes in Anthem (9th–10th) or The Fountainhead (11th–12th).",
-    url: "https://aynrand.org/students/essay-contests/"
-  },
-  {
-    id: 17,
-    title: "We the Students Essay Contest (Bill of Rights Institute)",
-    category: "Scholarship",
-    grades: [9, 10, 11, 12],
-    award: "Up to $7,500",
-    focus: "Constitutional principles, civics, and American government",
-    deadlineWindow: "Typically April",
-    description: "Annual civics essay competition inviting students ages 14–19 to reflect on constitutional rights and responsibilities.",
-    url: "https://billofrightsinstitute.org/we-the-students-essay-contest"
-  },
-  {
-    id: 18,
-    title: "Burger King Scholars Program",
-    category: "Scholarship",
-    grades: [12],
-    award: "$1,000 to $60,000",
-    focus: "Academic record, community service, and work experience",
-    deadlineWindow: "Opens October; closes December",
-    description: "Awards grants to graduating seniors across North America based on GPA, work experience, extracurriculars, and community involvement.",
-    url: "https://www.burgerkingfoundation.org/programs/burger-king-sm-scholars"
-  },
+    var ALL_ITEMS = [
+      { title: "Coolidge Scholarship", type: "Scholarship", grades: [11], award: "Full-ride (4 years)", topic: "Public policy, merit, civic leadership", window: "January", desc: "Full-ride scholarship for high school juniors planning to enter college the following fall.", link: "https://coolidgescholars.org/" },
+      { title: "Horatio Alger National & State Scholarships", type: "Scholarship", grades: [11], award: "$10,000 - $25,000", topic: "Financial need, overcoming adversity", window: "Spring of junior year", desc: "Supports high school juniors facing financial hardship who show perseverance and academic commitment.", link: "https://scholars.horatioalger.org/" },
+      { title: "Davidson Fellows Scholarship", type: "Scholarship", grades: [9, 10, 11, 12], award: "$10,000 - $50,000", topic: "STEM, Literature, Music, Philosophy", window: "February", desc: "Awarded to students under 18 for significant original projects or research.", link: "https://www.davidsongifted.org/gifted-programs/fellows-scholarship/" },
+      { title: "VFW Voice of Democracy", type: "Scholarship", grades: [9, 10, 11, 12], award: "Up to $35,000", topic: "Audio essay, patriotism, civics", window: "October 31", desc: "Audio-essay competition where students record a short speech on an annual theme.", link: "https://www.vfw.org/community/youth-and-education/youth-scholarships" },
+      { title: "Cameron Impact Scholarship", type: "Scholarship", grades: [11], award: "Full-tuition merit", topic: "Leadership, community service, academics", window: "Opens spring of junior year", desc: "Four-year merit scholarship for students leading service and school/community initiatives.", link: "https://www.bryancameroneducationfoundation.org/" },
+      { title: "Coca-Cola Scholars Program", type: "Scholarship", grades: [12], award: "$20,000", topic: "Leadership, service, academics", window: "August - October", desc: "Scholarship for high school seniors demonstrating leadership and community impact.", link: "https://www.coca-colascholarsfoundation.org/" },
+      { title: "QuestBridge College Prep Scholars Program", type: "Scholarship", grades: [11], award: "Summer awards & college prep", topic: "Low-income high achievers, college prep", window: "March", desc: "Supports high-achieving juniors from low-income backgrounds with college prep awards and resources.", link: "https://www.questbridge.org/high-school-students/college-prep-scholars" },
+      { title: "QuestBridge National College Match", type: "Scholarship", grades: [12], award: "Full 4-year college scholarship", topic: "Financial need, academic achievement", window: "Late September", desc: "Matches seniors from low-income households with full four-year scholarships at partner colleges.", link: "https://www.questbridge.org/high-school-students/national-college-match" },
+      { title: "The Gates Scholarship", type: "Scholarship", grades: [12], award: "Full cost of attendance", topic: "Pell-eligible seniors, leadership", window: "July - September", desc: "Covers remaining college attendance costs for Pell-eligible high school seniors.", link: "https://www.thegatesscholarship.org/" },
+      { title: "Jack Kent Cooke Foundation College Scholarship", type: "Scholarship", grades: [12], award: "Up to $55,000/year", topic: "High-achieving seniors with financial need", window: "November", desc: "Scholarship for high-achieving seniors with financial need attending four-year colleges.", link: "https://www.jkcf.org/our-scholarships/college-scholarship-program/" },
+      { title: "Elks Most Valuable Student Scholarship", type: "Scholarship", grades: [12], award: "$1,000 - $7,500/year", topic: "Academics, leadership, financial need", window: "November", desc: "Four-year scholarship for high school seniors evaluated on scholarship, leadership, and financial need.", link: "https://www.elks.org/scholars/scholarships/mvs.cfm" },
+      { title: "Prudential Emerging Visionaries", type: "Scholarship", grades: [9, 10, 11, 12], award: "Up to $15,000", topic: "Community solutions, leadership", window: "November", desc: "Recognizes students ages 14-18 creating solutions to community challenges.", link: "https://www.prudential.com/links/about/emergingvisionaries" },
+      { title: "Doodle for Google Scholarship", type: "Scholarship", grades: [9, 10, 11, 12], award: "Up to $55,000 scholarship", topic: "Art, illustration, design", window: "February - March", desc: "Art contest inviting students to create a custom Google doodle around an annual theme.", link: "https://doodles.google.com/d4g/" },
+      { title: "Scholastic Art & Writing Awards", type: "Scholarship", grades: [9, 10, 11, 12], award: "Scholarships up to $12,500", topic: "Creative writing, poetry, visual art", window: "December - January", desc: "Recognition and scholarship program for teen artists and writers in grades 7-12.", link: "https://www.artandwriting.org/" },
+      { title: "JFK Profile in Courage Essay Contest", type: "Scholarship", grades: [9, 10, 11, 12], award: "Up to $10,000", topic: "History, government, writing", window: "January", desc: "Essay contest about an act of political courage by a U.S. elected official.", link: "https://www.jfklibrary.org/learn/education/profile-in-courage-essay-contest" },
+      { title: "Ayn Rand Anthem & Fountainhead Essay Contests", type: "Scholarship", grades: [9, 10, 11, 12], award: "Up to $10,000", topic: "Literature, philosophy, essay writing", window: "April", desc: "Essay contests for high school students analyzing literary and philosophical themes.", link: "https://aynrand.org/students/essay-contests/" },
+      { title: "We the Students Essay Contest", type: "Scholarship", grades: [9, 10, 11, 12], award: "Up to $7,500", topic: "Constitution, civics, essay writing", window: "April", desc: "Civics essay contest focused on constitutional principles and rights.", link: "https://billofrightsinstitute.org/we-the-students-essay-contest" },
+      { title: "Burger King Scholars Program", type: "Scholarship", grades: [12], award: "$1,000 - $60,000", topic: "Academics, service, work experience", window: "October - December", desc: "Scholarships for graduating seniors based on GPA, service, work, and extracurriculars.", link: "https://www.burgerkingfoundation.org/programs/burger-king-sm-scholars" },
 
-  // ================= SUMMER PROGRAMS (15) =================
-  {
-    id: 19,
-    title: "Bank of America Student Leaders",
-    category: "Summer Program",
-    grades: [11, 12],
-    award: "Paid 8-week internship + D.C. leadership summit",
-    focus: "Nonprofit community service and civic leadership",
-    deadlineWindow: "Typically January",
-    description: "Connects juniors and seniors with paid summer internships at local nonprofits alongside a week-long leadership summit in Washington, D.C.",
-    url: "https://about.bankofamerica.com/en/making-an-impact/student-leaders"
-  },
-  {
-    id: 20,
-    title: "MITES Summer",
-    category: "Summer Program",
-    grades: [11],
-    award: "Free 6-week residential STEM program at MIT",
-    focus: "Engineering, science, mathematics, and collaborative projects",
-    deadlineWindow: "Typically January / early February",
-    description: "Free, immersive summer program at MIT for high school juniors interested in science, engineering, and quantitative problem-solving.",
-    url: "https://mites.mit.edu/"
-  },
-  {
-    id: 21,
-    title: "Telluride Association Summer Seminar (TASS)",
-    category: "Summer Program",
-    grades: [10, 11],
-    award: "Free residential summer seminar (all expenses covered)",
-    focus: "Humanities, critical inquiry, and democratic community",
-    deadlineWindow: "Typically December",
-    description: "Free summer seminar bringing high school sophomores and juniors together for college-level discussion and seminar-style learning.",
-    url: "https://www.tellurideassociation.org/"
-  },
-  {
-    id: 22,
-    title: "American Legion Boys State / Girls State",
-    category: "Summer Program",
-    grades: [11],
-    award: "State-sponsored leadership & government program",
-    focus: "Civics, public speaking, policy, and leadership simulation",
-    deadlineWindow: "Varies by state chapter (winter/spring)",
-    description: "Hands-on program where rising seniors learn how local, county, and state government operate through interactive leadership roles.",
-    url: "https://www.legion.org/boysnation"
-  },
-  {
-    id: 23,
-    title: "Yale Young Global Scholars (YYGS)",
-    category: "Summer Program",
-    grades: [10, 11],
-    award: "2-week academic program (need-based financial aid available)",
-    focus: "Interdisciplinary seminars in STEM, humanities, policy, and global affairs",
-    deadlineWindow: "Typically early January",
-    description: "Enrichment program at Yale University where students explore specialized academic tracks with peers from around the world.",
-    url: "https://globalscholars.yale.edu/"
-  },
-  {
-    id: 24,
-    title: "Stanford University Mathematics Camp (SUMaC)",
-    category: "Summer Program",
-    grades: [10, 11],
-    award: "3-week advanced math program (financial aid available)",
-    focus: "Abstract algebra, number theory, and algebraic topology",
-    deadlineWindow: "Typically early February",
-    description: "Intensive summer program for rising juniors and seniors passionate about pure mathematics and proof-based problem solving.",
-    url: "https://sumac.spcs.stanford.edu/"
-  },
-  {
-    id: 25,
-    title: "Ross Mathematics Program",
-    category: "Summer Program",
-    grades: [9, 10, 11, 12],
-    award: "6-week intensive number theory camp (financial aid available)",
-    focus: "Deep mathematical thinking, proofs, and number theory",
-    deadlineWindow: "Typically March",
-    description: "Immersive residential summer program encouraging high school students to explore mathematical discovery from first principles.",
-    url: "https://rossprogram.org/"
-  },
-  {
-    id: 26,
-    title: "PROMYS (Program in Mathematics for Young Scientists)",
-    category: "Summer Program",
-    grades: [9, 10, 11, 12],
-    award: "6-week math program at Boston University (free for families under $80k)",
-    focus: "Number theory and creative mathematical exploration",
-    deadlineWindow: "Typically March",
-    description: "Residential program at Boston University where students ages 14–18 tackle open-ended mathematical problems and research labs.",
-    url: "https://promys.org/"
-  },
-  {
-    id: 27,
-    title: "Girls Who Code Summer Immersion Program",
-    category: "Summer Program",
-    grades: [9, 10, 11],
-    award: "Free 2-week virtual program + grants up to $300 for eligible students",
-    focus: "Computer science, game design, UX, and tech careers",
-    deadlineWindow: "Typically February / March",
-    description: "Free live virtual program teaching high school girls and non-binary students coding fundamentals alongside industry mentors.",
-    url: "https://girlswhocode.com/programs/summer-immersion-program"
-  },
-  {
-    id: 28,
-    title: "Kode With Klossy Summer Camps",
-    category: "Summer Program",
-    grades: [9, 10, 11, 12],
-    award: "Free 2-week coding camp",
-    focus: "Web development, mobile apps, machine learning, and data science",
-    deadlineWindow: "Typically March",
-    description: "Free two-week summer coding camps for young women and gender-expansive teens ages 13–18 across multiple tech tracks.",
-    url: "https://www.kodewithklossy.com/camp"
-  },
-  {
-    id: 29,
-    title: "Princeton Summer Journalism Program (PSJP)",
-    category: "Summer Program",
-    grades: [11],
-    award: "Free hybrid & residential journalism institute at Princeton",
-    focus: "Investigative reporting, media, writing, and college prep",
-    deadlineWindow: "Typically February",
-    description: "Free program for high-achieving juniors from low-income backgrounds interested in journalism and reporting.",
-    url: "https://psjp.princeton.edu/"
-  },
-  {
-    id: 30,
-    title: "Carnegie Mellon SAMS (Summer Academy for Math and Science)",
-    category: "Summer Program",
-    grades: [11],
-    award: "Fully funded 6-week residential STEM program",
-    focus: "STEM coursework, hands-on projects, and college readiness",
-    deadlineWindow: "Typically March",
-    description: "Tuition-free, room-and-board-covered summer program at Carnegie Mellon for rising seniors from underrepresented communities.",
-    url: "https://www.cmu.edu/pre-college/academic-programs/sams.html"
-  },
-  {
-    id: 31,
-    title: "Iowa Young Writers' Studio",
-    category: "Summer Program",
-    grades: [10, 11, 12],
-    award: "2-week creative writing residency (need-based aid available)",
-    focus: "Fiction, poetry, creative nonfiction, and playwriting",
-    deadlineWindow: "Typically January / February",
-    description: "Hosted by the University of Iowa, bringing high school writers together for intensive workshops and literary seminars.",
-    url: "https://iyws.clas.uiowa.edu/"
-  },
-  {
-    id: 32,
-    title: "NSLI-Y (National Security Language Initiative for Youth)",
-    category: "Summer Program",
-    grades: [9, 10, 11, 12],
-    award: "Full U.S. State Department merit scholarship abroad",
-    focus: "Intensive immersion in Arabic, Chinese, Korean, Russian, and other languages",
-    deadlineWindow: "Typically October / November",
-    description: "Fully funded U.S. Department of State program sending high school students overseas to study critical world languages.",
-    url: "https://www.nsliforyouth.org/"
-  },
-  {
-    id: 33,
-    title: "Congress-Bundestag Youth Exchange (CBYX)",
-    category: "Summer Program",
-    grades: [9, 10, 11, 12],
-    award: "Full-year cultural & academic exchange scholarship in Germany",
-    focus: "German language, diplomacy, and cultural immersion",
-    deadlineWindow: "Typically November",
-    description: "Jointly funded by the U.S. Congress and German Bundestag, awarding full scholarships for high school students to live and study in Germany.",
-    url: "https://usagermanyscholarship.org/"
-  },
+      { title: "Bank of America Student Leaders", type: "Summer Program", grades: [11, 12], award: "Paid internship + D.C. summit", topic: "Nonprofits, civic leadership", window: "January", desc: "Paid summer nonprofit internship plus a leadership summit in Washington, D.C.", link: "https://about.bankofamerica.com/en/making-an-impact/student-leaders" },
+      { title: "MITES Summer", type: "Summer Program", grades: [11], award: "Free 6-week MIT program", topic: "STEM, engineering, math", window: "January - February", desc: "Free summer STEM and engineering program at MIT for high school juniors.", link: "https://mites.mit.edu/" },
+      { title: "Telluride Association Summer Seminar (TASS)", type: "Summer Program", grades: [10, 11], award: "Free summer seminar", topic: "Humanities, seminar discussion", window: "December", desc: "Free residential summer seminar in humanities and critical inquiry for sophomores and juniors.", link: "https://www.tellurideassociation.org/" },
+      { title: "American Legion Boys State / Girls State", type: "Summer Program", grades: [11], award: "State leadership program", topic: "Government, civics, leadership", window: "Winter - Spring (by state)", desc: "Hands-on government and leadership program for rising seniors.", link: "https://www.legion.org/boysnation" },
+      { title: "Yale Young Global Scholars (YYGS)", type: "Summer Program", grades: [10, 11], award: "2-week Yale program (aid available)", topic: "STEM, humanities, global affairs", window: "Early January", desc: "Academic enrichment program at Yale with specialized seminar tracks.", link: "https://globalscholars.yale.edu/" },
+      { title: "Stanford University Mathematics Camp (SUMaC)", type: "Summer Program", grades: [10, 11], award: "3-week math program (aid available)", topic: "Pure math, number theory, algebra", window: "Early February", desc: "Intensive mathematics summer program for rising juniors and seniors.", link: "https://sumac.spcs.stanford.edu/" },
+      { title: "Ross Mathematics Program", type: "Summer Program", grades: [9, 10, 11, 12], award: "6-week math program (aid available)", topic: "Number theory, mathematical proofs", window: "March", desc: "Summer program focused on mathematical discovery and number theory.", link: "https://rossprogram.org/" },
+      { title: "PROMYS", type: "Summer Program", grades: [9, 10, 11, 12], award: "6-week BU math program (aid available)", topic: "Number theory, math exploration", window: "March", desc: "Summer math program at Boston University for students ages 14-18.", link: "https://promys.org/" },
+      { title: "Girls Who Code Summer Immersion Program", type: "Summer Program", grades: [9, 10, 11], award: "Free virtual program + grants", topic: "Coding, computer science, tech", window: "February - March", desc: "Free virtual coding and tech program for high school girls and non-binary students.", link: "https://girlswhocode.com/programs/summer-immersion-program" },
+      { title: "Kode With Klossy Summer Camps", type: "Summer Program", grades: [9, 10, 11, 12], award: "Free 2-week coding camp", topic: "Web dev, apps, AI, data science", window: "March", desc: "Free two-week coding camps for young women and gender-expansive teens.", link: "https://www.kodewithklossy.com/camp" },
+      { title: "Princeton Summer Journalism Program", type: "Summer Program", grades: [11], award: "Free journalism program at Princeton", topic: "Journalism, reporting, writing", window: "February", desc: "Free journalism and college prep program for high school juniors.", link: "https://psjp.princeton.edu/" },
+      { title: "Carnegie Mellon SAMS", type: "Summer Program", grades: [11], award: "Free 6-week CMU STEM program", topic: "STEM, math, science, projects", window: "March", desc: "Fully funded summer STEM academy at Carnegie Mellon for rising seniors.", link: "https://www.cmu.edu/pre-college/academic-programs/sams.html" },
+      { title: "Iowa Young Writers' Studio", type: "Summer Program", grades: [10, 11, 12], award: "2-week writing program (aid available)", topic: "Creative writing, fiction, poetry", window: "January - February", desc: "Creative writing workshops hosted by the University of Iowa.", link: "https://iyws.clas.uiowa.edu/" },
+      { title: "NSLI-Y", type: "Summer Program", grades: [9, 10, 11, 12], award: "Full language study scholarship abroad", topic: "World languages, cultural immersion", window: "October - November", desc: "U.S. State Department scholarship program to study critical languages abroad.", link: "https://www.nsliforyouth.org/" },
+      { title: "Congress-Bundestag Youth Exchange (CBYX)", type: "Summer Program", grades: [9, 10, 11, 12], award: "Full exchange scholarship in Germany", topic: "German, diplomacy, exchange", window: "November", desc: "Exchange scholarship program for high school students to live and study in Germany.", link: "https://usagermanyscholarship.org/" },
 
-  // ================= RESEARCH (15) =================
-  {
-    id: 34,
-    title: "Research Science Institute (RSI)",
-    category: "Research",
-    grades: [11],
-    award: "Free 6-week summer research program at MIT",
-    focus: "Full research cycle in science, technology, engineering, and mathematics",
-    deadlineWindow: "Typically December (domestic) / January (international)",
-    description: "Combines on-campus STEM coursework with mentored research where students conduct original investigations and present findings.",
-    url: "https://www.cee.org/programs/research-science-institute"
-  },
-  {
-    id: 35,
-    title: "Stanford Institutes of Medicine Summer Research (SIMR)",
-    category: "Research",
-    grades: [11, 12],
-    award: "8-week biomedical research internship (stipends available)",
-    focus: "Biology, medicine, bioinformatics, and lab research",
-    deadlineWindow: "Typically February",
-    description: "High school juniors and seniors (age 16+) work alongside Stanford researchers on mentored projects in medicine and biological sciences.",
-    url: "https://simr.stanford.edu/"
-  },
-  {
-    id: 36,
-    title: "NASA High School Internship Program (OSTEM)",
-    category: "Research",
-    grades: [10, 11, 12],
-    award: "Paid internship / research experience",
-    focus: "Space exploration, engineering, earth science, and STEM research",
-    deadlineWindow: "Seasonal cycles (Fall, Spring, Summer)",
-    description: "Offers students (age 16+) hands-on research and technical internships supporting NASA missions and science teams.",
-    url: "https://stem.nasa.gov/ostem/"
-  },
-  {
-    id: 37,
-    title: "Science & Engineering Apprenticeship Program (SEAP)",
-    category: "Research",
-    grades: [10, 11, 12],
-    award: "Paid 8-week summer research placement",
-    focus: "Department of the Navy laboratory research and engineering",
-    deadlineWindow: "Typically fall / early winter",
-    description: "Places eligible high school students (age 16+) in Navy research laboratories to work with scientists and engineers.",
-    url: "https://www.navalsteminterns.us/seap/"
-  },
-  {
-    id: 38,
-    title: "Regeneron Science Talent Search",
-    category: "Research",
-    grades: [12],
-    award: "Awards up to $250,000",
-    focus: "Independent original scientific or mathematical research",
-    deadlineWindow: "Typically November of senior year",
-    description: "Nation’s oldest and most prestigious high school science and math research competition based on original student research.",
-    url: "https://www.societyforscience.org/regeneron-sts/"
-  },
-  {
-    id: 39,
-    title: "Simons Summer Research Program (Stony Brook)",
-    category: "Research",
-    grades: [11],
-    award: "Mentored summer research fellowship + stipend",
-    focus: "Science, mathematics, and engineering research",
-    deadlineWindow: "Typically February",
-    description: "Matches high school juniors with Stony Brook faculty mentors to join active research groups and produce a written abstract and poster.",
-    url: "https://www.stonybrook.edu/simons/"
-  },
-  {
-    id: 40,
-    title: "Summer Science Program (SSP)",
-    category: "Research",
-    grades: [10, 11],
-    award: "5-week collaborative research immersion (generous need-based financial aid)",
-    focus: "Astrophysics, biochemistry, genomics, or synthetic chemistry",
-    deadlineWindow: "Typically February / March",
-    description: "Teams of three students complete an authentic research project from start to finish in astrophysics, biochemistry, or genomics.",
-    url: "https://summerscience.org/"
-  },
-  {
-    id: 41,
-    title: "Garcia Summer Research Program (Stony Brook)",
-    category: "Research",
-    grades: [10, 11, 12],
-    award: "7-week polymer & materials science lab program",
-    focus: "Materials science, chemistry, physics, and engineering",
-    deadlineWindow: "Typically February",
-    description: "Intensive summer program combining lectures and hands-on lab research where students design original materials science projects.",
-    url: "https://www.stonybrook.edu/commcms/garcia/summer_program/program_description"
-  },
-  {
-    id: 42,
-    title: "NIH High School Summer Internship Program (HS-SIP)",
-    category: "Research",
-    grades: [11, 12],
-    award: "Paid 8-week biomedical research internship",
-    focus: "Biomedical, behavioral, and clinical research",
-    deadlineWindow: "Typically February",
-    description: "Students (age 17+) conduct full-time summer research alongside investigators at the National Institutes of Health.",
-    url: "https://www.training.nih.gov/research-training/hs/hs-sip/"
-  },
-  {
-    id: 43,
-    title: "MIT Beaver Works Summer Institute (BWSI)",
-    category: "Research",
-    grades: [9, 10, 11],
-    award: "Free 4-week project-based STEM & engineering program",
-    focus: "Autonomous robotics, AI, cybersecurity, quantum software, and aerospace",
-    deadlineWindow: "Online prerequisite starts February; summer app March",
-    description: "Rigorous project-based program where students build real engineering prototypes after completing free online prerequisite modules.",
-    url: "https://bwsi.mit.edu/"
-  },
-  {
-    id: 44,
-    title: "Clark Scholars Program (Texas Tech)",
-    category: "Research",
-    grades: [11, 12],
-    award: "Free 7-week residential research program + $750 stipend",
-    focus: "Sciences, humanities, fine arts, and social sciences research",
-    deadlineWindow: "Typically February",
-    description: "Selects 12 highly qualified students (age 17+) nationwide to conduct hands-on research with Texas Tech faculty across disciplines.",
-    url: "https://www.depts.ttu.edu/honors/academicsandenrichment/affiliatedandhighschool/clarks/"
-  },
-  {
-    id: 45,
-    title: "Hutton Junior Fisheries Biology Program",
-    category: "Research",
-    grades: [11, 12],
-    award: "Paid 8-week summer field internship ($3,000 stipend)",
-    focus: "Marine/freshwater ecology, conservation, and fisheries biology",
-    deadlineWindow: "Typically January / February",
-    description: "Sponsored by the American Fisheries Society, pairing students with fisheries scientists for hands-on aquatic research.",
-    url: "https://hutton.fisheries.org/"
-  },
-  {
-    id: 46,
-    title: "AEOP High School Apprenticeship Program",
-    category: "Research",
-    grades: [9, 10, 11, 12],
-    award: "Paid STEM research apprenticeship at university & DoD labs",
-    focus: "Engineering, computer science, biology, and defense research",
-    deadlineWindow: "Rolling / spring deadlines",
-    description: "Army Educational Outreach Program placing high school students in paid university and Department of Defense research labs.",
-    url: "https://www.usaeop.com/program/high-school-apprenticeships/"
-  },
-  {
-    id: 47,
-    title: "Junior Science and Humanities Symposium (JSHS)",
-    category: "Research",
-    grades: [9, 10, 11, 12],
-    award: "Up to $12,000 in undergraduate scholarships",
-    focus: "Original STEM research presentation and symposium",
-    deadlineWindow: "Regional deadlines fall–winter",
-    description: "DoD-sponsored STEM competition where high schoolers present original research papers and posters at regional and national symposia.",
-    url: "https://www.jshs.org/"
-  },
-  {
-    id: 48,
-    title: "UC Santa Barbara Research Mentorship Program (RMP)",
-    category: "Research",
-    grades: [10, 11],
-    award: "6-week interdisciplinary research program (scholarships available)",
-    focus: "STEM, humanities, and social sciences mentored research",
-    deadlineWindow: "Typically March",
-    description: "Pairs high-achieving 10th and 11th graders with university mentors to conduct hands-on research, write a technical paper, and present at a symposium.",
-    url: "https://www.summer.ucsb.edu/programs/research-mentorship-program/overview"
-  }
-];
+      { title: "Research Science Institute (RSI)", type: "Research", grades: [11], award: "Free 6-week MIT research program", topic: "STEM research, science, engineering", window: "December - January", desc: "Summer science and engineering research program hosted at MIT.", link: "https://www.cee.org/programs/research-science-institute" },
+      { title: "Stanford SIMR", type: "Research", grades: [11, 12], award: "8-week biomedical research internship", topic: "Medicine, biology, lab research", window: "February", desc: "Biomedical research internship at Stanford for students age 16+.", link: "https://simr.stanford.edu/" },
+      { title: "NASA High School Internship (OSTEM)", type: "Research", grades: [10, 11, 12], award: "Paid NASA internship", topic: "Space, engineering, earth science", window: "Fall, Spring, Summer cycles", desc: "Hands-on STEM and research internships at NASA for students age 16+.", link: "https://stem.nasa.gov/ostem/" },
+      { title: "Navy SEAP", type: "Research", grades: [10, 11, 12], award: "Paid 8-week Navy lab placement", topic: "Engineering, science, Navy research", window: "Fall - Early Winter", desc: "Paid summer research apprenticeship in Department of the Navy labs for ages 16+.", link: "https://www.navalsteminterns.us/seap/" },
+      { title: "Regeneron Science Talent Search", type: "Research", grades: [12], award: "Up to $250,000", topic: "Independent science & math research", window: "November of senior year", desc: "Science and math research competition based on original student research.", link: "https://www.societyforscience.org/regeneron-sts/" },
+      { title: "Simons Summer Research Program", type: "Research", grades: [11], award: "Research fellowship + stipend", topic: "Science, math, engineering research", window: "February", desc: "Mentored summer research program at Stony Brook University for juniors.", link: "https://www.stonybrook.edu/simons/" },
+      { title: "Summer Science Program (SSP)", type: "Research", grades: [10, 11], award: "5-week research program (aid available)", topic: "Astrophysics, biochemistry, genomics", window: "February - March", desc: "Team research program in astrophysics, biochemistry, or genomics.", link: "https://summerscience.org/" },
+      { title: "Garcia Summer Research Program", type: "Research", grades: [10, 11, 12], award: "7-week materials science lab program", topic: "Chemistry, physics, materials science", window: "February", desc: "Hands-on materials science and polymer research program at Stony Brook.", link: "https://www.stonybrook.edu/commcms/garcia/summer_program/program_description" },
+      { title: "NIH High School Summer Internship (HS-SIP)", type: "Research", grades: [11, 12], award: "Paid 8-week NIH internship", topic: "Biomedical & clinical research", window: "February", desc: "Paid summer biomedical research at the National Institutes of Health for ages 17+.", link: "https://www.training.nih.gov/research-training/hs/hs-sip/" },
+      { title: "MIT Beaver Works Summer Institute", type: "Research", grades: [9, 10, 11], award: "Free 4-week STEM engineering program", topic: "Robotics, AI, cybersecurity, aerospace", window: "February - March", desc: "Project-based engineering and research program with online prerequisites.", link: "https://bwsi.mit.edu/" },
+      { title: "Clark Scholars Program", type: "Research", grades: [11, 12], award: "Free 7-week program + $750 stipend", topic: "Sciences, humanities, social sciences", window: "February", desc: "Summer research program at Texas Tech University for students age 17+.", link: "https://www.depts.ttu.edu/honors/academicsandenrichment/affiliatedandhighschool/clarks/" },
+      { title: "Hutton Junior Fisheries Biology Program", type: "Research", grades: [11, 12], award: "Paid 8-week internship ($3,000)", topic: "Ecology, marine & freshwater biology", window: "January - February", desc: "Paid summer field research internship in fisheries and aquatic science.", link: "https://hutton.fisheries.org/" },
+      { title: "AEOP High School Apprenticeship", type: "Research", grades: [9, 10, 11, 12], award: "Paid STEM lab apprenticeship", topic: "Engineering, biology, computer science", window: "Rolling / Spring", desc: "Paid STEM research apprenticeships at university and DoD laboratories.", link: "https://www.usaeop.com/program/high-school-apprenticeships/" },
+      { title: "Junior Science and Humanities Symposium", type: "Research", grades: [9, 10, 11, 12], award: "Scholarships up to $12,000", topic: "STEM research presentation", window: "Fall - Winter", desc: "Symposium and competition for students presenting original STEM research.", link: "https://www.jshs.org/" },
+      { title: "UCSB Research Mentorship Program", type: "Research", grades: [10, 11], award: "6-week research program (aid available)", topic: "STEM, humanities, social sciences", window: "March", desc: "Mentored university research program for 10th and 11th grade students.", link: "https://www.summer.ucsb.edu/programs/research-mentorship-program/overview" }
+    ];
 
-  </script>
-  <script>
-let selectedGrade = "all";
-let selectedCategory = "all";
-let searchQuery = "";
+    var activeGrade = "all";
+    var activeType = "all";
+    var searchText = "";
 
-const gradeButtons = document.querySelectorAll("#grade-filters .pill");
-const categoryButtons = document.querySelectorAll("#category-filters .pill");
-const searchInput = document.getElementById("search-input");
-const resultsCount = document.getElementById("results-count");
-const grid = document.getElementById("opportunities-grid");
+    function renderCards() {
+      var container = document.getElementById("cardsContainer");
+      var countEl = document.getElementById("countText");
+      var query = searchText.trim().toLowerCase();
 
-function getCategoryBadgeClass(category) {
-  if (category === "Scholarship") return "badge-scholarship";
-  if (category === "Summer Program") return "badge-summer";
-  return "badge-research";
-}
+      var filtered = ALL_ITEMS.filter(function (item) {
+        var matchesGrade = activeGrade === "all" || item.grades.indexOf(Number(activeGrade)) !== -1;
+        var matchesType = activeType === "all" || item.type === activeType;
+        var matchesQuery =
+          query === "" ||
+          item.title.toLowerCase().indexOf(query) !== -1 ||
+          item.type.toLowerCase().indexOf(query) !== -1 ||
+          item.topic.toLowerCase().indexOf(query) !== -1 ||
+          item.award.toLowerCase().indexOf(query) !== -1 ||
+          item.desc.toLowerCase().indexOf(query) !== -1;
 
-function formatGrades(grades) {
-  return grades.map((g) => `Grade ${g}`).join(", ");
-}
+        return matchesGrade && matchesType && matchesQuery;
+      });
 
-function matchesFilters(item) {
-  const gradeMatch =
-    selectedGrade === "all" || item.grades.includes(Number(selectedGrade));
-  const categoryMatch =
-    selectedCategory === "all" || item.category === selectedCategory;
+      countEl.textContent = "Showing " + filtered.length + " of " + ALL_ITEMS.length + " opportunities";
 
-  const q = searchQuery.trim().toLowerCase();
-  const textMatch =
-    !q ||
-    item.title.toLowerCase().includes(q) ||
-    item.category.toLowerCase().includes(q) ||
-    item.focus.toLowerCase().includes(q) ||
-    item.description.toLowerCase().includes(q) ||
-    item.award.toLowerCase().includes(q);
+      if (filtered.length === 0) {
+        container.innerHTML = "<div class='card'><h2>No opportunities match</h2><p>Try selecting All Grades, All Categories, or clearing your search.</p></div>";
+        return;
+      }
 
-  return gradeMatch && categoryMatch && textMatch;
-}
+      var html = "";
+      for (var i = 0; i < filtered.length; i++) {
+        var item = filtered[i];
+        var gradeLabel = "Grades: " + item.grades.join(", ");
+        html +=
+          "<div class='card'>" +
+            "<div>" +
+              "<div class='tag-row'>" +
+                "<span class='type-tag'>" + item.type + "</span>" +
+                "<span class='grade-tag'>" + gradeLabel + "</span>" +
+              "</div>" +
+              "<h2>" + item.title + "</h2>" +
+              "<p>" + item.desc + "</p>" +
+              "<div class='details'>" +
+                "<div><strong>Award / Program:</strong> " + item.award + "</div>" +
+                "<div><strong>Focus:</strong> " + item.topic + "</div>" +
+                "<div><strong>Typical Window:</strong> " + item.window + "</div>" +
+              "</div>" +
+            "</div>" +
+            "<a class='link-btn' href='" + item.link + "' target='_blank' rel='noopener noreferrer'>Visit Official Page</a>" +
+          "</div>";
+      }
 
-function renderOpportunities() {
-  const filtered = OPPORTUNITIES.filter(matchesFilters);
-  resultsCount.textContent = `Showing ${filtered.length} ${
-    filtered.length === 1 ? "opportunity" : "opportunities"
-  }`;
+      container.innerHTML = html;
+    }
 
-  if (filtered.length === 0) {
-    grid.innerHTML = `
-      <div class="empty-state">
-        <h2>No matching opportunities found</h2>
-        <p>Try switching back to <strong>All Grades</strong> or <strong>All Types</strong>, or clear your search box.</p>
-      </div>
-    `;
-    return;
-  }
+    function setupGroup(groupId, onSelect) {
+      var buttons = document.querySelectorAll("#" + groupId + " .filter-btn");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener("click", function () {
+          for (var j = 0; j < buttons.length; j++) {
+            buttons[j].classList.remove("active");
+          }
+          this.classList.add("active");
+          onSelect(this.getAttribute("data-val"));
+          renderCards();
+        });
+      }
+    }
 
-  grid.innerHTML = filtered
-    .map(
-      (item) => `
-      <article class="card">
-        <div>
-          <div class="card-top">
-            <span class="badge ${getCategoryBadgeClass(item.category)}">${item.category}</span>
-            <span class="grades-text">${formatGrades(item.grades)}</span>
-          </div>
-          <h2>${item.title}</h2>
-          <p>${item.description}</p>
-          <ul class="meta-list">
-            <li><strong>Award / Program:</strong> ${item.award}</li>
-            <li><strong>Focus:</strong> ${item.focus}</li>
-          </ul>
-        </div>
-        <div class="card-footer">
-          <span class="deadline-text">Window: ${item.deadlineWindow}</span>
-          <a class="apply-btn" href="${item.url}" target="_blank" rel="noopener noreferrer">Official Site</a>
-        </div>
-      </article>
-    `
-    )
-    .join("");
-}
+    setupGroup("gradeGroup", function (val) {
+      activeGrade = val;
+    });
 
-gradeButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    gradeButtons.forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-    selectedGrade = btn.dataset.grade;
-    renderOpportunities();
-  });
-});
+    setupGroup("typeGroup", function (val) {
+      activeType = val;
+    });
 
-categoryButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    categoryButtons.forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-    selectedCategory = btn.dataset.category;
-    renderOpportunities();
-  });
-});
+    document.getElementById("searchBox").addEventListener("input", function () {
+      searchText = this.value;
+      renderCards();
+    });
 
-searchInput.addEventListener("input", (e) => {
-  searchQuery = e.target.value;
-  renderOpportunities();
-});
-
-renderOpportunities();
-
+    renderCards();
   </script>
 </body>
 </html>

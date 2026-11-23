@@ -1,9 +1,10 @@
-# ScholarHub Website Files (48 Opportunities)
+# ScholarHub
 
-Upload the 4 website files (`index.html`, `styles.css`, `opportunities.js`, and `app.js`) to the root of your `ScholarHub` GitHub repository.
+ScholarHub is a grade-level directory of scholarships, summer programs, and research opportunities for high school students (9th–12th grade).
 
-## Quick Upload Steps
-1. Open `https://github.com/dhritienukonda/ScholarHub`.
-2. Click **Add file** -> **Upload files**.
-3. Drag and drop `index.html`, `styles.css`, `opportunities.js`, and `app.js` into the upload area.
-4. Click **Commit changes** and wait 1–2 minutes for `https://dhritienukonda.github.io/ScholarHub/` to update.
+## Included Files
+- `index.html` — Complete website layout, styles, filters, search bar, and 48 opportunities.
+- `favicon.svg` — Custom ScholarHub graduation-cap browser tab icon.
+- `manifest.json` — Web app metadata and icon reference.
+- `.nojekyll` — Ensures GitHub Pages serves all static files directly without Jekyll processing.
+- `README.md` — Project overview.
