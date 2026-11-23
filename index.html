@@ -4,90 +4,310 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ScholarHub | High School Scholarships, Research & Summer Programs</title>
-  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./styles.css" />
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --muted: #64748b;
+      --border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: white;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      background: var(--card-bg);
+      padding: 1.25rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    }
+
+    @media (max-width: 768px) {
+      .controls {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    input, select {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    input:focus, select:focus {
+      border-color: var(--primary);
+    }
+
+    .stats-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .badge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      gap: 0.5rem;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.65rem;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .badge-Scholarship { background: #dbeafe; color: #1e40af; }
+    .badge-Research { background: #dcfce7; color: #166534; }
+    .badge-Summer { background: #fef3c7; color: #92400e; }
+
+    .grades {
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .card p {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .meta {
+      font-size: 0.85rem;
+      margin-bottom: 1.25rem;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .meta div {
+      margin-bottom: 0.25rem;
+    }
+
+    .btn {
+      display: block;
+      text-align: center;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.15s ease;
+    }
+
+    .btn:hover {
+      background: var(--primary-dark);
+    }
+
+    .empty-state {
+      text-align: center;
+      padding: 3rem;
+      color: var(--muted);
+      grid-column: 1 / -1;
+    }
+  </style>
 </head>
 <body>
-  <header class="navbar">
-    <div class="container nav-content">
-      <a href="#" class="brand">
-        <img src="./favicon.svg" alt="ScholarHub Logo" class="brand-icon" />
-        <span class="brand-name">ScholarHub</span>
-      </a>
-      <nav class="nav-links">
-        <a href="#opportunities">Explore</a>
-        <button id="savedToggleBtn" class="saved-pill" type="button">
-          Saved (<span id="savedCount">0</span>)
-        </button>
-      </nav>
-    </div>
+
+  <header>
+    <h1>ScholarHub</h1>
+    <p>Discover high school scholarships, STEM research programs, and summer internships updated automatically every week.</p>
   </header>
 
-  <section class="hero">
-    <div class="container hero-inner">
-      <span class="hero-badge">Built for High School Students (Grades 9–12)</span>
-      <h1>Find Scholarships, Research &amp; Summer Programs by Grade Level</h1>
-      <p>
-        Stop sifting through expired links and college-only awards. Filter real opportunities tailored specifically to your current grade level—all in one place.
-      </p>
-      <div class="search-wrapper">
-        <input
-          type="text"
-          id="searchInput"
-          placeholder="Search by keyword (e.g., MIT, STEM, full-ride, paid, junior)..."
-          aria-label="Search opportunities"
-        />
-      </div>
-    </div>
-  </section>
-
-  <main id="opportunities" class="container main-section">
-    <!-- Filter Controls -->
-    <div class="controls-panel">
-      <div class="filter-group">
-        <span class="filter-label">Grade Level:</span>
-        <div class="pill-group" id="gradeFilters">
-          <button class="filter-btn active" data-grade="all">All Grades</button>
-          <button class="filter-btn" data-grade="9">9th Grade</button>
-          <button class="filter-btn" data-grade="10">10th Grade</button>
-          <button class="filter-btn" data-grade="11">11th Grade</button>
-          <button class="filter-btn" data-grade="12">12th Grade</button>
-        </div>
-      </div>
-
-      <div class="filter-group">
-        <span class="filter-label">Category:</span>
-        <div class="pill-group" id="categoryFilters">
-          <button class="filter-btn active" data-category="All">All Types</button>
-          <button class="filter-btn" data-category="Scholarship">Scholarships</button>
-          <button class="filter-btn" data-category="Research">Research</button>
-          <button class="filter-btn" data-category="Summer Program">Summer Programs</button>
-        </div>
-      </div>
+  <main class="container">
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Search by title, STEM, agency, or keyword..." />
+      <select id="categoryFilter">
+        <option value="All">All Categories</option>
+        <option value="Scholarship">Scholarships</option>
+        <option value="Research">Research</option>
+        <option value="Summer Program">Summer Programs</option>
+      </select>
+      <select id="gradeFilter">
+        <option value="All">All Grades (9–12)</option>
+        <option value="9">9th Grade</option>
+        <option value="10">10th Grade</option>
+        <option value="11">11th Grade</option>
+        <option value="12">12th Grade</option>
+      </select>
     </div>
 
-    <div class="results-bar">
-      <p id="resultsCount">Loading opportunities...</p>
-      <button id="resetFiltersBtn" class="reset-link" type="button">Reset Filters</button>
+    <div class="stats-bar">
+      <span id="resultCount">Loading opportunities...</span>
     </div>
 
-    <!-- Cards Grid -->
-    <div id="cardsGrid" class="cards-grid"></div>
+    <div class="grid" id="opportunitiesGrid"></div>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-brand">
-        <img src="./favicon.svg" alt="ScholarHub Icon" width="24" height="24" />
-        <span><strong>ScholarHub</strong> — Centralized High School Opportunities</span>
-      </div>
-      <p class="footer-note">Verify exact deadlines and eligibility requirements on each organization's official website.</p>
-    </div>
-  </footer>
+  <script>
+    let allOpportunities = [];
 
-  <script src="./script.js"></script>
+    const searchInput = document.getElementById("searchInput");
+    const categoryFilter = document.getElementById("categoryFilter");
+    const gradeFilter = document.getElementById("gradeFilter");
+    const grid = document.getElementById("opportunitiesGrid");
+    const resultCount = document.getElementById("resultCount");
+
+    async function loadOpportunities() {
+      try {
+        // Cache-buster (?v=timestamp) ensures the browser always fetches the latest 279+ items
+        const response = await fetch("scholarhub-opportunities.json?v=" + Date.now(), {
+          cache: "no-store"
+        });
+        if (!response.ok) throw new Error("Failed to load JSON");
+        allOpportunities = await response.json();
+        renderOpportunities();
+      } catch (err) {
+        console.error(err);
+        resultCount.textContent = "Error loading opportunities. Please refresh.";
+      }
+    }
+
+    function renderOpportunities() {
+      const query = searchInput.value.toLowerCase().trim();
+      const selectedCategory = categoryFilter.value;
+      const selectedGrade = gradeFilter.value;
+
+      const filtered = allOpportunities.filter(item => {
+        const matchesSearch =
+          !query ||
+          (item.title && item.title.toLowerCase().includes(query)) ||
+          (item.description && item.description.toLowerCase().includes(query));
+
+        const matchesCategory =
+          selectedCategory === "All" || item.category === selectedCategory;
+
+        const matchesGrade =
+          selectedGrade === "All" ||
+          (Array.isArray(item.grades) && item.grades.includes(Number(selectedGrade)));
+
+        return matchesSearch && matchesCategory && matchesGrade;
+      });
+
+      resultCount.textContent = `Showing ${filtered.length} of ${allOpportunities.length} opportunities`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `<div class="empty-state">No opportunities match your filters. Try clearing your search or selecting "All Grades".</div>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(item => {
+        const badgeClass =
+          item.category === "Research" ? "badge-Research" :
+          item.category === "Summer Program" ? "badge-Summer" : "badge-Scholarship";
+
+        const gradeText = Array.isArray(item.grades) ? `Grades ${item.grades.join(", ")}` : "High School";
+
+        return `
+          <div class="card">
+            <div>
+              <div class="badge-row">
+                <span class="badge ${badgeClass}">${item.category || "Opportunity"}</span>
+                <span class="grades">${gradeText}</span>
+              </div>
+              <h3>${item.title}</h3>
+              <p>${item.description || ""}</p>
+            </div>
+            <div>
+              <div class="meta">
+                <div><strong>Deadline:</strong> ${item.deadline || "Check Website"}</div>
+                <div><strong>Award / Type:</strong> ${item.amountOrCost || "Varies"}</div>
+              </div>
+              <a href="${item.link}" target="_blank" rel="noopener noreferrer" class="btn">View Details & Apply</a>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    searchInput.addEventListener("input", renderOpportunities);
+    categoryFilter.addEventListener("change", renderOpportunities);
+    gradeFilter.addEventListener("change", renderOpportunities);
+
+    loadOpportunities();
+  </script>
 </body>
 </html>
