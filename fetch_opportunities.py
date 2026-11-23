@@ -10,22 +10,35 @@ QUERIES = [
     ("high school students", "Scholarship"), ("high school summer", "Summer Program"),
     ("high school research", "Research"), ("high school internship", "Summer Program"),
     ("high school senior", "Scholarship"), ("high school fellowship", "Research"),
-    ("secondary school", "Scholarship"), ("teen leadership", "Summer Program"),
-    ("adolescent youth", "Summer Program"), ("pre-college", "Summer Program"),
-    ("college prep", "Scholarship"), ("college readiness", "Scholarship"),
-    ("upward bound", "Summer Program"), ("talent search youth", "Scholarship"),
-    ("youth stem", "Research"), ("youth science", "Research"),
-    ("computer science youth", "Research"), ("coding youth", "Summer Program"),
-    ("robotics youth", "Summer Program"), ("engineering high school", "Research"),
-    ("mathematics youth", "Research"), ("biomedical youth", "Research"),
-    ("health careers youth", "Summer Program"), ("environmental youth", "Research"),
-    ("climate youth", "Research"), ("ocean science youth", "Research"),
-    ("space education youth", "Research"), ("cybersecurity youth", "Summer Program"),
-    ("youth civic engagement", "Summer Program"), ("youth arts", "Summer Program"),
-    ("humanities youth", "Summer Program"), ("youth entrepreneurship", "Summer Program"),
-    ("youth mentorship", "Summer Program"), ("student scholarship", "Scholarship"),
-    ("summer institute high school", "Summer Program")
+    ("high school stem", "Research"), ("high school science", "Research"),
+    ("high school engineering", "Research"), ("high school coding", "Summer Program"),
+    ("secondary school", "Scholarship"), ("pre-college", "Summer Program"),
+    ("upward bound", "Summer Program"), ("talent search", "Scholarship"),
+    ("teen leadership", "Summer Program"), ("youth stem", "Research"),
+    ("youth science", "Research"), ("youth robotics", "Summer Program"),
+    ("youth biomedical", "Research"), ("youth environmental", "Research"),
+    ("youth cybersecurity", "Summer Program"), ("youth arts", "Summer Program"),
+    ("youth entrepreneurship", "Summer Program"), ("k-12 stem", "Research")
 ]
+
+INCLUDE_WORDS = [
+    "high school", "secondary school", "pre-college", "precollege", "teen",
+    "youth", "k-12", "upward bound", "talent search", "9th", "10th", "11th", "12th",
+    "uc ", "ucla", "ucsd", "uci", "ucsb", "ucsf", "berkeley", "cosmos", "regents", "blue and gold"
+]
+
+EXCLUDE_WORDS = [
+    "postdoctoral", "postdoc", "doctoral", "phd", "ph.d.", "dissertation",
+    "graduate student", "graduate fellowship", "graduate research", "faculty",
+    "undergraduate only", "college sophomore", "college junior", "law school",
+    "medical school", "residency", "veteran", "small business", "sbirs", "sttr"
+]
+
+def is_high_school(title):
+    t = title.lower()
+    if any(bad in t for bad in EXCLUDE_WORDS):
+        return False
+    return any(good in t for good in INCLUDE_WORDS)
 
 def load_json(path):
     if not os.path.exists(path):
@@ -51,32 +64,35 @@ def fetch_grants():
         for item in hits:
             title = item.get("title", "").strip()
             oid = item.get("id", "")
-            if title and oid:
+            if title and oid and is_high_school(title):
                 c = item.get("awardCeiling")
                 award = f"Up to ${int(c):,}" if c and str(c).isdigit() and int(c) > 0 else "Federal Grant / Program"
                 results.append({
                     "title": title, "category": cat,
-                    "grades": [11, 12] if "senior" in kw else [9, 10, 11, 12],
+                    "grades": [11, 12] if "senior" in title.lower() else [9, 10, 11, 12],
                     "deadline": item.get("closeDate") or "Rolling / Check Site",
                     "amountOrCost": award,
-                    "description": f"Sponsored by {item.get('agency', 'U.S. Federal Agency')}. Click below for details.",
+                    "description": f"Sponsored by {item.get('agency', 'U.S. Federal Agency')}. Click below for high school eligibility and details.",
                     "link": f"https://www.grants.gov/search-results-detail/{oid}"
                 })
         time.sleep(0.2)
     return results
 
 if __name__ == "__main__":
-    existing = load_json(DATA_FILE)
-    incoming = load_json(UC_FILE) + fetch_grants()
-    seen = {x["title"].strip().lower() for x in existing if isinstance(x, dict) and "title" in x}
-    max_id = max((x.get("id", 0) for x in existing if isinstance(x, dict)), default=0)
-    for item in incoming:
-        k = item["title"].strip().lower()
-        if k not in seen:
-            max_id += 1
-            item["id"] = max_id
-            existing.append(item)
+    uc_items = load_json(UC_FILE)
+    existing = [x for x in load_json(DATA_FILE) if isinstance(x, dict) and is_high_school(x.get("title", ""))]
+    incoming = uc_items + fetch_grants()
+
+    cleaned = []
+    seen = set()
+    for idx, item in enumerate(uc_items + existing + incoming, start=1):
+        title = item.get("title", "").strip()
+        k = title.lower()
+        if title and k not in seen:
+            item["id"] = idx
+            cleaned.append(item)
             seen.add(k)
+
     with open(DATA_FILE, "w", encoding="utf-8") as f:
-        json.dump(existing, f, indent=2)
-    print(f"Done! Total: {len(existing)}")
+        json.dump(cleaned, f, indent=2)
+    print(f"Done! High school opportunities: {len(cleaned)}")
