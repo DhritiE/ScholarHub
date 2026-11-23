@@ -191,11 +191,11 @@ UC_OPPORTUNITIES = [
         "category": "Summer Program",
         "grades": [9, 10, 11, 12],
         "deadline": "Rolling / Spring",
-        "amountOrCost": "Scholarships Available",
-        "description": "Career-focused certificate courses at UC San Diego Extended Studies in front-end web development, machine learning, CAD engineering, and business management.",
-        "link": "https://extendedstudies.ucsd.edu/courses-and-programs/futures"
-    },
-    {
-        "title": "UC San Diego (UCSD) Global Environmental Leadership & Sustainability",
+      "title": "UC San Diego (UCSD) Global Environmental Leadership & Sustainability",
         "category": "Summer Program",
-        "
+        "grades": [9, 10, 11, 12],
+        "deadline": "Spring",
+        "amountOrCost": "Scholarships Available",
+        "description": "Field-based sustainability and climate leadership programs hosted with UCSD researchers focusing on environmental policy and conservation.",
+        "link": "https://academicconnections.ucsd.edu/"
+    },
