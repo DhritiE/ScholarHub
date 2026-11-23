@@ -321,5 +321,642 @@
     "amountOrCost": "$1,000 to $60,000",
     "description": "Awards scholarships to high school seniors based on grade point average, work experience, extracurriculars, and community service.",
     "link": "https://www.burgerkingfoundation.org/programs/burger-king-sm-scholars"
+  },
+  {
+    "title": "Research in the Formation of Engineers (RFE)",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "11/10/2076",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by U.S. National Science Foundation. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/350230",
+    "id": 26
+  },
+  {
+    "title": "NIA Expanding Research in AD/ADRD (ERA) Summer Research Education Program (R25 Independent Clinical Trial Not Allowed)",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "05/26/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by National Institutes of Health. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/359655",
+    "id": 27
+  },
+  {
+    "title": "Harvest to Hallways: National School Lunch Program, Equipment Assistance Grants",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "01/11/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by Food and Nutrition Service. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/364164",
+    "id": 28
+  },
+  {
+    "title": "NSF Scholarships in Science, Technology, Engineering, and Mathematics (S-STEM)",
+    "category": "Research",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "03/02/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by U.S. National Science Foundation. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/357498",
+    "id": 29
+  },
+  {
+    "title": "Research Enhancement Award Program (REAP) for Health Professional Schools and Graduate Schools (R15 Clinical Trial Required)",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "10/25/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by National Institutes of Health. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/359733",
+    "id": 30
+  },
+  {
+    "title": "Research Enhancement Award Program (REAP) for Health Professional Schools and Graduate Schools (R15 Clinical Trial Not Allowed)",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "01/07/2028",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by National Institutes of Health. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/357568",
+    "id": 31
+  },
+  {
+    "title": "Academic Research Enhancement Award (AREA) for Undergraduate-Focused Institutions (R15 Clinical Trial Required)",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "01/07/2028",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by National Institutes of Health. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/357282",
+    "id": 32
+  },
+  {
+    "title": "Academic Research Enhancement Award (AREA) for Undergraduate-Focused Institutions (R15 Clinical Trial Not Allowed)",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "01/07/2028",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by National Institutes of Health. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/357458",
+    "id": 33
+  },
+  {
+    "title": "Centers of Research Excellence in Science and Technology (CREST)",
+    "category": "Research",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "12/04/2026",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by U.S. National Science Foundation. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/348375",
+    "id": 34
+  },
+  {
+    "title": "Improving Undergraduate STEM Education: Directorate for STEM Education (IUSE: EDU)",
+    "category": "Research",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "01/20/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by U.S. National Science Foundation. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/344124",
+    "id": 35
+  },
+  {
+    "title": "Economics",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "10/15/2076",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by U.S. National Science Foundation. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/348164",
+    "id": 36
+  },
+  {
+    "title": "Tribal Colleges and Universities Program (TCUP)",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "01/11/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by U.S. National Science Foundation. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/334326",
+    "id": 37
+  },
+  {
+    "title": "Mathematical Sciences Infrastructure Program",
+    "category": "Research",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "02/02/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by U.S. National Science Foundation. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/328573",
+    "id": 38
+  },
+  {
+    "title": "Research Experiences for Teachers (RET) in Engineering and Computer Science",
+    "category": "Research",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "10/13/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by U.S. National Science Foundation. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/350802",
+    "id": 39
+  },
+  {
+    "title": "Developmental Sciences (DS)",
+    "category": "Research",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "02/01/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by U.S. National Science Foundation. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/352455",
+    "id": 40
+  },
+  {
+    "title": "Advanced Technological Education (ATE)",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "10/07/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by U.S. National Science Foundation. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/355100",
+    "id": 41
+  },
+  {
+    "title": "National Facilities",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "Check Website",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by U.S. National Science Foundation. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/275109",
+    "id": 42
+  },
+  {
+    "title": "LPS Qubit Collaboratory (LQC)",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "04/30/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by Dept of the Army -- Materiel Command. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/332894",
+    "id": 43
+  },
+  {
+    "title": "Innovations in Graduate Education (IGE) Program",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "03/25/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by U.S. National Science Foundation. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/351947",
+    "id": 44
+  },
+  {
+    "title": "NIJ FY 2026 Research and Evaluation on School Safety",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "11/23/2026",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by National Institute of Justice. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/364048",
+    "id": 45
+  },
+  {
+    "title": "2026 Diesel Emissions Reduction Act (DERA) National Program",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "01/22/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by Environmental Protection Agency. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/363936",
+    "id": 46
+  },
+  {
+    "title": "University Nuclear Leadership Program&ndash; Scholarship and Fellowship Support",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "10/14/2030",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by Idaho Field Office. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/329436",
+    "id": 47
+  },
+  {
+    "title": "Research Experiences for Undergraduates (REU)",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "08/18/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by U.S. National Science Foundation. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/348985",
+    "id": 48
+  },
+  {
+    "title": "Continuing Human Enabling Enhancing Restoring and Sustaining",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "08/22/2044",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by Air Force -- Research Lab. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/360258",
+    "id": 49
+  },
+  {
+    "title": "Tribal Colleges Research Grants Program",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "12/31/2026",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by National Institute of Food and Agriculture. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/362029",
+    "id": 50
+  },
+  {
+    "title": "Ruth L. Kirschstein National Research Service Award (NRSA) Short-Term Institutional Research Training Grant (Parent T35)",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "05/07/2028",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by National Institutes of Health. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/357996",
+    "id": 51
+  },
+  {
+    "title": "IUSE / Professional Formation of Engineers: Revolutionizing Engineering Departments (IUSE/PFE: RED)",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "04/13/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by U.S. National Science Foundation. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/353413",
+    "id": 52
+  },
+  {
+    "title": "Research Initiatives at the Naval Postgraduate School",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "01/13/2030",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by Naval Supply Systems Command. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/361099",
+    "id": 53
+  },
+  {
+    "title": "IUSE: Innovation in Two-Year College STEM Education (ITYC)",
+    "category": "Research",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "12/09/2026",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by U.S. National Science Foundation. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/363752",
+    "id": 54
+  },
+  {
+    "title": "CHEERS Open Period 1 - All Technical Areas",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "09/30/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by Air Force -- Research Lab. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/360261",
+    "id": 55
+  },
+  {
+    "title": "CHEERS Open Period 2 - All Technical Areas",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "09/30/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by Air Force -- Research Lab. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/360262",
+    "id": 56
+  },
+  {
+    "title": "National Parks Business Plan Internship",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "03/05/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by National Park Service. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/363985",
+    "id": 57
+  },
+  {
+    "title": "NASA SPACE TECHNOLOGY GRADUATE RESEARCH OPPORTUNITIES &ndash; FALL 2027 (NSTGRO27)",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "03/18/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by NASA Headquarters. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/364247",
+    "id": 58
+  },
+  {
+    "title": "Effectiveness Trials to Test Mental Health System Interventions (R61/R33 Clinical Trial Required)",
+    "category": "Research",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "10/15/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by National Institutes of Health. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/357434",
+    "id": 59
+  },
+  {
+    "title": "Accelerating Solutions to Improve Access and Quality of Empirically-Supported Practices for Youth Mental Health (R01 Clinical Trial Optional)",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "01/07/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by National Institutes of Health. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/357524",
+    "id": 60
+  },
+  {
+    "title": "Crosscutting Activities in Materials Research",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "Check Website",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by U.S. National Science Foundation. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/308873",
+    "id": 61
+  },
+  {
+    "title": "Community-Partnered Nursing Research Centers (P20 Clinical Trial Optional)",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "05/07/2028",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by National Institutes of Health. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/358816",
+    "id": 62
+  },
+  {
+    "title": "SMART FY26 Support for Adam Walsh Act Implementation Grant Program",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "11/25/2026",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by SMART. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/364063",
+    "id": 63
+  },
+  {
+    "title": "Institute of Education Sciences (IES): National Center for Special Education Research (NCSER): Transformative Research in Special Education, Assistance Listing Number (ALN) 84.324T",
+    "category": "Research",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "12/11/2026",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by Department of Education. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/364087",
+    "id": 64
+  },
+  {
+    "title": "NRL Long Range Broad Agency Announcement (BAA) for Basic and Applied Research",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "12/30/2026",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by Naval Research Laboratory. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/352741",
+    "id": 65
+  },
+  {
+    "title": "Ruth L. Kirschstein National Research Service Award (NRSA) Individual Fellowship for Students at Institutions Without NIH-Funded Institutional Predoctoral Dual-Degree Training Programs (Parent F30)",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "05/07/2028",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by National Institutes of Health. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/358831",
+    "id": 66
+  },
+  {
+    "title": "Ruth L. Kirschstein National Research Service Award (NRSA) Individual Fellowship for Students at Institutions with NIH-Funded Institutional Predoctoral Dual-Degree Training Programs (Parent F30)",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "05/07/2028",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by National Institutes of Health. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/358832",
+    "id": 67
+  },
+  {
+    "title": "Avant Garde/Avenir Awards for Investigators Conducting High Risk/High Reward Research on HIV and Substance Use (or Substance Use Disorders) (DP1 Clinical Trial Optional)",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "09/25/2028",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by National Institutes of Health. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/358991",
+    "id": 68
+  },
+  {
+    "title": "Pancreatic Cancer Detection Consortium: Research Units (U01 Clinical Trial Optional)",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "11/05/2029",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by National Institutes of Health. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/361275",
+    "id": 69
+  },
+  {
+    "title": "Fiscal Year (FY) 2027 Department of the Navy (DoN) Historically Black Colleges and Universities/Minority Institutions (HBCU/MI) Program",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "12/11/2026",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by Office of Naval Research. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/362871",
+    "id": 70
+  },
+  {
+    "title": "NPS Cooperative Ecosystems Studies Units (CESU) Master Cooperative Agreements",
+    "category": "Research",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "12/31/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by National Park Service. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/345083",
+    "id": 71
+  },
+  {
+    "title": "NIGMS Institutional Biomedical Undergraduate Research Training (BURT) Program (T34)",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "09/25/2028",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by National Institutes of Health. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/359861",
+    "id": 72
+  },
+  {
+    "title": "National Space Grant College and Fellowship Program - Opportunities in NASA STEM FY 2020 &ndash; 2024",
+    "category": "Research",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "Check Website",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by National Aeronautics and Space Administration. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/318918",
+    "id": 73
+  },
+  {
+    "title": "Continuation of the Cardiovascular Repository for-Type 1 Diabetes (CARE-T1D) Consortium U01 (Open Competition)- Research (U01, Clinical Trial Not Allowed)",
+    "category": "Scholarship",
+    "grades": [
+      11,
+      12
+    ],
+    "deadline": "03/10/2027",
+    "amountOrCost": "Federal Grant / Program",
+    "description": "Sponsored by National Institutes of Health. Click below for full eligibility and application details.",
+    "link": "https://www.grants.gov/search-results-detail/360626",
+    "id": 74
   }
 ]
